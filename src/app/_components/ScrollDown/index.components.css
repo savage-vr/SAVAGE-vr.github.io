@@ -5,7 +5,7 @@
   bottom: 8rem;
 
   @media (max-width: 420px) {
-    right: 0.3rem;
+    right: -0.3rem;
   }
 
   &::after {

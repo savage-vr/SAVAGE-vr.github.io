@@ -68,15 +68,15 @@ const SectionHeader: React.FC<{ children: string }> = ({ children }) => {
 
 export default function Home() {
   return (
-    <main>
-      <section className="fixed w-screen h-screen flex flex-col items-center justify-center font-[family-name:var(--font-geist-sans)] bg-black p-20 fadeIn z-1">
+    <main className="w-full">
+      <section className="fixed w-full h-screen flex flex-col items-center justify-center font-[family-name:var(--font-geist-sans)] bg-black p-20 fadeIn z-1">
         <Logo />
         <Savage />
         <MainText />
         <ScrollDown />
       </section>
-      <section className="second-section bg-black">
-        <div className="content flex flex-col items-center p-[2rem]">
+      <section className="second-section w-full bg-black">
+        <div className="content flex flex-col items-center p-[2rem] w-full">
           <SectionHeader>About</SectionHeader>
           <About />
           <div className="flex flex-row flex-wrap gap-4 p-[1rem]">
