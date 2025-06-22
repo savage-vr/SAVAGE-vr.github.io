@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import { ProfileImage } from './ProfileImage'
 import './index.components.css'
 
 type Props = {
@@ -16,14 +16,7 @@ export const Role: React.FC<{ role: 'DJ' | 'VJ' }> = ({ role }) => {
 export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
   return (
     <div className="flex flex-row">
-      <Image
-        className="profile-image"
-        src={imgSrc}
-        alt={`${name}'s picture`}
-        width="200"
-        height="200"
-        priority
-      />
+      <ProfileImage name={name} imgSrc={imgSrc} />
       <div className="flex flex-col information min-w-[120px] gap-2">
         <h3 className="text-2xl">{name}</h3>
         <ul className="roles flex flex-row gap-2">
