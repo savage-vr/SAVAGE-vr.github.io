@@ -25,7 +25,7 @@ const MainText = () => {
   return (
     <div className="w-screen glow">
       <p className="text-3xl p-16 absolute bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
-        &ldquo;lets flexing to the chaos&rdquo;
+        &ldquo;FLEX the chaos&rdquo;
       </p>
     </div >
   );

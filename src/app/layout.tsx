@@ -20,7 +20,7 @@ const ibm = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "SAVAGE - VRC Club Event",
-  description: "lets flexing to the chaos",
+  description: "FLEX the chaos",
   keywords: ["VR", "Club", "Event", "DJ", "VJ", "Virtual", "Music", "VRChat"],
   authors: [{ name: "SAVAGE" }],
   creator: "SAVAGE",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "SAVAGE - VRC Club Event",
-    description: "lets flexing to the chaos",
+    description: "FLEX the chaos",
     url: 'https://savage-vr.github.io',
     siteName: 'SAVAGE',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "SAVAGE - VRクラブイベント",
-    description: "lets flexing to the chaos",
+    description: "FLEX the chaos",
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
     images: ['/logo-fill.jpg'],
@@ -83,7 +83,7 @@ export default function RootLayout({
         <meta name="twitter:site" content="@vrcsavageinfo" />
         <meta name="twitter:creator" content="@vrcsavageinfo" />
         <meta name="twitter:title" content="SAVAGE - VRC Club Event" />
-        <meta name="twitter:description" content="lets flexing to the chaos" />
+        <meta name="twitter:description" content="FLEX the chaos" />
         <meta name="twitter:image" content="https://savage-vr.github.io/logo-fill.png" />
         <meta name="twitter:image:alt" content="SAVAGE - VRC Club Event" />
       </head>
