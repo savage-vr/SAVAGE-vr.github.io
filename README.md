@@ -23,6 +23,6 @@ npm run dev
 npm run build
 ```
 
-- - -
+---
 
 この README は calude code によって書かれました

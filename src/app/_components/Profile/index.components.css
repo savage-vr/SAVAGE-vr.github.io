@@ -48,7 +48,7 @@
       text-decoration: underline;
     }
     &::before {
-      content: "-";
+      content: '-';
       margin: 0 0.4rem;
       text-decoration: none !important;
     }

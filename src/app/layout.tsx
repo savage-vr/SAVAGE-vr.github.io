@@ -1,30 +1,30 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Serif } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono, IBM_Plex_Serif } from 'next/font/google'
+import './globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 const ibm = IBM_Plex_Serif({
-  variable: "--font-ibm-plex-serif",
-  subsets: ["latin"],
-  weight: ["500"],
-});
+  variable: '--font-ibm-plex-serif',
+  subsets: ['latin'],
+  weight: ['500'],
+})
 
 export const metadata: Metadata = {
-  title: "SAVAGE - VRC Club Event",
-  description: "FLEX the chaos",
-  keywords: ["VR", "Club", "Event", "DJ", "VJ", "Virtual", "Music", "VRChat"],
-  authors: [{ name: "SAVAGE" }],
-  creator: "SAVAGE",
-  publisher: "SAVAGE",
+  title: 'SAVAGE - VRC Club Event',
+  description: 'FLEX the chaos',
+  keywords: ['VR', 'Club', 'Event', 'DJ', 'VJ', 'Virtual', 'Music', 'VRChat'],
+  authors: [{ name: 'SAVAGE' }],
+  creator: 'SAVAGE',
+  publisher: 'SAVAGE',
   formatDetection: {
     email: false,
     address: false,
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "SAVAGE - VRC Club Event",
-    description: "FLEX the chaos",
+    title: 'SAVAGE - VRC Club Event',
+    description: 'FLEX the chaos',
     url: 'https://savage-vr.github.io',
     siteName: 'SAVAGE',
     images: [
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SAVAGE - VRC Club Event",
-    description: "FLEX the chaos",
+    title: 'SAVAGE - VRC Club Event',
+    description: 'FLEX the chaos',
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
     images: ['/logo-fill.jpg'],
@@ -69,12 +69,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="ja">
@@ -84,19 +84,34 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@vrcsavageinfo" />
         <meta name="twitter:title" content="SAVAGE - VRC Club Event" />
         <meta name="twitter:description" content="FLEX the chaos" />
-        <meta name="twitter:image" content="https://savage-vr.github.io/logo-fill.png" />
+        <meta
+          name="twitter:image"
+          content="https://savage-vr.github.io/logo-fill.png"
+        />
         <meta name="twitter:image:alt" content="SAVAGE - VRC Club Event" />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16.png"
+        />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${ibm.variable} antialiased bg-black`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${ibm.variable} antialiased bg-black`}
+      >
         {children}
       </body>
     </html>
-  );
+  )
 }

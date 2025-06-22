@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import './index.components.css';
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import './index.components.css'
 
 const slideImages = [
   '/slide/VRChat_2025-01-22_23-04-06.240_1920x1080.png',
@@ -14,33 +14,33 @@ const slideImages = [
   '/slide/VRChat_2025-04-23_23-50-40.674_2560x1440.png',
   '/slide/VRChat_2025-04-24_00-31-35.116_1920x1080.png',
   '/slide/VRChat_2025-05-21_20-48-45.318_1920x1080.png',
-  '/slide/VRChat_2025-05-21_22-28-57.684_1920x1080.webp'
-];
+  '/slide/VRChat_2025-05-21_22-28-57.684_1920x1080.webp',
+]
 
 export default function Slideshow() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slideImages.length);
-    }, 10000);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % slideImages.length)
+    }, 10000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+    setCurrentIndex(index)
+  }
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex(prevIndex =>
       prevIndex === 0 ? slideImages.length - 1 : prevIndex - 1
-    );
-  };
+    )
+  }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slideImages.length);
-  };
+    setCurrentIndex(prevIndex => (prevIndex + 1) % slideImages.length)
+  }
 
   return (
     <div className="slideshow">
@@ -77,5 +77,5 @@ export default function Slideshow() {
         ))}
       </div>
     </div>
-  );
+  )
 }

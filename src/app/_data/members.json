@@ -5,18 +5,9 @@
       "roles": ["DJ"],
       "imgSrc": "/members/bonsai.jpg",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/iamtakerd"
-        ],
-        [
-          "mixcloud",
-          "https://www.mixcloud.com/bonsaiyowai_mellow/"
-        ],
-        [
-          "YouTube",
-          "https://www.youtube.com/@bonsaiyowai"
-        ]
+        ["X (Twitter)", "https://x.com/iamtakerd"],
+        ["mixcloud", "https://www.mixcloud.com/bonsaiyowai_mellow/"],
+        ["YouTube", "https://www.youtube.com/@bonsaiyowai"]
       ]
     },
     {
@@ -24,14 +15,8 @@
       "roles": ["DJ"],
       "imgSrc": "/members/fuji.jpg",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/fuji_COREmania"
-        ],
-        [
-          "mixcloud",
-          "https://www.mixcloud.com/Glicine/"
-        ]
+        ["X (Twitter)", "https://x.com/fuji_COREmania"],
+        ["mixcloud", "https://www.mixcloud.com/Glicine/"]
       ]
     },
     {
@@ -39,14 +24,8 @@
       "roles": ["DJ"],
       "imgSrc": "/members/piq.png",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/JinseihaLoFi"
-        ],
-        [
-          "mixcloud",
-          "https://www.mixcloud.com/piqLes/"
-        ]
+        ["X (Twitter)", "https://x.com/JinseihaLoFi"],
+        ["mixcloud", "https://www.mixcloud.com/piqLes/"]
       ]
     },
     {
@@ -54,18 +33,9 @@
       "roles": ["DJ"],
       "imgSrc": "/members/melo.png",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/zyzyzy_vl"
-        ],
-        [
-          "mixcloud",
-          "https://www.mixcloud.com/melocilde/"
-        ],
-        [
-          "YouTube",
-          "https://www.youtube.com/@zyzyzy012"
-        ]
+        ["X (Twitter)", "https://x.com/zyzyzy_vl"],
+        ["mixcloud", "https://www.mixcloud.com/melocilde/"],
+        ["YouTube", "https://www.youtube.com/@zyzyzy012"]
       ]
     },
     {
@@ -73,14 +43,8 @@
       "roles": ["VJ"],
       "imgSrc": "/members/siche.png",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/__lim_1_na"
-        ],
-        [
-          "linktr",
-          "https://linktr.ee/S1chemani4c"
-        ]
+        ["X (Twitter)", "https://x.com/__lim_1_na"],
+        ["linktr", "https://linktr.ee/S1chemani4c"]
       ]
     },
     {
@@ -88,14 +52,8 @@
       "roles": ["DJ", "VJ"],
       "imgSrc": "/members/pote.png",
       "links": [
-        [
-          "X (Twitter)",
-          "https://x.com/p5f8f"
-        ],
-        [
-          "mixcloud",
-          "https://www.mixcloud.com/RoastPotato/"
-        ],
+        ["X (Twitter)", "https://x.com/p5f8f"],
+        ["mixcloud", "https://www.mixcloud.com/RoastPotato/"],
         [
           "YouTube",
           "https://www.youtube.com/@%E3%82%8D%E3%83%BC%E3%81%99%E3%81%A8%E3%81%BD%E3%81%A6%E3%81%A8-z6z"

@@ -12,22 +12,22 @@
   width: 100vw;
 }
 
-.grid-line:nth-child(1){
+.grid-line:nth-child(1) {
   width: 1px;
   left: 2em;
 }
 
-.grid-line:nth-child(2){
+.grid-line:nth-child(2) {
   width: 1px;
   right: 2em;
 }
 
-.grid-line:nth-child(3){
+.grid-line:nth-child(3) {
   height: 1px;
   top: 2em;
 }
 
-.grid-line:nth-child(4){
+.grid-line:nth-child(4) {
   height: 1px;
   bottom: 2em;
 }

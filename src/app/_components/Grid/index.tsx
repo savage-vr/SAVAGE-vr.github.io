@@ -1,4 +1,4 @@
-import "./index.components.css"
+import './index.components.css'
 
 export const Grid = () => {
   return (

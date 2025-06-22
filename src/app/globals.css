@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @tailwind base;
 @tailwind components;
@@ -18,7 +18,9 @@
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+      Arial, sans-serif;
   }
 
   a {
@@ -26,14 +28,21 @@
     text-decoration: inherit;
   }
 
-  button, input, optgroup, select, textarea {
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
     margin: 0;
   }
 
-  button, [type="button"], [type="reset"], [type="submit"] {
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
     -webkit-appearance: button;
   }
 
