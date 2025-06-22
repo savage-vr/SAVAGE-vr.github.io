@@ -114,9 +114,9 @@ export default function Home() {
           <SectionHeader>Gallery</SectionHeader>
           <Slideshow />
         </div>
-        <div className="flex flex-col items-center p-[2rem] bg-black">
+        <footer className="footer flex flex-col items-center p-[2rem] bg-black">
           © SAVAGE-vr
-        </div>
+        </footer>
       </section>
       <Grid />
     </main>
