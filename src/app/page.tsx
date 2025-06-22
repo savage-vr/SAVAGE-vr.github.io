@@ -101,7 +101,7 @@ export default function Home() {
                 priority
               />
               <span className="text-base/8">
-                Ofiicial SNS
+                Official SNS
               </span>
             </a>
           </div>
