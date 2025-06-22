@@ -79,6 +79,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <meta
+          name="description"
+          content="SAVAGE is VRC Club Event, FLEX the chaos"
+        ></meta>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vrcsavageinfo" />
         <meta name="twitter:creator" content="@vrcsavageinfo" />

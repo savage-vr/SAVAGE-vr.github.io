@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "total": 11,
+    "generatedAt": "2025-06-22T18:45:42.323Z",
+    "directory": "/public/slide",
+    "formats": ["png", "webp"]
+  },
+  "slides": [
+    {
+      "id": 1,
+      "basename": "VRChat_2025-01-22_23-04-06.240_1920x1080",
+      "filename": "VRChat_2025-01-22_23-04-06.240_1920x1080.png",
+      "path": "/slide/VRChat_2025-01-22_23-04-06.240_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 1",
+      "format": "png",
+      "size": 1809866,
+      "createdAt": "2025-06-22T13:53:25.179Z",
+      "modifiedAt": "2025-06-22T13:53:26.839Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-01-22_23-04-06.240_1920x1080.webp",
+          "path": "/slide/VRChat_2025-01-22_23-04-06.240_1920x1080.webp",
+          "format": "webp",
+          "size": 58164,
+          "createdAt": "2025-06-22T13:53:24.983Z",
+          "modifiedAt": "2025-06-22T13:53:25.179Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "basename": "VRChat_2025-01-22_23-42-56.016_1920x1080",
+      "filename": "VRChat_2025-01-22_23-42-56.016_1920x1080.png",
+      "path": "/slide/VRChat_2025-01-22_23-42-56.016_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 2",
+      "format": "png",
+      "size": 1479272,
+      "createdAt": "2025-06-22T13:53:26.999Z",
+      "modifiedAt": "2025-06-22T13:53:29.003Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-01-22_23-42-56.016_1920x1080.webp",
+          "path": "/slide/VRChat_2025-01-22_23-42-56.016_1920x1080.webp",
+          "format": "webp",
+          "size": 37498,
+          "createdAt": "2025-06-22T13:53:26.843Z",
+          "modifiedAt": "2025-06-22T13:53:26.999Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "basename": "VRChat_2025-01-22_23-55-28.766_1920x1080",
+      "filename": "VRChat_2025-01-22_23-55-28.766_1920x1080.png",
+      "path": "/slide/VRChat_2025-01-22_23-55-28.766_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 3",
+      "format": "png",
+      "size": 2098353,
+      "createdAt": "2025-06-22T14:40:43.427Z",
+      "modifiedAt": "2025-06-22T14:40:43.439Z",
+      "alternatives": []
+    },
+    {
+      "id": 4,
+      "basename": "VRChat_2025-04-23_21-02-21.982_1920x1080",
+      "filename": "VRChat_2025-04-23_21-02-21.982_1920x1080.png",
+      "path": "/slide/VRChat_2025-04-23_21-02-21.982_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 4",
+      "format": "png",
+      "size": 1768435,
+      "createdAt": "2025-06-22T13:53:29.203Z",
+      "modifiedAt": "2025-06-22T13:53:30.915Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-23_21-02-21.982_1920x1080.webp",
+          "path": "/slide/VRChat_2025-04-23_21-02-21.982_1920x1080.webp",
+          "format": "webp",
+          "size": 59766,
+          "createdAt": "2025-06-22T13:53:29.003Z",
+          "modifiedAt": "2025-06-22T13:53:29.203Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "basename": "VRChat_2025-04-23_23-04-09.170_2560x1440",
+      "filename": "VRChat_2025-04-23_23-04-09.170_2560x1440.png",
+      "path": "/slide/VRChat_2025-04-23_23-04-09.170_2560x1440.png",
+      "alt": "SAVAGEイベントのスライド 5",
+      "format": "png",
+      "size": 1721071,
+      "createdAt": "2025-06-22T13:53:31.103Z",
+      "modifiedAt": "2025-06-22T13:53:32.843Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-23_23-04-09.170_2560x1440.webp",
+          "path": "/slide/VRChat_2025-04-23_23-04-09.170_2560x1440.webp",
+          "format": "webp",
+          "size": 44180,
+          "createdAt": "2025-06-22T13:53:30.919Z",
+          "modifiedAt": "2025-06-22T13:53:31.103Z"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "basename": "VRChat_2025-04-23_23-47-33.143_2560x1440",
+      "filename": "VRChat_2025-04-23_23-47-33.143_2560x1440.png",
+      "path": "/slide/VRChat_2025-04-23_23-47-33.143_2560x1440.png",
+      "alt": "SAVAGEイベントのスライド 6",
+      "format": "png",
+      "size": 1514929,
+      "createdAt": "2025-06-22T13:53:33.003Z",
+      "modifiedAt": "2025-06-22T13:53:34.971Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-23_23-47-33.143_2560x1440.webp",
+          "path": "/slide/VRChat_2025-04-23_23-47-33.143_2560x1440.webp",
+          "format": "webp",
+          "size": 23496,
+          "createdAt": "2025-06-22T13:53:32.847Z",
+          "modifiedAt": "2025-06-22T13:53:33.003Z"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "basename": "VRChat_2025-04-23_23-48-18.239_1920x1080",
+      "filename": "VRChat_2025-04-23_23-48-18.239_1920x1080.png",
+      "path": "/slide/VRChat_2025-04-23_23-48-18.239_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 7",
+      "format": "png",
+      "size": 2006879,
+      "createdAt": "2025-06-22T13:53:35.199Z",
+      "modifiedAt": "2025-06-22T13:53:36.763Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-23_23-48-18.239_1920x1080.webp",
+          "path": "/slide/VRChat_2025-04-23_23-48-18.239_1920x1080.webp",
+          "format": "webp",
+          "size": 77800,
+          "createdAt": "2025-06-22T13:53:34.971Z",
+          "modifiedAt": "2025-06-22T13:53:35.195Z"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "basename": "VRChat_2025-04-23_23-50-40.674_2560x1440",
+      "filename": "VRChat_2025-04-23_23-50-40.674_2560x1440.png",
+      "path": "/slide/VRChat_2025-04-23_23-50-40.674_2560x1440.png",
+      "alt": "SAVAGEイベントのスライド 8",
+      "format": "png",
+      "size": 1802481,
+      "createdAt": "2025-06-22T13:53:36.963Z",
+      "modifiedAt": "2025-06-22T13:53:38.743Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-23_23-50-40.674_2560x1440.webp",
+          "path": "/slide/VRChat_2025-04-23_23-50-40.674_2560x1440.webp",
+          "format": "webp",
+          "size": 48638,
+          "createdAt": "2025-06-22T13:53:36.767Z",
+          "modifiedAt": "2025-06-22T13:53:36.963Z"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "basename": "VRChat_2025-04-24_00-31-35.116_1920x1080",
+      "filename": "VRChat_2025-04-24_00-31-35.116_1920x1080.png",
+      "path": "/slide/VRChat_2025-04-24_00-31-35.116_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 9",
+      "format": "png",
+      "size": 2769375,
+      "createdAt": "2025-06-22T13:53:39.079Z",
+      "modifiedAt": "2025-06-22T13:53:40.263Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-04-24_00-31-35.116_1920x1080.webp",
+          "path": "/slide/VRChat_2025-04-24_00-31-35.116_1920x1080.webp",
+          "format": "webp",
+          "size": 208700,
+          "createdAt": "2025-06-22T13:53:38.743Z",
+          "modifiedAt": "2025-06-22T13:53:39.079Z"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "basename": "VRChat_2025-05-21_20-48-45.318_1920x1080",
+      "filename": "VRChat_2025-05-21_20-48-45.318_1920x1080.png",
+      "path": "/slide/VRChat_2025-05-21_20-48-45.318_1920x1080.png",
+      "alt": "SAVAGEイベントのスライド 10",
+      "format": "png",
+      "size": 1514571,
+      "createdAt": "2025-06-22T13:53:40.395Z",
+      "modifiedAt": "2025-06-22T13:53:42.315Z",
+      "alternatives": [
+        {
+          "filename": "VRChat_2025-05-21_20-48-45.318_1920x1080.webp",
+          "path": "/slide/VRChat_2025-05-21_20-48-45.318_1920x1080.webp",
+          "format": "webp",
+          "size": 13748,
+          "createdAt": "2025-06-22T13:53:40.267Z",
+          "modifiedAt": "2025-06-22T13:53:40.395Z"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "basename": "VRChat_2025-05-21_22-28-57.684_1920x1080",
+      "filename": "VRChat_2025-05-21_22-28-57.684_1920x1080.webp",
+      "path": "/slide/VRChat_2025-05-21_22-28-57.684_1920x1080.webp",
+      "alt": "SAVAGEイベントのスライド 11",
+      "format": "webp",
+      "size": 1421193,
+      "createdAt": "2025-06-22T13:53:42.315Z",
+      "modifiedAt": "2025-06-22T13:53:43.503Z",
+      "alternatives": []
+    }
+  ]
+}

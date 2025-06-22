@@ -65,13 +65,13 @@
 .slideshow-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-top: 16px;
 }
 
 .slideshow-dot {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.5);
