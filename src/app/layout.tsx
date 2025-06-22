@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SAVAGE - VRクラブイベント",
+    title: "SAVAGE - VRC Club Event",
     description: "FLEX the chaos",
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
@@ -86,7 +86,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="FLEX the chaos" />
         <meta name="twitter:image" content="https://savage-vr.github.io/logo-fill.png" />
         <meta name="twitter:image:alt" content="SAVAGE - VRC Club Event" />
-        
+
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
