@@ -79,7 +79,7 @@ export default function Home() {
         <div className="content flex flex-col items-center p-[2rem]">
           <SectionHeader>About</SectionHeader>
           <About />
-          <a className="flex flex-row gap-4" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
+          <a className="flex flex-row gap-4 p-[1rem]" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
             <Image
               width={20}
               height={20}
