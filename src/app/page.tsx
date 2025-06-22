@@ -79,16 +79,32 @@ export default function Home() {
         <div className="content flex flex-col items-center p-[2rem]">
           <SectionHeader>About</SectionHeader>
           <About />
-          <a className="flex flex-row gap-4 p-[1rem]" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
-            <Image
-              width={20}
-              height={20}
-              src="/logo/X_logo.svg"
-              alt="Logo"
-              priority
-            />
-            Ofiicial SNS
-          </a>
+          <div className="flex flex-row gap-4 p-[1rem]">
+            <a className="flex flex-row gap-4 p-[1rem]" href="https://vrchat.com/home/group/grp_0fa30f81-0523-4034-90ab-c3ca819b9fea" target="_blank" referrerPolicy="no-referrer">
+              <Image
+                width={82}
+                height={42}
+                src="/logo/vrc-logo.png"
+                alt="Logo"
+                priority
+              />
+              <span className="text-base/8">
+                VRChar Group
+              </span>
+            </a>
+            <a className="flex flex-row gap-4 p-[1rem]" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
+              <Image
+                width={40}
+                height={40}
+                src="/logo/X_logo.svg"
+                alt="Logo"
+                priority
+              />
+              <span className="text-base/8">
+                Ofiicial SNS
+              </span>
+            </a>
+          </div>
           <SectionHeader>Members</SectionHeader>
           <div className="flex flex-wrap justify-center gap-[3rem]">
             {members.members.map(member => (

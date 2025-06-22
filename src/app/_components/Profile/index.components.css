@@ -7,6 +7,16 @@
 
 .information {
   margin-left: 2rem;
+
+  & h3 {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+@media (max-width: 400px) {
+  .information h3 {
+    font-size: 1.25rem; /* 20px */
+  }
 }
 
 .roles {
@@ -17,7 +27,7 @@
 }
 
 .DJ {
-  background: #080318;
+  background: #8f642e;
 }
 
 .VJ {
