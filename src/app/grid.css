@@ -1,0 +1,33 @@
+.grid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.grid-line {
+  position: fixed;
+  border: 1px solid white;
+  opacity: 0.2;
+  height: 100vh;
+  width: 100vw;
+}
+
+.grid-line:nth-child(1){
+  width: 1px;
+  left: 2em;
+}
+
+.grid-line:nth-child(2){
+  width: 1px;
+  right: 2em;
+}
+
+.grid-line:nth-child(3){
+  height: 1px;
+  top: 2em;
+}
+
+.grid-line:nth-child(4){
+  height: 1px;
+  bottom: 2em;
+}
