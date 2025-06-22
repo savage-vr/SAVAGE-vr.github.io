@@ -45,9 +45,15 @@ export default function Slideshow() {
   return (
     <div className="slideshow">
       <div className="slideshow-container">
-        <button className="slideshow-nav prev" onClick={goToPrevious} />
+        <button 
+          className="slideshow-nav prev" 
+          onClick={goToPrevious}
+          aria-label="前のスライドを表示"
+        >
+          ◀
+        </button>
 
-        <div className="slideshow-images">
+        <div className="slideshow-images" role="img" aria-live="polite">
           {slideImages.map((image, index) => (
             <div
               key={image}
@@ -55,7 +61,7 @@ export default function Slideshow() {
             >
               <Image
                 src={image}
-                alt={`Slide ${index + 1}`}
+                alt={`SAVAGEイベントのスライド ${index + 1}/${slideImages.length}`}
                 style={{ objectFit: 'cover' }}
                 priority={index === 0}
                 fill
@@ -64,15 +70,24 @@ export default function Slideshow() {
           ))}
         </div>
 
-        <button className="slideshow-nav next" onClick={goToNext} />
+        <button 
+          className="slideshow-nav next" 
+          onClick={goToNext}
+          aria-label="次のスライドを表示"
+        >
+          ▶
+        </button>
       </div>
 
-      <div className="slideshow-dots">
+      <div className="slideshow-dots" role="tablist" aria-label="スライド選択">
         {slideImages.map((_, index) => (
           <button
             key={index}
             className={`slideshow-dot ${index === currentIndex ? 'active' : ''}`}
             onClick={() => goToSlide(index)}
+            role="tab"
+            aria-label={`スライド ${index + 1} を表示`}
+            aria-selected={index === currentIndex}
           />
         ))}
       </div>
