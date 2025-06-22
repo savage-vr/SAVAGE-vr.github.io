@@ -19,6 +19,7 @@ export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
   return (
     <div className="flex flex-row">
       <Image
+        className="profile-image"
         src={imgSrc ?? "#"}
         alt={`${name}'s picture`}
         width="200"
