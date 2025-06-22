@@ -89,7 +89,7 @@ export default function Home() {
                 priority
               />
               <span className="text-base/8">
-                VRChar Group
+                VRChat Group
               </span>
             </a>
             <a className="flex flex-row gap-4 p-[1rem]" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
