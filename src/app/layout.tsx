@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "SAVAGE - VRクラブイベント",
-  description: "lets flexing to the chaos",
+    description: "lets flexing to the chaos",
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
     images: ['/logo.jpg'],
@@ -84,7 +84,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@vrcsavageinfo" />
         <meta name="twitter:title" content="SAVAGE - VRC Club Event" />
         <meta name="twitter:description" content="lets flexing to the chaos" />
-        <meta name="twitter:image" content="https://savage-vr.github.io/logo.jpg" />
+        <meta name="twitter:image" content="https://savage-vr.github.io/logo.png" />
         <meta name="twitter:image:alt" content="SAVAGE - VRC Club Event" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ibm.variable} antialiased bg-black`}>
