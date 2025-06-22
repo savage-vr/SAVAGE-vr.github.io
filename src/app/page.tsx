@@ -79,7 +79,7 @@ export default function Home() {
         <div className="content flex flex-col items-center p-[2rem]">
           <SectionHeader>About</SectionHeader>
           <About />
-          <div className="flex flex-row gap-4 p-[1rem]">
+          <div className="flex flex-row flex-wrap gap-4 p-[1rem]">
             <a className="flex flex-row gap-4 p-[1rem]" href="https://vrchat.com/home/group/grp_0fa30f81-0523-4034-90ab-c3ca819b9fea" target="_blank" referrerPolicy="no-referrer">
               <Image
                 width={82}
