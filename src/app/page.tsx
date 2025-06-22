@@ -79,6 +79,16 @@ export default function Home() {
         <div className="content flex flex-col items-center p-[2rem]">
           <SectionHeader>About</SectionHeader>
           <About />
+          <a className="flex flex-row gap-4" href="https://x.com/vrcsavageinfo" target="_blank" referrerPolicy="no-referrer">
+            <Image
+              width={20}
+              height={20}
+              src="/logo/X_logo.svg"
+              alt="Logo"
+              priority
+            />
+            Ofiicial SNS
+          </a>
           <SectionHeader>Members</SectionHeader>
           <div className="flex flex-wrap justify-center gap-[3rem]">
             {members.members.map(member => (
@@ -88,7 +98,7 @@ export default function Home() {
           <SectionHeader>Gallery</SectionHeader>
           <Slideshow />
         </div>
-        <div className="content flex flex-col items-center p-[2rem]">
+        <div className="flex flex-col items-center p-[2rem] bg-black">
           © SAVAGE
         </div>
       </section>
