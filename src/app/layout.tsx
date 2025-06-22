@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'SAVAGE',
     images: [
       {
-        url: '/logo.jpg',
+        url: '/logo-fill.jpg',
         width: 1200,
         height: 630,
         alt: 'SAVAGE - VRC Club Event',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: "lets flexing to the chaos",
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
-    images: ['/logo.jpg'],
+    images: ['/logo-fill.jpg'],
   },
   robots: {
     index: true,
@@ -84,7 +84,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@vrcsavageinfo" />
         <meta name="twitter:title" content="SAVAGE - VRC Club Event" />
         <meta name="twitter:description" content="lets flexing to the chaos" />
-        <meta name="twitter:image" content="https://savage-vr.github.io/logo.png" />
+        <meta name="twitter:image" content="https://savage-vr.github.io/logo-fill.png" />
         <meta name="twitter:image:alt" content="SAVAGE - VRC Club Event" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ibm.variable} antialiased bg-black`}>
