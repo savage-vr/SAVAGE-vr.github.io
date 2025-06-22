@@ -57,7 +57,7 @@ export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#666',
+            color: '#fff',
             fontSize: '12px',
           }}
         >
