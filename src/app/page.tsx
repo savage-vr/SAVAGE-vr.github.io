@@ -99,7 +99,7 @@ export default function Home() {
           <Slideshow />
         </div>
         <div className="flex flex-col items-center p-[2rem] bg-black">
-          © SAVAGE
+          © SAVAGE-vr
         </div>
       </section>
       <Grid />
