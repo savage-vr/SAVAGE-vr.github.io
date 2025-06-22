@@ -1,0 +1,20 @@
+.scroll-down {
+  transform: rotate(90deg);
+  position: absolute;
+  right: 1rem;
+  bottom: 8rem;
+
+  @media (max-width: 420px) {
+    right: 0.3rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 8px;
+    top: 1rem;
+    width: 100px;
+    height: 1px;
+    border: solid 1px white;
+  }
+}

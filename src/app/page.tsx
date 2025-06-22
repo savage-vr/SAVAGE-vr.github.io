@@ -1,7 +1,10 @@
+import React from "react";
 import Image from "next/image";
-import "./section.css"
-import "./grid.css"
-import { Profile } from "./profile";
+import { Grid } from "./_components/Grid"
+import { Profile } from "./_components/Profile";
+import { ScrollDown } from "./_components/ScrollDown";
+import { members } from "./_data/members.schema";
+import Slideshow from "./_components/Slideshow";
 
 const Logo = () => {
   return (
@@ -20,9 +23,11 @@ const Logo = () => {
 
 const MainText = () => {
   return (
-    <p className="text-3xl p-16 absolute bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
-      &ldquo;lets flexing to the chaos&rdquo;
-    </p>
+    <div className="w-screen glow">
+      <p className="text-3xl p-16 absolute bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
+        &ldquo;lets flexing to the chaos&rdquo;
+      </p>
+    </div >
   );
 }
 
@@ -35,25 +40,31 @@ const Savage = () => {
   )
 }
 
-const Grid = () => {
+const About = () => {
   return (
-    <div className="grid-container z-2">
-      <div className="grid-line" />
-      <div className="grid-line" />
-      <div className="grid-line" />
-      <div className="grid-line" />
+    <div className="flex flex-row items-center justify-center flex-wrap gap-[2rem]">
+      <p className="text-wrap">
+        SAVAGE は、不思議で魅惑的な空気感を大切にする、<wbr />VR上のクラブイベントです。<br /><br />
+        時折テーマを設け、<wbr />その世界観に深く浸るように構成されたDJセットが特徴です。<br /><br />
+        現実とはひと味違う没入感あふれるバーチャルな夜をSAVAGEが創り出します。
+      </p>
+      <Image
+        className="logo"
+        src="/1.jpg"
+        alt="Logo"
+        width={250}
+        height={250}
+        priority
+      />
     </div>
   )
 }
 
-const ScrollDown = () => {
+const SectionHeader: React.FC<{ children: string }> = ({ children }) => {
   return (
-    <p className="scroll-down text-xl font-[family-name:var(--font-ibm-plex-serif)]">
-      Scroll Down
-    </p>
+    <h2 className="p-16 text-3xl font-bold">{children}</h2>
   )
 }
-
 
 export default function Home() {
   return (
@@ -61,38 +72,24 @@ export default function Home() {
       <section className="fixed w-screen h-screen flex flex-col items-center justify-center font-[family-name:var(--font-geist-sans)] bg-black p-20 fadeIn z-1">
         <Logo />
         <Savage />
-        <div className="w-screen glow">
-          <MainText />
-        </div>
+        <MainText />
         <ScrollDown />
       </section>
       <section className="second-section bg-black">
         <div className="content flex flex-col items-center p-[2rem]">
-          <h2 className="p-8 text-3xl pb-16 font-bold">About</h2>
-          <div className="flex flex-row items-center justify-center flex-wrap gap-[2rem]">
-            <p className="text-wrap">
-              SAVAGE は、不思議で魅惑的な空気感を大切にする、<wbr />VR上のクラブイベントです。<br /><br />
-              時折テーマを設け、<wbr />その世界観に深く浸るように構成されたDJセットが特徴です。<br /><br />
-              現実とはひと味違う没入感あふれるバーチャルな夜をSAVAGEが創り出します。
-            </p>
-            <Image
-              className="logo"
-              src="/1.jpg"
-              alt="Logo"
-              width={250}
-              height={250}
-              priority
-            />
-          </div>
-          <h2 className="p-8 text-3xl pb-16 font-bold">Members</h2>
+          <SectionHeader>About</SectionHeader>
+          <About />
+          <SectionHeader>Members</SectionHeader>
           <div className="flex flex-wrap justify-center gap-[3rem]">
-            <Profile name="bonsai" roles={["DJ"]} links={[["X (Twitter)", "https://x.com/iamtakerd"], ["youtube", "https://www.youtube.com/@bonsaiyowai"]]} />
-            <Profile name="fuji_Glicine" roles={["DJ"]} links={[["X (Twitter)", "https://x.com/fuji_COREmania"]]} />
-            <Profile name="piqLessss" roles={["DJ"]} links={[["X (Twitter)", "https://x.com/JinseihaLoFi"]]} />
-            <Profile name="melocilde" roles={["DJ"]} links={[["X (Twitter)", "https://x.com/zyzyzy_vl"]]} />
-            <Profile name="RoastPotato" roles={["DJ", "VJ"]} links={[["X (Twitter)", "https://x.com/p5f8f"]]} />
-            <Profile name="sichemaniac" roles={["VJ"]} links={[["X (Twitter)", "https://x.com/__lim_1_na"]]} />
+            {members.members.map(member => (
+              <Profile key={member.name} imgSrc={member.imgSrc} name={member.name} roles={member.roles} links={member.links} />
+            ))}
           </div>
+          <SectionHeader>Gallery</SectionHeader>
+          <Slideshow />
+        </div>
+        <div className="content flex flex-col items-center p-[2rem]">
+          © SAVAGE
         </div>
       </section>
       <Grid />

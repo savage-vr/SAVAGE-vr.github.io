@@ -1,0 +1,106 @@
+{
+  "members": [
+    {
+      "name": "bonsai",
+      "roles": ["DJ"],
+      "imgSrc": "/members/bonsai.jpg",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/iamtakerd"
+        ],
+        [
+          "mixcloud",
+          "https://www.mixcloud.com/bonsaiyowai_mellow/"
+        ],
+        [
+          "youtube",
+          "https://www.youtube.com/@bonsaiyowai"
+        ]
+      ]
+    },
+    {
+      "name": "fuji_Glicine",
+      "roles": ["DJ"],
+      "imgSrc": "/members/fuji.jpg",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/fuji_COREmania"
+        ],
+        [
+          "mixcloud",
+          "https://www.mixcloud.com/Glicine/"
+        ]
+      ]
+    },
+    {
+      "name": "piqLessss",
+      "roles": ["DJ"],
+      "imgSrc": "/members/piq.png",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/JinseihaLoFi"
+        ],
+        [
+          "mixcloud",
+          "https://www.mixcloud.com/piqLes/"
+        ]
+      ]
+    },
+    {
+      "name": "melocilde",
+      "roles": ["DJ"],
+      "imgSrc": "/members/melo.png",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/zyzyzy_vl"
+        ],
+        [
+          "mixcloud",
+          "https://www.mixcloud.com/melocilde/"
+        ],
+        [
+          "youtube",
+          "https://www.youtube.com/@zyzyzy012"
+        ]
+      ]
+    },
+    {
+      "name": "sichemaniac",
+      "roles": ["VJ"],
+      "imgSrc": "/members/siche.png",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/__lim_1_na"
+        ],
+        [
+          "discord server",
+          "https://discord.com/invite/8nCNRDS4pa"
+        ]
+      ]
+    },
+    {
+      "name": "RoastPotato",
+      "roles": ["DJ", "VJ"],
+      "imgSrc": "/members/pote.jpg",
+      "links": [
+        [
+          "X (Twitter)",
+          "https://x.com/p5f8f"
+        ],
+        [
+          "mixcloud",
+          "https://www.mixcloud.com/RoastPotato/"
+        ],
+        [
+          "youtube",
+          "https://www.youtube.com/@%E3%82%8D%E3%83%BC%E3%81%99%E3%81%A8%E3%81%BD%E3%81%A6%E3%81%A8-z6z"
+        ]
+      ]
+    }
+  ]
+}
