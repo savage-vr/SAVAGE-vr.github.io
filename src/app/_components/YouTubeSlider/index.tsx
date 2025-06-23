@@ -38,6 +38,7 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
               <div className="aspect-video">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}`}
+                  loading="lazy"
                   title={video.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
