@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+import { DotNavigation } from '../common/DotNavigation'
+import { NavigationButton } from '../common/NavigationButton'
+
 interface YouTubeVideo {
   id: string
   title: string
@@ -87,10 +90,6 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
     setCurrentIndex(prev => (prev - 1 + videos.length) % videos.length)
   }
 
-  const goToVideo = (index: number) => {
-    setCurrentIndex(index)
-  }
-
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="relative overflow-hidden rounded-lg shadow-lg">
@@ -109,63 +108,26 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
 
         {videos.length > 1 && (
           <>
-            <button
+            <NavigationButton
+              direction="prev"
               onClick={prevVideo}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity"
-              aria-label="前の動画"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-
-            <button
+              ariaLabel="前の動画"
+            />
+            <NavigationButton
+              direction="next"
               onClick={nextVideo}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity"
-              aria-label="次の動画"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+              ariaLabel="次の動画"
+            />
           </>
         )}
       </div>
 
-      {videos.length > 1 && (
-        <div className="flex justify-center mt-4 space-x-2">
-          {videos.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToVideo(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-white' : 'bg-gray-400'
-              }`}
-              aria-label={`動画${index + 1}を表示`}
-            />
-          ))}
-        </div>
-      )}
+      <DotNavigation
+        totalItems={videos.length}
+        currentIndex={currentIndex}
+        onIndexChange={setCurrentIndex}
+        getItemAriaLabel={index => `動画${index + 1}を表示`}
+      />
 
       {videos[currentIndex] && (
         <div className="mt-4 text-center font-[family-name:var(--font-geist-sans)]">

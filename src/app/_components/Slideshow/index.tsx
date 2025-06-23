@@ -4,13 +4,16 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
 import './index.components.css'
+
 import { slides } from '#/app/_data/slides.schema'
+
+import { DotNavigation } from '../common/DotNavigation'
+import { NavigationButton } from '../common/NavigationButton'
 
 const slideImages = slides.slides
 
 export default function Slideshow() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const slideshowRef = useRef<HTMLDivElement>(null)
 
@@ -20,7 +23,6 @@ export default function Slideshow() {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
             // Load current image and next few images
             const imagesToLoad = new Set<number>()
             for (let i = 0; i < Math.min(3, slideImages.length); i++) {
@@ -39,26 +41,6 @@ export default function Slideshow() {
 
     return () => observer.disconnect()
   }, [currentIndex])
-
-  // Auto-advance slideshow only when visible
-  useEffect(() => {
-    if (!isVisible) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => {
-        const nextIndex = (prevIndex + 1) % slideImages.length
-        // Preload next few images
-        const imagesToLoad = new Set<number>()
-        for (let i = 0; i < 3; i++) {
-          imagesToLoad.add((nextIndex + i) % slideImages.length)
-        }
-        setLoadedImages(prev => new Set([...prev, ...imagesToLoad]))
-        return nextIndex
-      })
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [isVisible])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
@@ -104,10 +86,12 @@ export default function Slideshow() {
   return (
     <div className="slideshow" ref={slideshowRef}>
       <div className="slideshow-container">
-        <button
-          className="slideshow-nav prev"
+        <NavigationButton
+          direction="prev"
           onClick={goToPrevious}
-          aria-label="前のスライドを表示"
+          ariaLabel="前のスライドを表示"
+          className="slideshow-nav prev"
+          useDefaultStyle={false}
         />
 
         <div className="slideshow-images" role="img" aria-live="polite">
@@ -159,25 +143,21 @@ export default function Slideshow() {
           ))}
         </div>
 
-        <button
-          className="slideshow-nav next"
+        <NavigationButton
+          direction="next"
           onClick={goToNext}
-          aria-label="次のスライドを表示"
+          ariaLabel="次のスライドを表示"
+          className="slideshow-nav next"
         />
       </div>
 
-      <div className="slideshow-dots" role="tablist" aria-label="スライド選択">
-        {slideImages.map((_, index) => (
-          <button
-            key={index}
-            className={`slideshow-dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            role="tab"
-            aria-label={`スライド ${index + 1} を表示`}
-            aria-selected={index === currentIndex}
-          />
-        ))}
-      </div>
+      <DotNavigation
+        totalItems={slideImages.length}
+        currentIndex={currentIndex}
+        onIndexChange={goToSlide}
+        ariaLabel="スライド選択"
+        getItemAriaLabel={index => `スライド ${index + 1} を表示`}
+      />
     </div>
   )
 }
