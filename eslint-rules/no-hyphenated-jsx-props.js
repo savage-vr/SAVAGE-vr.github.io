@@ -19,15 +19,13 @@ module.exports = {
     const isHyphenatedProp = (propName) => {
       // Exclude standard HTML attributes and common patterns
       const allowedPatterns = [
-        /^aria-/,
-        /^data-/,
         /^stroke/,
         /^fill/,
         /^viewBox$/,
         /^xmlns/,
       ]
-      
-      return propName.includes('-') && 
+
+      return propName.includes('-') &&
              !allowedPatterns.some(pattern => pattern.test(propName))
     }
 
