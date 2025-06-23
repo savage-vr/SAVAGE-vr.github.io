@@ -103,10 +103,11 @@ export default function Home() {
                 alt="Logo"
                 priority
               />
-              <span className="text-base/8">VRChat Group</span>
+              <span className="text-base/9">VRChat Group</span>
             </a>
             <a
               className="flex flex-row gap-4 p-[1rem]"
+              style={{ marginLeft: "1rem" }}
               href="https://x.com/vrcsavageinfo"
               target="_blank"
               referrerPolicy="no-referrer"
@@ -118,7 +119,7 @@ export default function Home() {
                 alt="Logo"
                 priority
               />
-              <span className="text-base/8">Official SNS</span>
+              <span className="text-base/9">Official SNS</span>
             </a>
           </div>
           <SectionHeader>Members</SectionHeader>
