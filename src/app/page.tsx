@@ -97,8 +97,8 @@ export default function Home() {
             >
               <Image
                 width={82}
-                height={42}
-                src="/logo/vrc-logo.jpg"
+                height={41}
+                src="/logo/vrchat-logo-white-optimized.png"
                 alt="Logo"
                 priority
               />
