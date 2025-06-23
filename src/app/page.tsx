@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Image from 'next/image'
 import { Grid } from './_components/Grid'
 import { Profile } from './_components/Profile'
 import { ScrollDown } from './_components/ScrollDown'
 import { members } from './_data/members.schema'
-import Slideshow from './_components/Slideshow'
+
+const Slideshow = React.lazy(() => import('./_components/Slideshow'))
 
 const Logo = () => {
   return (
@@ -97,7 +98,7 @@ export default function Home() {
               <Image
                 width={82}
                 height={42}
-                src="/logo/vrc-logo.png"
+                src="/logo/vrc-logo.jpg"
                 alt="Logo"
                 priority
               />
@@ -132,7 +133,9 @@ export default function Home() {
             ))}
           </div>
           <SectionHeader>Gallery</SectionHeader>
-          <Slideshow />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Slideshow />
+          </Suspense>
         </div>
         <footer className="footer flex flex-col items-center p-[2rem] bg-black">
           © SAVAGE-vr
