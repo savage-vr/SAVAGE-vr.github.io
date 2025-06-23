@@ -29,7 +29,7 @@ export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
         <ul className="links">
           {links.map(([title, url], index) => (
             <li key={index}>
-              <a href={url}>{title}</a>
+              <a href={url} target="_blank" rel="noreferrer">{title}</a>
             </li>
           ))}
         </ul>
