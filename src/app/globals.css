@@ -106,8 +106,12 @@ body {
   animation: fadeIn 2s ease-out;
 }
 
+.hero {
+  margin-top: -100svh;
+}
+
 .second-section {
-  padding-top: 100svh;
+  margin-top: 100svh;
   z-index: 10;
   background: transparent;
   position: relative;
