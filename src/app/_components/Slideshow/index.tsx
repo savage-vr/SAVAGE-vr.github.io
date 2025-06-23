@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
+
 import './index.components.css'
 import { slides } from '#/app/_data/slides.schema'
 

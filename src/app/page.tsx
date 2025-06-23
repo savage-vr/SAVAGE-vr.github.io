@@ -1,11 +1,14 @@
-import React, { Suspense } from 'react'
 import Image from 'next/image'
+import React, { Suspense } from 'react'
+
 import { Grid } from './_components/Grid'
 import { Profile } from './_components/Profile'
 import { ScrollDown } from './_components/ScrollDown'
 import { members } from './_data/members.schema'
+import { youtube } from './_data/youtube.schema'
 
 const Slideshow = React.lazy(() => import('./_components/Slideshow'))
+const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
 
 const Logo = () => {
   return (
@@ -107,7 +110,7 @@ export default function Home() {
             </a>
             <a
               className="flex flex-row gap-4 p-[1rem]"
-              style={{ marginLeft: "1rem" }}
+              style={{ marginLeft: '1rem' }}
               href="https://x.com/vrcsavageinfo"
               target="_blank"
               referrerPolicy="no-referrer"
@@ -137,6 +140,10 @@ export default function Home() {
           <SectionHeader>Gallery</SectionHeader>
           <Suspense fallback={<div>Loading...</div>}>
             <Slideshow />
+          </Suspense>
+          <SectionHeader>Videos</SectionHeader>
+          <Suspense fallback={<div>Loading videos...</div>}>
+            <YouTubeSlider videos={youtube.movies} />
           </Suspense>
         </div>
         <footer className="footer flex flex-col items-center p-[2rem] bg-black">

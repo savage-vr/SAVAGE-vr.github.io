@@ -1,4 +1,5 @@
 import { z } from 'zod'
+
 import slidesData from './slides.json'
 
 const SlideMetadataSchema = z.object({

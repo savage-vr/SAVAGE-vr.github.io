@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 
 type Props = {
   name: string
@@ -35,7 +35,11 @@ export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
   }, [])
 
   return (
-    <div className="profile-image-container" style={{ position: 'relative' }} ref={imageRef}>
+    <div
+      className="profile-image-container"
+      style={{ position: 'relative' }}
+      ref={imageRef}
+    >
       {isVisible ? (
         <Image
           className="profile-image"

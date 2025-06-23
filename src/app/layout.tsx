@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { Geist, IBM_Plex_Serif } from 'next/font/google'
+
+import type { Metadata } from 'next'
 import './globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 })
-
 
 const ibm = IBM_Plex_Serif({
   variable: '--font-ibm-plex-serif',

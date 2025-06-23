@@ -3,10 +3,7 @@
     "total": 11,
     "generatedAt": "2025-06-22T19:22:43.157Z",
     "directory": "/public/slide",
-    "formats": [
-      "png",
-      "webp"
-    ]
+    "formats": ["png", "webp"]
   },
   "slides": [
     {
