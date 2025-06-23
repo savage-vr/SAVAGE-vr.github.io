@@ -5,6 +5,9 @@ import { FlatCompat } from '@eslint/eslintrc'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
+// Import custom rule
+import noHyphenatedJsxProps from './eslint-rules/no-hyphenated-jsx-props.js'
+
 const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
@@ -14,6 +17,12 @@ const eslintConfig = [
   {
     plugins: {
       import: (await import('eslint-plugin-import')).default,
+      react: (await import('eslint-plugin-react')).default,
+      'custom-rules': {
+        rules: {
+          'no-hyphenated-jsx-props': noHyphenatedJsxProps,
+        },
+      },
     },
     rules: {
       'import/order': [
@@ -32,6 +41,26 @@ const eslintConfig = [
           alphabetize: {
             order: 'asc',
             caseInsensitive: true,
+          },
+        },
+      ],
+      'react/jsx-props-no-multi-spaces': 'error',
+      'react/jsx-props-no-spreading': 'off',
+      'react/jsx-pascal-case': 'error',
+      'react/jsx-no-duplicate-props': 'error',
+      'custom-rules/no-hyphenated-jsx-props': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'property',
+          filter: {
+            regex: '^(aria-|data-|stroke|max-|og:|twitter:)',
+            match: false,
+          },
+          format: ['camelCase'],
+          custom: {
+            regex: '^(?!.*-).*$',
+            match: true,
           },
         },
       ],
