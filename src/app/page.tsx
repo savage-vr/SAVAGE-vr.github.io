@@ -86,6 +86,7 @@ export default function Home() {
       </section>
       <section className="second-section w-full bg-black">
         <div className="content flex flex-col items-center p-[2rem] w-full">
+          <div id="main-content" />
           <SectionHeader>About</SectionHeader>
           <About />
           <div className="flex flex-row flex-wrap gap-4 p-[1rem]">
@@ -97,7 +98,7 @@ export default function Home() {
             >
               <Image
                 width={82}
-                height={41}
+                height={42}
                 src="/logo/vrchat-logo-white-optimized.png"
                 alt="Logo"
                 priority

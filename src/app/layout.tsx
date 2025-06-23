@@ -110,6 +110,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${ibm.variable} antialiased bg-black`}
       >
+        <a href="#main-content" className="skip-link">
+          メインコンテンツにスキップ
+        </a>
         {children}
       </body>
     </html>

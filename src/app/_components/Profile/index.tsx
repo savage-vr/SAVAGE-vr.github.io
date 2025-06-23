@@ -15,25 +15,34 @@ export const Role: React.FC<{ role: 'DJ' | 'VJ' }> = ({ role }) => {
 
 export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
   return (
-    <div className="flex flex-row">
+    <article className="flex flex-row" aria-labelledby={`profile-${name}`}>
       <ProfileImage name={name} imgSrc={imgSrc} />
       <div className="flex flex-col information min-w-[120px] gap-2">
-        <h3 className="text-2xl">{name}</h3>
-        <ul className="roles flex flex-row gap-2">
+        <h3 id={`profile-${name}`} className="text-2xl">{name}</h3>
+        <ul className="roles flex flex-row gap-2" aria-label={`${name}の役割`}>
           {roles.map((r, index) => (
             <li key={index} className={r}>
               <Role role={r} />
             </li>
           ))}
         </ul>
-        <ul className="links">
-          {links.map(([title, url], index) => (
-            <li key={index}>
-              <a href={url} target="_blank" rel="noreferrer">{title}</a>
-            </li>
-          ))}
-        </ul>
+        <nav aria-label={`${name}のリンク`}>
+          <ul className="links">
+            {links.map(([title, url], index) => (
+              <li key={index}>
+                <a 
+                  href={url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label={`${name}の${title}を新しいタブで開く`}
+                >
+                  {title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </div>
+    </article>
   )
 }
