@@ -3,6 +3,7 @@
   position: absolute;
   right: 1rem;
   bottom: 8rem;
+  user-select: none;
 
   @media (max-width: 420px) {
     right: -0.3rem;
