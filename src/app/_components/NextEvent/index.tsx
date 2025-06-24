@@ -48,7 +48,10 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
         aria-live="polite"
         aria-labelledby="next-event-title"
       >
-        <h3 id="next-event-title" className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2">
+        <h3
+          id="next-event-title"
+          className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2"
+        >
           次のイベント
         </h3>
         <p className="text-lg text-gray-400 mt-4 italic" role="status">
@@ -65,7 +68,10 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
       aria-live="polite"
       aria-labelledby="next-event-title"
     >
-      <h3 id="next-event-title" className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2">
+      <h3
+        id="next-event-title"
+        className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2"
+      >
         Next
       </h3>
       <div className="flex flex-col gap-4" aria-describedby="event-details">
@@ -94,12 +100,18 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
           {formatEventDate(nextEvent.eventDate)}
         </time>
         <div className="mt-4" role="group" aria-labelledby="cast-title">
-          <h5 id="cast-title" className="text-lg font-semibold text-white mb-3 text-center">
+          <h5
+            id="cast-title"
+            className="text-lg font-semibold text-white mb-3 text-center"
+          >
             出演者
           </h5>
           <ul className="flex flex-col gap-2 list-none" aria-label="出演者一覧">
             {nextEvent.cast.map((member, index) => (
-              <li key={index} className="flex justify-between items-center sm:flex-col sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700">
+              <li
+                key={index}
+                className="flex justify-between items-center sm:flex-col sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700"
+              >
                 <span className="font-semibold text-white">{member.name}</span>
                 <span
                   className="text-sm text-gray-400 font-medium"

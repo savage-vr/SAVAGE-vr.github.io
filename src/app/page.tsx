@@ -5,10 +5,10 @@ import { Grid } from './_components/Grid'
 import NextEvent from './_components/NextEvent'
 import { Profile } from './_components/Profile'
 import { ScrollDown } from './_components/ScrollDown'
-import { members } from './_data/members.schema'
-import { youtube } from './_data/youtube.schema'
 import { events } from './_data/events.schema'
+import { members } from './_data/members.schema'
 import { slides } from './_data/slides.schema'
+import { youtube } from './_data/youtube.schema'
 
 const Slideshow = React.lazy(() => import('./_components/Slideshow'))
 const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
