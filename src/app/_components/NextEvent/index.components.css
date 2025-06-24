@@ -1,7 +1,6 @@
 .next-event {
-  padding: 2rem;
-  margin: 1rem 0;
   max-width: 600px;
+  padding-bottom: 1rem;
 }
 
 .event-title {

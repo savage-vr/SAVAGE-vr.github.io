@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { events, type Event } from '#/app/_data/events.schema'
 
@@ -30,14 +30,17 @@ const formatEventDate = (dateString: string): string => {
 
 export const NextEvent: React.FC = () => {
   const nextEvent = findNextEvent()
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setLoading(() => false)
+  }, [loading, setLoading])
+  if (loading) return null
 
   if (!nextEvent) {
     return (
       <div className="next-event no-events">
         <h3 className="event-title">次のイベント</h3>
-        <p className="no-event-message">
-          現在予定されているイベントはありません
-        </p>
+        <p className="no-event-message">現在予定されているイベントはありません</p>
       </div>
     )
   }
@@ -67,3 +70,5 @@ export const NextEvent: React.FC = () => {
     </div>
   )
 }
+
+export default NextEvent
