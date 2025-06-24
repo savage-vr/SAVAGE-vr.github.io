@@ -75,7 +75,7 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
         Next
       </h3>
       <div className="flex flex-col gap-4" aria-describedby="event-details">
-        <h4 className="text-3xl sm:text-2xl font-semibold text-white text-center mb-2">
+        <h4 className="text-xl sm:text-3xl font-semibold text-white text-center mb-2">
           {nextEvent.tweets ? (
             <a
               target="_blank"
@@ -93,24 +93,24 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
           )}
         </h4>
         <time
-          className="text-lg sm:text-base text-gray-300 text-center font-medium p-2 bg-white/5 rounded-lg"
+          className="text-lg sm:text-base min-w-3xs m-auto text-gray-300 text-center font-medium p-2 bg-white/5 rounded-lg"
           dateTime={nextEvent.eventDate}
           aria-label={`開催日: ${formatEventDate(nextEvent.eventDate)}`}
         >
           {formatEventDate(nextEvent.eventDate)}
         </time>
-        <div className="mt-4" role="group" aria-labelledby="cast-title">
+        <div className="mt-4 m-auto min-w-3xs" role="group" aria-labelledby="cast-title">
           <h5
             id="cast-title"
             className="text-lg font-semibold text-white mb-3 text-center"
           >
             出演者
           </h5>
-          <ul className="flex flex-col gap-2 list-none" aria-label="出演者一覧">
+          <ul className="flex flex-col gap-1 list-none" aria-label="出演者一覧">
             {nextEvent.cast.map((member, index) => (
               <li
                 key={index}
-                className="flex justify-between items-center sm:flex-col sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700"
+                className="flex justify-between items-center flex-row flex-wrap sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700"
               >
                 <span className="font-semibold text-white">{member.name}</span>
                 <span
