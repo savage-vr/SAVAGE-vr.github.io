@@ -99,7 +99,11 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
         >
           {formatEventDate(nextEvent.eventDate)}
         </time>
-        <div className="mt-4 m-auto min-w-3xs" role="group" aria-labelledby="cast-title">
+        <div
+          className="mt-4 m-auto min-w-3xs"
+          role="group"
+          aria-labelledby="cast-title"
+        >
           <h5
             id="cast-title"
             className="text-lg font-semibold text-white mb-3 text-center"
