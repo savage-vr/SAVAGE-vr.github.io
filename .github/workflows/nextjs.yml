@@ -29,6 +29,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: ja_JP.UTF-8
+        run: |
+          sudo locale-gen ja_JP.UTF-8
+          sudo update-locale LANG=ja_JP.UTF-8
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
