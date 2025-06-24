@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "name": "SAVAGE Vol.8",
+      "cast": [
+        {
+          "name": "piqLessss",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        }
+      ],
+      "eventDate": "2025-06-26"
+    },
+    {
+      "name": "SAVAGE Vol.9",
+      "cast": [
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "melocilde",
+          "roles": ["DJ"]
+        }
+      ],
+      "eventDate": "2025-07-03"
+    },
+    {
+      "name": "SAVAGE Vol.10",
+      "cast": [
+        {
+          "name": "fuji_Clicine",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        }
+      ],
+      "eventDate": "2025-07-24"
+    }
+  ]
+}

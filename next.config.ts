@@ -1,5 +1,9 @@
 import type { NextConfig } from 'next'
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -9,4 +13,4 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
 }
 
-export default nextConfig
+export default withBundleAnalyzer(nextConfig)

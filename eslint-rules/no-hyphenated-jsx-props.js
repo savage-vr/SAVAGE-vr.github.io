@@ -11,22 +11,19 @@ module.exports = {
   },
 
   create(context) {
-    const isUserDefinedComponent = (node) => {
+    const isUserDefinedComponent = node => {
       // User-defined components start with uppercase
       return node.name && /^[A-Z]/.test(node.name.name)
     }
 
-    const isHyphenatedProp = (propName) => {
+    const isHyphenatedProp = propName => {
       // Exclude standard HTML attributes and common patterns
-      const allowedPatterns = [
-        /^stroke/,
-        /^fill/,
-        /^viewBox$/,
-        /^xmlns/,
-      ]
+      const allowedPatterns = [/^stroke/, /^fill/, /^viewBox$/, /^xmlns/]
 
-      return propName.includes('-') &&
-             !allowedPatterns.some(pattern => pattern.test(propName))
+      return (
+        propName.includes('-') &&
+        !allowedPatterns.some(pattern => pattern.test(propName))
+      )
     }
 
     return {

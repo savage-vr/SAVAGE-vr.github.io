@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { Suspense } from 'react'
 
 import { Grid } from './_components/Grid'
+import { NextEvent } from './_components/NextEvent'
 import { Profile } from './_components/Profile'
 import { ScrollDown } from './_components/ScrollDown'
 import { members } from './_data/members.schema'
@@ -124,6 +125,9 @@ export default function Home() {
               />
               <span className="text-base/9">Official SNS</span>
             </a>
+          </div>
+          <div className="flex justify-center w-full bg-zinc-800">
+            <NextEvent />
           </div>
           <SectionHeader>Members</SectionHeader>
           <div className="flex flex-wrap justify-center gap-[3rem]">
