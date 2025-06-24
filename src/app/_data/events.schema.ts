@@ -11,6 +11,7 @@ const EventSchema = z.object({
   name: z.string(),
   cast: z.array(EventCastSchema),
   eventDate: z.string().date(),
+  tweets: z.string().optional(),
 })
 
 const EventsDataSchema = z.object({

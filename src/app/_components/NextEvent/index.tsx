@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useState } from 'react'
 
@@ -40,7 +40,9 @@ export const NextEvent: React.FC = () => {
     return (
       <div className="next-event no-events">
         <h3 className="event-title">次のイベント</h3>
-        <p className="no-event-message">現在予定されているイベントはありません</p>
+        <p className="no-event-message">
+          現在予定されているイベントはありません
+        </p>
       </div>
     )
   }
@@ -49,7 +51,19 @@ export const NextEvent: React.FC = () => {
     <div className="next-event">
       <h3 className="event-title">Next</h3>
       <div className="event-info">
-        <h4 className="event-name">{nextEvent.name}</h4>
+        <h4 className="event-name">
+          {nextEvent.tweets ? (
+            <a
+              target="_blank"
+              referrerPolicy="no-referrer"
+              href={nextEvent.tweets}
+            >
+              {nextEvent.name}
+            </a>
+          ) : (
+            nextEvent.name
+          )}
+        </h4>
         <time className="event-date" dateTime={nextEvent.eventDate}>
           {formatEventDate(nextEvent.eventDate)}
         </time>
