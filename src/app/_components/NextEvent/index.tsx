@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 
-import { events, type Event } from '#/app/_data/events.schema'
+import { type Event, type EventsData } from '#/app/_data/events.schema'
 
 import './index.components.css'
 
-const findNextEvent = (): Event | null => {
+const findNextEvent = (events: EventsData): Event | null => {
   const now = new Date()
   const today = now.toISOString().split('T')[0] // YYYY-MM-DD format
 
@@ -28,8 +28,12 @@ const formatEventDate = (dateString: string): string => {
   return new Intl.DateTimeFormat('default', {}).format(date)
 }
 
-export const NextEvent: React.FC = () => {
-  const nextEvent = findNextEvent()
+interface NextEventProps {
+  events: EventsData
+}
+
+export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
+  const nextEvent = findNextEvent(events)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setLoading(() => false)

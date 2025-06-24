@@ -5,14 +5,17 @@ import { useState, useEffect, useRef } from 'react'
 
 import './index.components.css'
 
-import { slides } from '#/app/_data/slides.schema'
+import { type SlidesData } from '#/app/_data/slides.schema'
 
 import { DotNavigation } from '../common/DotNavigation'
 import { NavigationButton } from '../common/NavigationButton'
 
-const slideImages = slides.slides
+interface SlideshowProps {
+  slides: SlidesData
+}
 
-export default function Slideshow() {
+export default function Slideshow({ slides }: SlideshowProps) {
+  const slideImages = slides.slides
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const slideshowRef = useRef<HTMLDivElement>(null)
@@ -40,7 +43,7 @@ export default function Slideshow() {
     }
 
     return () => observer.disconnect()
-  }, [currentIndex])
+  }, [currentIndex, slideImages.length])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)

@@ -7,6 +7,8 @@ import { Profile } from './_components/Profile'
 import { ScrollDown } from './_components/ScrollDown'
 import { members } from './_data/members.schema'
 import { youtube } from './_data/youtube.schema'
+import { events } from './_data/events.schema'
+import { slides } from './_data/slides.schema'
 
 const Slideshow = React.lazy(() => import('./_components/Slideshow'))
 const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
@@ -127,7 +129,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex justify-center items-center w-full bg-zinc-800 min-h-120">
-            <NextEvent />
+            <NextEvent events={events} />
           </div>
           <SectionHeader>Members</SectionHeader>
           <div className="flex flex-wrap justify-center gap-[3rem]">
@@ -143,7 +145,7 @@ export default function Home() {
           </div>
           <SectionHeader>Gallery</SectionHeader>
           <Suspense fallback={<div>Loading...</div>}>
-            <Slideshow />
+            <Slideshow slides={slides} />
           </Suspense>
           <SectionHeader>Videos</SectionHeader>
           <Suspense fallback={<div>Loading videos...</div>}>
