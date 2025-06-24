@@ -38,7 +38,7 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
   useEffect(() => {
     setLoading(() => false)
   }, [loading, setLoading])
-  if (loading) return null
+  if (loading) return <div>Loading...</div>
 
   if (!nextEvent) {
     return (
