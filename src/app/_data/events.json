@@ -46,6 +46,20 @@
         }
       ],
       "eventDate": "2025-07-24"
+    },
+    {
+      "name": "SAVAGE 8/32 LOST SUMMER Edition (Vol.XX)",
+      "cast": [
+        {
+          "name": "fuji_Clicine",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        }
+      ],
+      "eventDate": "2025-08-31"
     }
   ]
 }
