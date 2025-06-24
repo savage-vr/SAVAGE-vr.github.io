@@ -39,15 +39,15 @@ export const NextEvent: React.FC = () => {
   if (!nextEvent) {
     return (
       <section
-        className="next-event no-events"
+        className="text-center py-12 px-8 bg-gradient-to-br from-gray-900 to-gray-700 border border-gray-600 rounded-xl max-w-[600px]"
         role="region"
         aria-live="polite"
         aria-labelledby="next-event-title"
       >
-        <h3 id="next-event-title" className="event-title">
+        <h3 id="next-event-title" className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2">
           次のイベント
         </h3>
-        <p className="no-event-message" role="status">
+        <p className="text-lg text-gray-400 mt-4 italic" role="status">
           現在予定されているイベントはありません
         </p>
       </section>
@@ -56,16 +56,16 @@ export const NextEvent: React.FC = () => {
 
   return (
     <section
-      className="next-event"
+      className="max-w-[600px] pb-4 sm:p-6 sm:m-4"
       role="region"
       aria-live="polite"
       aria-labelledby="next-event-title"
     >
-      <h3 id="next-event-title" className="event-title">
+      <h3 id="next-event-title" className="text-2xl font-bold mb-4 text-white text-center border-b-2 border-gray-600 pb-2">
         Next
       </h3>
-      <div className="event-info" aria-describedby="event-details">
-        <h4 className="event-name">
+      <div className="flex flex-col gap-4" aria-describedby="event-details">
+        <h4 className="text-3xl sm:text-2xl font-semibold text-white text-center mb-2">
           {nextEvent.tweets ? (
             <a
               target="_blank"
@@ -73,6 +73,7 @@ export const NextEvent: React.FC = () => {
               referrerPolicy="no-referrer"
               href={nextEvent.tweets}
               aria-label={`${nextEvent.name} - 外部リンクで詳細を見る`}
+              className="underline"
             >
               {nextEvent.name}
               <span aria-hidden="true"> ↗</span>
@@ -82,22 +83,22 @@ export const NextEvent: React.FC = () => {
           )}
         </h4>
         <time
-          className="event-date"
+          className="text-lg sm:text-base text-gray-300 text-center font-medium p-2 bg-white/5 rounded-lg"
           dateTime={nextEvent.eventDate}
           aria-label={`開催日: ${formatEventDate(nextEvent.eventDate)}`}
         >
           {formatEventDate(nextEvent.eventDate)}
         </time>
-        <div className="event-cast" role="group" aria-labelledby="cast-title">
-          <h5 id="cast-title" className="cast-title">
+        <div className="mt-4" role="group" aria-labelledby="cast-title">
+          <h5 id="cast-title" className="text-lg font-semibold text-white mb-3 text-center">
             出演者
           </h5>
-          <ul className="cast-list" aria-label="出演者一覧">
+          <ul className="flex flex-col gap-2 list-none" aria-label="出演者一覧">
             {nextEvent.cast.map((member, index) => (
-              <li key={index} className="cast-member">
-                <span className="member-name">{member.name}</span>
+              <li key={index} className="flex justify-between items-center sm:flex-col sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700">
+                <span className="font-semibold text-white">{member.name}</span>
                 <span
-                  className="member-roles"
+                  className="text-sm text-gray-400 font-medium"
                   aria-label={`役割: ${member.roles.join(', ')}`}
                 >
                   ({member.roles.join(', ')})
