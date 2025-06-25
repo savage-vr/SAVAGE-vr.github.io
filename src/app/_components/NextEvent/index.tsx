@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 
 import { type Event, type EventsData } from '#/app/_data/events.schema'
 
-import './index.components.css'
-
 const findNextEvent = (events: EventsData): Event | null => {
   const now = new Date()
   const today = now.toISOString().split('T')[0] // YYYY-MM-DD format
