@@ -32,7 +32,7 @@ const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
           }
         })
       },
-      { threshold: 1.0 }
+      { threshold: 0.5 }
     )
 
     observer.observe(containerRef.current)
@@ -40,17 +40,10 @@ const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
     return () => observer.disconnect()
   }, [shouldLoad])
 
-  // Load when visible in slider
-  useEffect(() => {
-    if (isVisible && !shouldLoad) {
-      setShouldLoad(true)
-    }
-  }, [isVisible, shouldLoad])
-
   return (
     <div key={video.id} className="w-full flex-shrink-0">
       <div ref={containerRef} className="aspect-video">
-        {shouldLoad ? (
+        {shouldLoad && isVisible ? (
           <iframe
             src={`https://www.youtube.com/embed/${video.id}`}
             title={video.title}
