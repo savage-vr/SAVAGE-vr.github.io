@@ -1,12 +1,7 @@
-import { Geist, IBM_Plex_Serif } from 'next/font/google'
+import { IBM_Plex_Serif } from 'next/font/google'
 
 import type { Metadata } from 'next'
 import './globals.css'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
 
 const ibm = IBM_Plex_Serif({
   variable: '--font-ibm-plex-serif',
@@ -108,7 +103,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
       </head>
       <body
-        className={`${geistSans.variable} ${ibm.variable} antialiased bg-black`}
+        className={`${ibm.variable} antialiased bg-black`}
       >
         <a href="#main-content" className="skip-link">
           メインコンテンツにスキップ

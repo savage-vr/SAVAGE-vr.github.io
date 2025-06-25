@@ -123,7 +123,7 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
       />
 
       {videos[currentIndex] && (
-        <div className="mt-4 text-center font-[family-name:var(--font-geist-sans)]">
+        <div className="mt-4 text-center">
           <p className="text-white text-lg font-thin">
             {videos[currentIndex].title}
           </p>

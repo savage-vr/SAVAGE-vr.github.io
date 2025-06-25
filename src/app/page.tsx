@@ -84,7 +84,7 @@ const SectionHeader: React.FC<{ children: string }> = ({ children }) => {
 export default function Home() {
   return (
     <main className="w-full">
-      <section className="hero fixed w-full h-screen flex flex-col items-center justify-center font-[family-name:var(--font-geist-sans)] bg-black p-20 fadeIn z-1">
+      <section className="hero fixed w-full h-screen flex flex-col items-center justify-center bg-black p-20 fadeIn z-1">
         <Logo />
         <Savage />
         <MainText />
