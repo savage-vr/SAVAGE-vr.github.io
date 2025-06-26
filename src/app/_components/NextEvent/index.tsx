@@ -2,24 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 
-import { type Event, type EventsData } from '#/app/_data/events.schema'
-
-const findNextEvent = (events: EventsData): Event | null => {
-  const now = new Date()
-  const today = now.toISOString().split('T')[0] // YYYY-MM-DD format
-
-  // Filter events that are today or in the future
-  const upcomingEvents = events.events.filter(event => {
-    return event.eventDate >= today
-  })
-
-  // Sort by date and return the earliest one
-  const sortedEvents = upcomingEvents.sort((a, b) =>
-    a.eventDate.localeCompare(b.eventDate)
-  )
-
-  return sortedEvents.length > 0 ? sortedEvents[0] : null
-}
+import { type EventsData } from '#/app/_data/events.schema'
+import { findNextEvent } from '#/app/_utils/findNextEvent'
 
 const formatEventDate = (dateString: string): string => {
   const date = new Date(dateString)
@@ -31,7 +15,7 @@ interface NextEventProps {
 }
 
 export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
-  const nextEvent = findNextEvent(events)
+  const nextEvent = findNextEvent(events.events)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setLoading(() => false)
