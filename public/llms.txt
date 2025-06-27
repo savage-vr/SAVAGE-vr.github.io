@@ -1,0 +1,33 @@
+# SAVAGE - VRC Club Event
+
+## Site URL
+https://savage-vr.github.io
+
+## Description
+SAVAGEは、不思議で魅惑的な空気感を大切にする、VR上のクラブイベントです。時折テーマを設け、その世界観に深く浸るように構成されたDJセットが特徴です。現実とはひと味違う没入感あふれるバーチャルな夜をSAVAGEが創り出します。
+
+Tagline: "FLEX the chaos"
+
+## Social Links
+- VRChat Group: https://vrchat.com/home/group/grp_0fa30f81-0523-4034-90ab-c3ca819b9fea
+- Official SNS: https://x.com/vrcsavageinfo
+
+## Content Structure
+- About: Introduction to SAVAGE VRC Club Event
+- Members: Team member profiles with roles and social links
+- Gallery: Photo slideshow from events
+- Videos: YouTube video content from past events
+- Next Event: Information about upcoming events
+
+## Technology Stack
+- Next.js 15 with React 19
+- TypeScript
+- Tailwind CSS v4
+- Static export deployment
+
+## Keywords
+VR, Club, Event, DJ, VJ, Virtual, Music, VRChat, バーチャルリアリティ, クラブイベント
+
+## Contact
+- Twitter: @vrcsavageinfo
+- Copyright: © SAVAGE-vr
