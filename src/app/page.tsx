@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
-
 import { Grid } from './_components/Grid'
 import NextEvent from './_components/NextEvent'
 import { Profile } from './_components/Profile'
@@ -145,7 +144,7 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   themeColor: '#000000',
   other: {
-    "msapplication-TileColor": '#000000',
+    'msapplication-TileColor': '#000000',
   },
 }
 
