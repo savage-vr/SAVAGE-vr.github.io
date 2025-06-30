@@ -31,3 +31,22 @@
   height: 1px;
   bottom: 2em;
 }
+
+
+@media (max-width: 400px) {
+  .grid-line:nth-child(1) {
+    left: 1em;
+  }
+
+  .grid-line:nth-child(2) {
+    right: 1em;
+  }
+
+  .grid-line:nth-child(3) {
+    top: 1em;
+  }
+
+  .grid-line:nth-child(4) {
+    bottom: 1em;
+  }
+}

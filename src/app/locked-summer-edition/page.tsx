@@ -14,7 +14,7 @@ export default function Home() {
             SAVAGE
           </h1>
           <p className="drop-shadow-lg lg:text-3xl sm:text-2xl p-8 bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
-            8/32 LOCKED Summer Edition{' '}
+            8/32 LOCKED<wbr /> Summer Edition<wbr />{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
