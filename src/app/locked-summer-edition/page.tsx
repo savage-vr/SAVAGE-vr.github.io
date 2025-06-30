@@ -29,9 +29,9 @@ export default function Home() {
             &ldquo;In summer, the song sings itself&rdquo;
           </p>
           <p className="flex flex-col justify-center items-center drop-shadow-lg text-xl font-[family-name:var(--font-ibm-plex-serif)]">
-            <time>2024.08.31 21:00</time>
+            <time dateTime="2024-08-31 21:00">2024.08.31 21:00</time>
             <span>|</span>
-            <time>2024.08.32 01:00</time>
+            <time dateTime="2024-09-01 01:00">2024.08.32 01:00</time>
           </p>
           <p className="text-2xl pt-6">TO BE ANNOUNCED</p>
         </div>
