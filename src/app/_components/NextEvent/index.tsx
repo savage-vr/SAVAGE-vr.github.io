@@ -1,14 +1,14 @@
 'use client'
 
+import { format } from 'date-fns'
 import React, { useEffect, useState } from 'react'
 
 import { type EventsData } from '#/app/_data/events.schema'
 import { findNextEvent } from '#/app/_utils/findNextEvent'
-import { format } from 'date-fns'
 
 const formatEventDate = (dateString: string): string => {
   const date = new Date(dateString)
-  return format(date, "yyyy.MM.dd");
+  return format(date, 'yyyy.MM.dd')
 }
 
 interface NextEventProps {
