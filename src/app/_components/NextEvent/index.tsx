@@ -4,10 +4,11 @@ import React, { useEffect, useState } from 'react'
 
 import { type EventsData } from '#/app/_data/events.schema'
 import { findNextEvent } from '#/app/_utils/findNextEvent'
+import { format } from 'date-fns'
 
 const formatEventDate = (dateString: string): string => {
   const date = new Date(dateString)
-  return new Intl.DateTimeFormat('default', {}).format(date)
+  return format(date, "yyyy.MM.dd");
 }
 
 interface NextEventProps {
@@ -75,7 +76,7 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
           )}
         </h4>
         <time
-          className="text-lg sm:text-base min-w-3xs m-auto text-gray-300 text-center font-medium p-2 bg-white/5 rounded-lg"
+          className="text-xl min-w-2xs m-auto text-center font-medium p-2 rounded-lg"
           dateTime={nextEvent.eventDate}
           aria-label={`開催日: ${formatEventDate(nextEvent.eventDate)}`}
         >
