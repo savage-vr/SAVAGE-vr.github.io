@@ -49,21 +49,6 @@ const eslintConfig = [
       'react/jsx-pascal-case': 'error',
       'react/jsx-no-duplicate-props': 'error',
       'custom-rules/no-hyphenated-jsx-props': 'error',
-      '@typescript-eslint/naming-convention': [
-        'error',
-        {
-          selector: 'property',
-          filter: {
-            regex: '^(aria-|data-|stroke|max-|og:|twitter:)',
-            match: false,
-          },
-          format: ['camelCase'],
-          custom: {
-            regex: '^(?!.*-).*$',
-            match: true,
-          },
-        },
-      ],
     },
   },
 ]

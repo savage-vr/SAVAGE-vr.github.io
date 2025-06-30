@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
+
 import { Grid } from './_components/Grid'
 import NextEvent from './_components/NextEvent'
 import { Profile } from './_components/Profile'
@@ -9,6 +10,8 @@ import { events } from './_data/events.schema'
 import { members } from './_data/members.schema'
 import { slides } from './_data/slides.schema'
 import { youtube } from './_data/youtube.schema'
+
+import type { Metadata } from 'next'
 
 const Slideshow = React.lazy(() => import('./_components/Slideshow'))
 const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
@@ -79,6 +82,71 @@ const About = () => {
 
 const SectionHeader: React.FC<{ children: string }> = ({ children }) => {
   return <h2 className="p-16 text-3xl font-bold">{children}</h2>
+}
+
+export const metadata: Metadata = {
+  title: 'SAVAGE - VRC Club Event',
+  description: 'FLEX the chaos',
+  keywords: ['VR', 'Club', 'Event', 'DJ', 'VJ', 'Virtual', 'Music', 'VRChat'],
+  authors: [{ name: 'SAVAGE' }],
+  creator: 'SAVAGE',
+  publisher: 'SAVAGE',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://savage-vr.github.io'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'SAVAGE - VRC Club Event',
+    description: 'FLEX the chaos',
+    url: 'https://savage-vr.github.io',
+    siteName: 'SAVAGE',
+    images: [
+      {
+        url: '/logo-fill.jpg',
+        width: 600,
+        height: 600,
+        alt: 'SAVAGE - VRC Club Event',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SAVAGE - VRC Club Event',
+    description: 'FLEX the chaos',
+    site: '@vrcsavageinfo',
+    creator: '@vrcsavageinfo',
+    images: ['/logo-fill.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#000000',
+  other: {
+    "msapplication-TileColor": '#000000',
+  },
 }
 
 export default function Home() {
