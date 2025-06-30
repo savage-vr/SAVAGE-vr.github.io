@@ -22,7 +22,7 @@
   92.5% {
     background: url('/locked-summer-edition/1.png') center center / cover
       no-repeat;
-    filter: grayscale(80%);
+    filter: brightness(0.5) grayscale(90%);
   }
 
   95% {
@@ -34,7 +34,7 @@
   97.5% {
     background: url('/locked-summer-edition/3.png') center center / cover
       no-repeat;
-    filter: grayscale(80%);
+    filter: brightness(0.5) grayscale(90%);
   }
 }
 
