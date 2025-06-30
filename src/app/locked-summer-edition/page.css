@@ -3,7 +3,7 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  background: url('/locked-summer-edition/index.jpg') center center / cover
+  background: url('/locked-summer-edition/index.webp') center center / cover
     no-repeat;
   display: flex;
   justify-content: center;
@@ -15,24 +15,24 @@
 @keyframes glitch {
   0%,
   100% {
-    background: url('/locked-summer-edition/index.jpg') center center / cover
+    background: url('/locked-summer-edition/index.webp') center center / cover
       no-repeat;
   }
 
   92.5% {
-    background: url('/locked-summer-edition/1.png') center center / cover
+    background: url('/locked-summer-edition/1.webp') center center / cover
       no-repeat;
     filter: brightness(0.5) grayscale(90%);
   }
 
   95% {
-    background: url('/locked-summer-edition/2.png') center center / cover
+    background: url('/locked-summer-edition/2.webp') center center / cover
       no-repeat;
     filter: grayscale(100%);
   }
 
   97.5% {
-    background: url('/locked-summer-edition/3.png') center center / cover
+    background: url('/locked-summer-edition/3.webp') center center / cover
       no-repeat;
     filter: brightness(0.5) grayscale(90%);
   }
