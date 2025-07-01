@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: brightness(0.3) grayscale(99%);
+  filter: brightness(0.3);
   animation: glitch 3.5s infinite steps(1);
 }
 
@@ -22,19 +22,16 @@
   92.5% {
     background: url('/locked-summer-edition/1.webp') center center / cover
       no-repeat;
-    filter: brightness(0.5) grayscale(90%);
   }
 
   95% {
     background: url('/locked-summer-edition/2.webp') center center / cover
       no-repeat;
-    filter: grayscale(100%);
   }
 
   97.5% {
     background: url('/locked-summer-edition/3.webp') center center / cover
       no-repeat;
-    filter: brightness(0.5) grayscale(90%);
   }
 }
 

@@ -13,8 +13,12 @@ export default function Home() {
           <h1 className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
             SAVAGE
           </h1>
-          <p className="drop-shadow-lg lg:text-3xl sm:text-2xl p-8 bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
-            8/32 LOCKED<wbr /> Summer Edition<wbr />{' '}
+          <p className="drop-shadow-lg lg:text-3xl sm:text-2xl pt-8 bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
+            8/32 LOCKED
+            <wbr /> Summer Edition
+            <wbr />
+          </p>
+          <p className="drop-shadow-lg lg:text-3xl sm:text-2xl pt-2 pb-8 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
             <a
               target="_blank"
               rel="noopener noreferrer"
