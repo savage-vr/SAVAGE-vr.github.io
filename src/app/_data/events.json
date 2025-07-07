@@ -48,18 +48,47 @@
       "eventDate": "2025-07-24"
     },
     {
-      "name": "SAVAGE 8/32 LOST SUMMER Edition (wave.XX)",
+      "name": "SAVAGE 8/32 LOST SUMMER Edition",
       "cast": [
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        },
         {
           "name": "fuji_Clicine",
           "roles": ["DJ"]
         },
         {
+          "name": "melocilde",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "piqLessss",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "torikyatt",
+          "roles": ["DJ"]
+        },
+        {
           "name": "RoastPotato",
           "roles": ["DJ"]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "みや",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "切り昆布",
+          "roles": ["VJ"]
         }
       ],
-      "eventDate": "2025-08-31"
+      "eventDate": "2025-08-31",
+      "tweets": "https://savage-vr.github.io/locked-summer-edition"
     }
   ]
 }

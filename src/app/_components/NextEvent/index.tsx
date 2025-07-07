@@ -46,7 +46,7 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
 
   return (
     <section
-      className="max-w-[600px] pb-4 sm:p-6 sm:m-4"
+      className="max-w-[600px] pb-4 m-8"
       role="region"
       aria-live="polite"
       aria-labelledby="next-event-title"
@@ -93,11 +93,14 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
           >
             出演者
           </h5>
-          <ul className="flex flex-col gap-1 list-none" aria-label="出演者一覧">
+          <ul
+            className="flex flex-row flex-wrap justify-center md:justify-between gap-1 list-none"
+            aria-label="出演者一覧"
+          >
             {nextEvent.cast.map((member, index) => (
               <li
                 key={index}
-                className="flex justify-between items-center flex-row flex-wrap sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700"
+                className="flex justify-between min-w-3xs items-center flex-row flex-wrap sm:items-start sm:gap-1 p-3 bg-white/5 rounded-lg border-l-4 border-amber-700"
               >
                 <span className="font-semibold text-white">{member.name}</span>
                 <span
