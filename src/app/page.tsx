@@ -69,7 +69,7 @@ const About = () => {
       </p>
       <Image
         className="logo"
-        src="/1.jpg"
+        src="/1.png"
         alt="Logo"
         width={250}
         height={250}
