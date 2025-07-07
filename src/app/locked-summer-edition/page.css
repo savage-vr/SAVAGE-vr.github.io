@@ -18,6 +18,12 @@
   right: -105px;
 }
 
+@media (max-width: 400px) {
+  .maxim {
+    right: -125px;
+  }
+}
+
 .locked-summer {
   top: 0;
   left: 0;
