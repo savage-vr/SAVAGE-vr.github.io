@@ -29,6 +29,17 @@ export default function Home() {
               at Club Column
             </a>
           </p>
+          <p className="pb-8 underline text-wrap lg:text-2xl sm:text-xl font-[family-name:var(--font-ibm-plex-serif)]">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerPolicy="no-referrer"
+              aria-label={`VJ 用素材を投稿 - 外部リンクで詳細を見る`}
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdPS377R_-s4821qB4f2S_ZMTgY5nI4otT_fMf45XDWAjI-CA/viewform"
+            >
+              Please request your memory of summer....
+            </a>
+          </p>
           <p className="maxim text-xl font-[family-name:var(--font-ibm-plex-serif)]">
             &ldquo;In summer, the song sings itself&rdquo;
           </p>
