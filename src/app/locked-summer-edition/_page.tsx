@@ -48,7 +48,6 @@ export default function Home() {
             <span>|</span>
             <time dateTime="2025-09-01 01:00">2025.08.32 01:00</time>
           </p>
-          <p className="text-2xl pt-6">TO BE ANNOUNCED</p>
         </div>
       </div>
       <div className="bg" />

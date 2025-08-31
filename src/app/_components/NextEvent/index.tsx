@@ -26,7 +26,7 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
   if (!nextEvent) {
     return (
       <section
-        className="text-center py-12 px-8 bg-gradient-to-br from-gray-900 to-gray-700 border border-gray-600 rounded-xl max-w-[600px]"
+        className="text-center py-12 px-8 border border-gray-600 rounded-xl max-w-[600px]"
         role="region"
         aria-live="polite"
         aria-labelledby="next-event-title"
