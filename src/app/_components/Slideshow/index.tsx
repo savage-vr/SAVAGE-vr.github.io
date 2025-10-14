@@ -117,14 +117,8 @@ export default function Slideshow({ slides }: SlideshowProps) {
                       type="image/webp"
                     />
                   )}
-                  {/* Primary format as fallback */}
-                  <Image
-                    src={slide.path}
-                    alt={slide.alt}
-                    style={{ objectFit: 'cover' }}
-                    priority={index === 0}
-                    fill
-                  />
+                  <source srcSet={slide.path} type="image/png" />
+                  <img alt={slide.alt} style={{ objectFit: 'fill' }} />
                 </picture>
               ) : (
                 <div
