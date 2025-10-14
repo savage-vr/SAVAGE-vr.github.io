@@ -32,7 +32,7 @@ const Logo = () => {
 
 const MainText = () => {
   return (
-    <div className="w-screen glow">
+    <div className="w-screen glow z-10">
       <p className="text-3xl p-16 absolute bottom-0 left-0 font-[family-name:var(--font-ibm-plex-serif)]">
         &ldquo;FLEX the chaos&rdquo;
       </p>
@@ -42,7 +42,7 @@ const MainText = () => {
 
 const Savage = () => {
   return (
-    <div className="flex flex-col items-center justify-center top-1/2 left-1/2">
+    <div className="flex flex-col items-center justify-center top-1/2 left-1/2 z-10">
       <aside className="text-xs">サヴェージ</aside>
       <h1 className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
         SAVAGE
@@ -152,6 +152,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <section className="hero fixed w-full h-screen flex flex-col items-center justify-center bg-black p-20 fadeIn z-1">
+        <video className="video fixed w-full h-screen items-center justify-center" src="/savage_bg.mp4" autoPlay muted loop />
         <Logo />
         <Savage />
         <MainText />
