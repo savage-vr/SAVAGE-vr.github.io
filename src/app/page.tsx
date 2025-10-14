@@ -26,6 +26,7 @@ const Logo = () => {
         width={200}
         height={200}
         priority
+        fetchPriority="high"
       />
     </div>
   )
