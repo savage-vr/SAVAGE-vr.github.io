@@ -111,6 +111,37 @@
       ],
       "eventDate": "2025-08-31",
       "tweets": "https://savage-vr.github.io/locked-summer-edition"
+    },
+    {
+      "name": "SAVAGE wave.14",
+      "cast": [
+        {
+          "name": "torikyatt",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "Kaonasy1000",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "みや",
+          "roles": ["VJ"]
+        }
+      ],
+      "eventDate": "2025-10-04",
+      "tweets": "https://x.com/vrcsavageinfo/status/1968977038959686101"
     }
   ]
 }
