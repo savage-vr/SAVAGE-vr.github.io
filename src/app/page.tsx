@@ -11,6 +11,7 @@ import { slides } from './_data/slides.schema'
 import { youtube } from './_data/youtube.schema'
 
 import type { Metadata } from 'next'
+import Video from './_components/Video'
 
 const Slideshow = React.lazy(() => import('./_components/Slideshow'))
 const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
@@ -152,7 +153,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <section className="hero fixed w-full h-screen flex flex-col items-center justify-center bg-black p-20 fadeIn z-1">
-        <video className="video fixed w-full h-screen items-center justify-center" src="/savage_bg.mp4" autoPlay muted loop />
+        <Video />
         <Logo />
         <Savage />
         <MainText />
