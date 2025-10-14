@@ -118,7 +118,7 @@ export default function Slideshow({ slides }: SlideshowProps) {
                     />
                   )}
                   <source srcSet={slide.path} type="image/png" />
-                  <img alt={slide.alt} style={{ objectFit: 'fill' }} />
+                  <img alt={slide.alt} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                 </picture>
               ) : (
                 <div
