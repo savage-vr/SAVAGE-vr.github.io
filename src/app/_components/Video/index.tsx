@@ -13,10 +13,14 @@ export default function Video() {
   }, [])
   const ref = useCallback((node: HTMLVideoElement) => {
     if (node) {
-      const hls = new HLS()
-      hls.loadSource(src)
-      hls.attachMedia(node)
-      node.addEventListener("play", callback)
+      if (HLS.isSupported()) {
+        const hls = new HLS()
+        hls.loadSource(src)
+        hls.attachMedia(node)
+        node.addEventListener("play", callback)
+      } else if (node.canPlayType('application/vnd.apple.mpegurl')) {
+        node.src = src;
+      }
     }
   }, [])
   useEffect(() => {
