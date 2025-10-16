@@ -15,6 +15,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
+    ignores: [
+      "./public/**/*"
+    ],
     plugins: {
       import: (await import('eslint-plugin-import')).default,
       react: (await import('eslint-plugin-react')).default,
