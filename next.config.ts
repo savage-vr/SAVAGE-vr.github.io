@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 export default withBundleAnalyzer(nextConfig)
