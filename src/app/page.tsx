@@ -18,7 +18,7 @@ const YouTubeSlider = React.lazy(() => import('./_components/YouTubeSlider'))
 
 const Logo = () => {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center z-10">
       <Image
         className="logo"
         src="/logo.png"

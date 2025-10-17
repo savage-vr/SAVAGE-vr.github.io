@@ -4,6 +4,7 @@ import HLS from "hls.js"
 import { useEffect, useState, useCallback } from "react"
 
 const src = "/movie/video.m3u8"
+const fallback = "movie/savage_bg.mp4"
 
 export default function Video() {
   const [load, setLoad] = useState(false)
@@ -20,6 +21,8 @@ export default function Video() {
         node.addEventListener("play", callback)
       } else if (node.canPlayType('application/vnd.apple.mpegurl')) {
         node.src = src;
+      } else {
+        node.src = fallback
       }
     }
   }, [])
@@ -31,6 +34,6 @@ export default function Video() {
   if (!load) return null;
   const anim = animation ? "animation" : ""
   return (
-    <video ref={ref} className={`video fixed w-full h-screen items-center justify-center ${anim}`} autoPlay muted loop />
+    <video ref={ref} className={`video z-10 fixed w-full h-screen items-center justify-center ${anim}`} autoPlay muted loop playsInline />
   )
 }
