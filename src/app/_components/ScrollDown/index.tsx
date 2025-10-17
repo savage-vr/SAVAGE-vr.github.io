@@ -12,7 +12,7 @@ export const ScrollDown = () => {
 
   return (
     <div
-      className="scroll-down text-xl font-[family-name:var(--font-ibm-plex-serif)] bg-transparent border-none cursor-pointer"
+      className="scroll-down text-xl font-[family-name:var(--font-ibm-plex-serif)] bg-transparent border-none cursor-pointer z-10"
       aria-label="下にスクロールしてメインコンテンツを表示"
       onClick={handleScrollDown}
     >
