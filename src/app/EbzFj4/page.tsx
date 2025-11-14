@@ -60,7 +60,7 @@ export default function Home() {
           </p>
           <p className="mt-8 article">
             この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が
-            <time dateTime="2025-11-23">2025年11月23日の SAVAGE</time> の出演を最後に
+            <time dateTime="2025-11-23">2025年11月22日の SAVAGE</time> の出演を最後に
             脱退する運びとなりましたので、お知らせいたします。
             <br />
             <br />
