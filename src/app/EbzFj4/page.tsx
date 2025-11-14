@@ -57,17 +57,17 @@ export default function Home() {
             </time>
           </p>
           <p className="mt-8 article">
-            この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたのでお知らせいたします。
+            この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたので、お知らせいたします。
             <br />
             <br />
             fuji_Glicine は 2024年11月に発足したSAVAGEの初期メンバーとして加入。
-            高いBPM帯の Drum&#39;n&#39;Bass / Liquidfunk / UK Hardcore / J-Core などを中心をプレイし他のメンバーにはできない領域のDJをたくさんプレイしていただきました。
+            高いBPM帯の Drum&#39;n&#39;Bass / Liquid Funk / UK Hardcore / J-Core などを中心をプレイし他のメンバーにはできない領域のDJを多数披露プレイしていただきました。
             <br />
             <br />
-            SAVAGE 以外での活躍も非常に大きく、VRC上で UK Hardcore / Mainstream Hardcore シーンの盛り上げに貢献してきました。
+            SAVAGE 以外での活躍も目覚ましく、VRC上で UK Hardcore / Mainstream Hardcore シーンの盛り上げに貢献してきました。
             <br />
             <br />
-            fuji_Glicineのこれまでの貢献に感謝するとともに、今後のさらなる飛躍を心より願っております。
+            fuji_Glicineのこれまでの貢献に感謝するとともに、今後のさらなる飛躍を心より願っています。
           </p>
           <div className="pt-8">
             <h3 className="text-sm">Links</h3>
