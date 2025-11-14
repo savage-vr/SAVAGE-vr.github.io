@@ -4,19 +4,21 @@ import Link from "next/link"
 
 import "./style.css"
 
+const description = "この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が2025年11月23日の SAVAGE の出演を最後に 脱退する運びとなりましたので、お知らせいたします。"
+
 export const metadata: Metadata = {
   title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
-  description: 'この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたのでお知らせいたします。',
+  description,
   openGraph: {
     title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
-    description: 'この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたのでお知らせいたします。',
+    description,
     url: 'https://savage-vr.github.io/Ebzfj4',
     siteName: 'SAVAGE',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
-    description: 'この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたのでお知らせいたします。',
+    description,
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
     images: ['/logo-fill.jpg'],
@@ -57,7 +59,9 @@ export default function Home() {
             </time>
           </p>
           <p className="mt-8 article">
-            この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が脱退する運びとなりましたので、お知らせいたします。
+            この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が
+            <time dateTime="2025-11-23">2025年11月23日の SAVAGE</time> の出演を最後に
+            脱退する運びとなりましたので、お知らせいたします。
             <br />
             <br />
             fuji_Glicine は 2024年11月に発足したSAVAGEの初期メンバーとして加入。
