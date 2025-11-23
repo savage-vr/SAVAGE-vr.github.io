@@ -11,15 +11,6 @@
       ]
     },
     {
-      "name": "fuji_Glicine",
-      "roles": ["DJ"],
-      "imgSrc": "/members/fuji.jpg",
-      "links": [
-        ["X (Twitter)", "https://x.com/fuji_COREmania"],
-        ["mixcloud", "https://www.mixcloud.com/Glicine/"]
-      ]
-    },
-    {
       "name": "piqLessss",
       "roles": ["DJ", "VJ"],
       "imgSrc": "/members/piq.png",
