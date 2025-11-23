@@ -135,18 +135,20 @@ body {
 
 dl {
   margin-bottom: 3em;
+  text-align: center;
 }
 
 dl,
 dt {
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.7rem;
   margin-bottom: 0.4em;
 }
 
 dd {
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 1.0rem;
   margin-bottom: 1em;
-  margin-left: 1.2em;
 }
 
 @keyframes rise {

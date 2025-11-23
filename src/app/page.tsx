@@ -281,7 +281,7 @@ export default function Home() {
           </Suspense>
         </div>
         <footer className="footer flex flex-col items-center p-[2rem] bg-black">
-          <dl>
+          <dl className='flex flex-col items-center'>
             <dt>Event Design / Organize</dt>
             <dd>bonsai</dd>
             <dt>Logo Design</dt>
