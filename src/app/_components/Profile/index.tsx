@@ -11,7 +11,25 @@ type Props = {
 }
 
 export const Role: React.FC<{ role: 'BOSS' | 'DJ' | 'VJ' }> = ({ role }) => {
-  return <p className="font-bold text-xs">{role}</p>
+  return (
+    <p className="font-bold text-xs flex items-center gap-1">
+      {role === 'BOSS' && (
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 200 169.002"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 2L14 7H19L15 10L17 15L12 12L7 15L9 10L5 7H10L12 2Z M5 19H19V21H5V19Z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="169.002" viewBox="0 0 200 169.002">
+            <path d="M1850.217,332.258,1805.088,408.6l-54.871-40.268,21.458,102.046,157.084.006,21.458-102.045-54.868,40.268Zm-78.588,147.474V501.26h157.179V479.733Z" transform="translate(-1750.217 -332.258)"/>
+          </svg>
+        </svg>
+      )}
+      {role}
+    </p>
+  )
 }
 
 export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
