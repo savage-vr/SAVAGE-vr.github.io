@@ -285,6 +285,8 @@ export default function Home() {
             <dt>Event Design / Organize</dt>
             <dd>bonsai</dd>
             <dt>Logo Design</dt>
+            <dd>piqLessss</dd>
+            <dt>Logo Retouch</dt>
             <dd>sichemaniac</dd>
             <dt>Logo Animation</dt>
             <dd>melocilde</dd>
