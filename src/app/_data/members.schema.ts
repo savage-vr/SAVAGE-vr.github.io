@@ -5,7 +5,7 @@ import json from './members.json'
 const MemberSchema = z.object({
   name: z.string(),
   imgSrc: z.string(),
-  roles: z.array(z.enum(['DJ', 'VJ'])),
+  roles: z.array(z.enum(['BOSS', 'DJ', 'VJ'])),
   links: z.array(z.tuple([z.string(), z.string().url()])),
 })
 

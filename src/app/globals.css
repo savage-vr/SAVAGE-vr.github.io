@@ -133,6 +133,22 @@ body {
   overflow-x: hidden;
 }
 
+dl {
+  margin-bottom: 3em;
+}
+
+dl,
+dt {
+  font-size: 0.9rem;
+  margin-bottom: 0.4em;
+}
+
+dd {
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+  margin-left: 1.2em;
+}
+
 @keyframes rise {
   from {
     opacity: 0;

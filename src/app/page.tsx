@@ -281,6 +281,18 @@ export default function Home() {
           </Suspense>
         </div>
         <footer className="footer flex flex-col items-center p-[2rem] bg-black">
+          <dl>
+            <dt>Event Design / Organize</dt>
+            <dd>bonsai</dd>
+            <dt>Logo Design</dt>
+            <dd>sichemaniac</dd>
+            <dt>Logo Animation</dt>
+            <dd>melocilde</dd>
+            <dt>Background Movie</dt>
+            <dd>Kaonasy1000</dd>
+            <dt>Web Site Development</dt>
+            <dd>melocilde</dd>
+          </dl>
           © SAVAGE-vr
         </footer>
       </section>

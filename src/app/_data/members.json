@@ -2,7 +2,7 @@
   "members": [
     {
       "name": "bonsai",
-      "roles": ["DJ"],
+      "roles": ["BOSS", "DJ"],
       "imgSrc": "/members/bonsai.jpg",
       "links": [
         ["X (Twitter)", "https://x.com/iamtakerd"],

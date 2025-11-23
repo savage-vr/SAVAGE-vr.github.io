@@ -6,11 +6,11 @@ import './index.components.css'
 type Props = {
   name: string
   imgSrc: string
-  roles: Array<'DJ' | 'VJ'>
+  roles: Array<'BOSS' | 'DJ' | 'VJ'>
   links: Array<[string, string]> // tuple of [title, url]
 }
 
-export const Role: React.FC<{ role: 'DJ' | 'VJ' }> = ({ role }) => {
+export const Role: React.FC<{ role: 'BOSS' | 'DJ' | 'VJ' }> = ({ role }) => {
   return <p className="font-bold text-xs">{role}</p>
 }
 
