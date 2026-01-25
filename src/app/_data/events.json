@@ -236,5 +236,37 @@
       "eventDate": "2025-12-18",
       "tweets": "https://x.com/vrcsavageinfo/status/1997520530568880434"
     }
+  ],
+    {
+      "name": "SAVAGE wave.17",
+      "cast": [
+        {
+          "name": "段ぼーる",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "pikka",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "Shiorii",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "melocilde",
+          "roles": ["VJ"]
+        }
+      ],
+      "eventDate": "2026-01-29",
+      "tweets": "https://x.com/vrcsavageinfo/status/2013538762869834051"
+    }
   ]
 }
