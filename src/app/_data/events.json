@@ -266,6 +266,45 @@
       ],
       "eventDate": "2026-01-29",
       "tweets": "https://x.com/vrcsavageinfo/status/2013538762869834051"
+    },
+    {
+      "name": "SAVAGE Winter Edition",
+      "cast": [
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "melocilde",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        },
+        ,
+        {
+          "name": "torikyatt",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "Noi",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "みや",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "Tatsu",
+          "roles": ["VJ"]
+        }
+      ],
+      "eventDate": "2026-02-26"
     }
   ]
 }
