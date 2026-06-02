@@ -327,6 +327,49 @@
       ],
       "eventDate": "2026-03-29",
       "tweets": "https://x.com/vrcsavageinfo/status/2035532930840420666"
+    },
+    {
+      "name": "SAVAGE PETRICHOR EDITION",
+      "cast": [
+        {
+          "name": "piqLessss",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "torikyatt",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "TOMTOM-TO",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "Celken",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        }, 
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "melocilde",
+          "roles": ["VJ"]
+        }, 
+        {
+          "name": "Mano.Hsmt",
+          "roles": ["VJ"]
+        }
+      ],
+      "eventDate": "2026-06-10",
+      "tweets": "https://x.com/vrcsavageinfo/status/2061734576817639497"
     }
   ]
 }
