@@ -402,7 +402,7 @@
       "eventDate": "2026-07-09",
       "tweets": "https://x.com/vrcsavageinfo/status/2070481820257501339?s=20"
     },
-        {
+    {
       "name": "SAVAGE wave.24",
       "cast": [
         {
@@ -428,6 +428,49 @@
       ],
       "eventDate": "2026-07-30",
       "tweets": "https://x.com/vrcsavageinfo/status/2080255576697934332?s=20"
+    },
+    {
+      "name": "SAVAGE 8/32 LOCKED SUMMER Edition RECALL",
+      "cast": [
+        {
+          "name": "RoastPotato",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "torikyatt",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "monoton",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "melocilde",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "yuccue",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "bonsai",
+          "roles": ["DJ"]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "Noi",
+          "roles": ["VJ"]
+        },
+        {
+          "name": "Tatsu",
+          "roles": ["VJ"]
+        }
+      ],
+      "eventDate": "2026-08-31",
+      "tweets": "https://x.com/vrcsavageinfo/status/2090574605262155944?s=20"
     }
   ]
 }
