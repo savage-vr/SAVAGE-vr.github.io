@@ -5,15 +5,21 @@
       "cast": [
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-06-26",
@@ -24,11 +30,15 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         }
       ],
       "eventDate": "2025-07-10"
@@ -38,11 +48,15 @@
       "cast": [
         {
           "name": "fuji_Glicine",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         }
       ],
       "eventDate": "2025-07-24"
@@ -52,19 +66,27 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "kaonasy1000",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         }
       ],
       "eventDate": "2025-08-06"
@@ -74,39 +96,57 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "fuji_Clicine",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "みや",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "切り昆布",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-08-31",
@@ -117,27 +157,39 @@
       "cast": [
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Kaonasy1000",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "みや",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-10-04",
@@ -148,27 +200,39 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Fradol",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Mano.Hsmt",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-11-21",
@@ -179,27 +243,39 @@
       "cast": [
         {
           "name": "fuji_Glicine",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Lazi",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Lagita",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "Tatsu",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-11-22",
@@ -210,27 +286,39 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Noshahr",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2025-12-18",
@@ -241,27 +329,39 @@
       "cast": [
         {
           "name": "段ぼーる",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "pikka",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Shiorii",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-01-29",
@@ -272,35 +372,51 @@
       "cast": [
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "Noi",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "みや",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "Tatsu",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-02-26"
@@ -310,19 +426,28 @@
       "cast": [
         {
           "name": "nomecore",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Enma",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ", "VJ"]
+          "roles": [
+            "DJ",
+            "VJ"
+          ]
         },
         {
           "name": "Redmond",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-03-29",
@@ -333,39 +458,57 @@
       "cast": [
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "TOMTOM-TO",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Celken",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "bonsai",
-          "roles": ["DJ"]
-        }, 
+          "roles": [
+            "DJ"
+          ]
+        },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["VJ"]
-        }, 
+          "roles": [
+            "VJ"
+          ]
+        },
         {
           "name": "Mano.Hsmt",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-06-10",
@@ -376,27 +519,39 @@
       "cast": [
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "mawaru mahiwaru",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-07-09",
@@ -407,23 +562,33 @@
       "cast": [
         {
           "name": "Noshahr",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Shiorii",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "misumi",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-07-30",
@@ -434,70 +599,100 @@
       "cast": [
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "torikyatt",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "monoton",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "melocilde",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "yuccue",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "Noi",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "Tatsu",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-08-31",
       "tweets": "https://x.com/vrcsavageinfo/status/2090574605262155944?s=20"
     },
     {
-      "name": "SAVAGE wave.25",
+      "name": "SAVAGE wave.26",
       "cast": [
         {
           "name": "piqLessss",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "RoastPotato",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "Izena",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "bonsai",
-          "roles": ["DJ"]
+          "roles": [
+            "DJ"
+          ]
         },
         {
           "name": "nomecore",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         },
         {
           "name": "sichemaniac",
-          "roles": ["VJ"]
+          "roles": [
+            "VJ"
+          ]
         }
       ],
       "eventDate": "2026-10-08"
