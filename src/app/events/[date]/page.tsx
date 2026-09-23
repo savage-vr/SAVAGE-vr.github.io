@@ -2,7 +2,6 @@ import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { BackLink } from '#/app/_components/BackLink'
 import { EventCast } from '#/app/_components/EventCast'
 import { Grid } from '#/app/_components/Grid'
 import { eventPath, events } from '#/app/_data/events.schema'
@@ -91,7 +90,8 @@ export default async function EventPage({
   return (
     <main id="main-content" className="event-page">
       <nav className="event-back mono-label">
-        <BackLink />
+        {/* Always back to the list this page is reached from */}
+        <Link href="/#section-archive">← Top</Link>
       </nav>
 
       <header className="event-header">

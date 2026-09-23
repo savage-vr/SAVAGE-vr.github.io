@@ -3,6 +3,7 @@ import React, { Suspense } from 'react'
 
 import { EventArchive } from './_components/EventArchive'
 import { Grid } from './_components/Grid'
+import { HashScroll } from './_components/HashScroll'
 import { Logo } from './_components/Logo'
 import NextEvent from './_components/NextEvent'
 import { Profile } from './_components/Profile'
@@ -282,6 +283,7 @@ export default function Home() {
         </footer>
       </section>
       <Grid />
+      <HashScroll />
     </main>
   )
 }
