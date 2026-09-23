@@ -35,11 +35,7 @@ export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
   }, [])
 
   return (
-    <div
-      className="profile-image-container"
-      style={{ position: 'relative' }}
-      ref={imageRef}
-    >
+    <div className="profile-image-container" ref={imageRef}>
       {isVisible ? (
         <Image
           className="profile-image"
@@ -48,25 +44,10 @@ export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
           width="200"
           height="200"
           onLoad={() => setIsImageLoaded(true)}
-          style={{
-            opacity: isImageLoaded ? 1 : 0,
-            transition: 'opacity 0.3s ease-in-out',
-          }}
+          style={{ opacity: isImageLoaded ? 1 : 0 }}
         />
       ) : (
-        <div
-          className="profile-image"
-          style={{
-            backgroundColor: '#1a1a1a',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            fontSize: '12px',
-          }}
-        >
-          Loading...
-        </div>
+        <div className="profile-image profile-image-placeholder" />
       )}
     </div>
   )

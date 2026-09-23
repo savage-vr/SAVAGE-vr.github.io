@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { DotNavigation } from '../common/DotNavigation'
+import { MediaCounter } from '../common/MediaCounter'
 import { NavigationButton } from '../common/NavigationButton'
+import '../common/media.css'
 
 interface YouTubeVideo {
   id: string
@@ -52,19 +54,26 @@ const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
             className="w-full h-full border-0"
           />
         ) : (
-          <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-red-600 rounded-full flex items-center justify-center">
+          <div className="relative w-full h-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-cover opacity-60 grayscale"
+            />
+            <span className="absolute inset-0 flex items-center justify-center">
+              <span className="flex items-center justify-center w-14 h-14 border border-white/40 rounded-full bg-black/60">
                 <svg
-                  className="w-8 h-8 text-white"
+                  className="w-5 h-5 ml-0.5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path d="M8 5v14l11-7z" />
                 </svg>
-              </div>
-              <p className="text-white text-sm">動画を読み込み中...</p>
-            </div>
+              </span>
+            </span>
           </div>
         )}
       </div>
@@ -84,10 +93,10 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="relative overflow-hidden rounded-lg shadow-lg">
+    <div className="w-full">
+      <div className="media-frame">
         <div
-          className="flex transition-transform duration-300 ease-in-out"
+          className="flex transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)]"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {videos.map((video, index) => (
@@ -123,11 +132,10 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
       />
 
       {videos[currentIndex] && (
-        <div className="mt-4 text-center">
-          <p className="text-white text-lg font-thin">
-            {videos[currentIndex].title}
-          </p>
-        </div>
+        <p className="media-caption">
+          <MediaCounter current={currentIndex} total={videos.length} />
+          <span>{videos[currentIndex].title}</span>
+        </p>
       )}
     </div>
   )

@@ -7,7 +7,9 @@ import './index.components.css'
 import { type SlidesData } from '#/app/_data/slides.schema'
 
 import { DotNavigation } from '../common/DotNavigation'
+import { MediaCounter } from '../common/MediaCounter'
 import { NavigationButton } from '../common/NavigationButton'
+import '../common/media.css'
 
 interface SlideshowProps {
   slides: SlidesData
@@ -87,13 +89,11 @@ export default function Slideshow({ slides }: SlideshowProps) {
 
   return (
     <div className="slideshow" ref={slideshowRef}>
-      <div className="slideshow-container">
+      <div className="slideshow-container media-frame">
         <NavigationButton
           direction="prev"
           onClick={goToPrevious}
           ariaLabel="前のスライドを表示"
-          className="slideshow-nav prev"
-          useDefaultStyle={false}
         />
 
         <div className="slideshow-images" role="img" aria-live="polite">
@@ -120,20 +120,7 @@ export default function Slideshow({ slides }: SlideshowProps) {
                   <img alt={slide.alt} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                 </picture>
               ) : (
-                <div
-                  className="slideshow-placeholder"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: '#1a1a1a',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#fff',
-                  }}
-                >
-                  Loading...
-                </div>
+                <div className="media-placeholder" />
               )}
             </div>
           ))}
@@ -143,8 +130,8 @@ export default function Slideshow({ slides }: SlideshowProps) {
           direction="next"
           onClick={goToNext}
           ariaLabel="次のスライドを表示"
-          className="slideshow-nav next"
         />
+        <MediaCounter current={currentIndex} total={slideImages.length} />
       </div>
 
       <DotNavigation

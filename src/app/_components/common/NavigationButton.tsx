@@ -6,7 +6,6 @@ interface NavigationButtonProps {
   ariaLabel: string
   className?: string
   iconClassName?: string
-  useDefaultStyle?: boolean
 }
 
 export const NavigationButton: React.FC<NavigationButtonProps> = ({
@@ -14,16 +13,14 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
   onClick,
   ariaLabel,
   className = '',
-  iconClassName = 'w-6 h-6',
+  iconClassName = 'w-5 h-5',
 }) => {
-  const defaultClasses = `absolute ${
-    direction === 'prev' ? 'left-4' : 'right-4'
-  } top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-opacity`
-
-  const finalClassName = `${defaultClasses} ${className}`
-
   return (
-    <button onClick={onClick} className={finalClassName} aria-label={ariaLabel}>
+    <button
+      onClick={onClick}
+      className={`media-nav ${direction} ${className}`}
+      aria-label={ariaLabel}
+    >
       <NavigationIcon direction={direction} className={iconClassName} />
     </button>
   )

@@ -113,22 +113,23 @@ const Savage = () => {
 
 const About = () => {
   return (
-    <div className="flex flex-row items-center justify-center flex-wrap gap-[2rem]">
-      <p className="text-wrap">
-        SAVAGE は、不思議で魅惑的な空気感を大切にする、
-        <wbr />
-        VR上のクラブイベントです。
-        <br />
-        <br />
-        時折テーマを設け、
-        <wbr />
-        その世界観に深く浸るように構成されたDJセットが特徴です。
-        <br />
-        <br />
-        現実とはひと味違う没入感あふれるバーチャルな夜をSAVAGEが創り出します。
-      </p>
+    <div className="about">
+      <div className="about-text">
+        <p className="about-lead">
+          SAVAGE は、不思議で魅惑的な空気感を大切にする、
+          <wbr />
+          VR上のクラブイベントです。
+        </p>
+        <p>
+          時折テーマを設け、
+          <wbr />
+          その世界観に深く浸るように構成されたDJセットが特徴です。
+          <br />
+          現実とはひと味違う没入感あふれるバーチャルな夜をSAVAGEが創り出します。
+        </p>
+      </div>
       <Image
-        className="logo"
+        className="about-logo"
         src="/1.png"
         alt="Logo"
         width={250}
@@ -139,9 +140,35 @@ const About = () => {
   )
 }
 
-const SectionHeader: React.FC<{ children: string }> = ({ children }) => {
-  return <h2 className="p-16 text-3xl font-bold">{children}</h2>
+const Section: React.FC<{
+  index: string
+  title: string
+  caption?: string
+  children: React.ReactNode
+}> = ({ index, title, caption, children }) => {
+  const id = `section-${title.toLowerCase()}`
+  return (
+    <section className="section" aria-labelledby={id}>
+      <header className="section-header">
+        <h2 id={id} className="section-title">
+          <span className="section-index">{index}</span>
+          {title}
+        </h2>
+        {caption && <p className="section-caption">{caption}</p>}
+      </header>
+      {children}
+    </section>
+  )
 }
+
+const credits: Array<[string, string]> = [
+  ['Event Design / Organize', 'bonsai'],
+  ['Logo Design', 'piqLessss'],
+  ['Logo Retouch', 'sichemaniac'],
+  ['Logo Animation', 'melocilde'],
+  ['Background Movie', 'Kaonasy1000'],
+  ['Web Site Development', 'melocilde'],
+]
 
 export const metadata: Metadata = {
   title: 'SAVAGE - VRC Club Event',
@@ -218,84 +245,105 @@ export default function Home() {
         <MainText />
         <ScrollDown />
       </section>
-      <section className="second-section w-full bg-black">
-        <div className="content flex flex-col items-center p-[2rem] w-full">
+      <section className="second-section">
+        <div className="content">
           <div id="main-content" />
-          <SectionHeader>About</SectionHeader>
-          <About />
-          <div className="flex flex-row flex-wrap gap-4 p-[1rem]">
-            <a
-              className="flex flex-row gap-4 p-[1rem]"
-              href="https://vrchat.com/home/group/grp_0fa30f81-0523-4034-90ab-c3ca819b9fea"
-              target="_blank"
-              referrerPolicy="no-referrer"
-            >
-              <Image
-                width={82}
-                height={42}
-                src="/logo/vrchat-logo-white-optimized.png"
-                alt="Logo"
-                priority
-              />
-              <span className="text-base/9">VRChat Group</span>
-            </a>
-            <a
-              className="flex flex-row gap-4 p-[1rem]"
-              style={{ marginLeft: '1rem' }}
-              href="https://x.com/vrcsavageinfo"
-              target="_blank"
-              referrerPolicy="no-referrer"
-            >
-              <Image
-                width={40}
-                height={40}
-                src="/logo/X_logo.svg"
-                alt="Logo"
-                priority
-              />
-              <span className="text-base/9">Official SNS</span>
-            </a>
-          </div>
-          <div className="flex justify-center items-center w-full bg-zinc-800 min-h-120">
+          <Section index="01" title="About" caption="VRChat Club Event">
+            <About />
+            <ul className="chip-links">
+              <li>
+                <a
+                  className="chip"
+                  href="https://vrchat.com/home/group/grp_0fa30f81-0523-4034-90ab-c3ca819b9fea"
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                >
+                  <Image
+                    width={82}
+                    height={42}
+                    src="/logo/vrchat-logo-white-optimized.png"
+                    alt=""
+                    priority
+                  />
+                  VRChat Group ↗
+                </a>
+              </li>
+              <li>
+                <a
+                  className="chip"
+                  href="https://x.com/vrcsavageinfo"
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                >
+                  <Image
+                    width={40}
+                    height={40}
+                    src="/logo/X_logo.svg"
+                    alt=""
+                    priority
+                  />
+                  Official SNS ↗
+                </a>
+              </li>
+            </ul>
+          </Section>
+          <Section index="02" title="Next" caption="Upcoming Event">
             <NextEvent events={events} />
-          </div>
-          <SectionHeader>Members</SectionHeader>
-          <div className="flex flex-wrap justify-center gap-[3rem]">
-            {members.members.map(member => (
-              <Profile
-                key={member.name}
-                imgSrc={member.imgSrc}
-                name={member.name}
-                roles={member.roles}
-                links={member.links}
-              />
-            ))}
-          </div>
-          <SectionHeader>Gallery</SectionHeader>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Slideshow slides={slides} />
-          </Suspense>
-          <SectionHeader>Videos</SectionHeader>
-          <Suspense fallback={<div>Loading videos...</div>}>
-            <YouTubeSlider videos={youtube.movies} />
-          </Suspense>
+          </Section>
+          <Section
+            index="03"
+            title="Members"
+            caption={`${members.members.length} Crew`}
+          >
+            <div className="members">
+              {members.members.map(member => (
+                <Profile
+                  key={member.name}
+                  imgSrc={member.imgSrc}
+                  name={member.name}
+                  roles={member.roles}
+                  links={member.links}
+                />
+              ))}
+            </div>
+          </Section>
+          <Section
+            index="04"
+            title="Gallery"
+            caption={`${slides.slides.length} Shots`}
+          >
+            <Suspense fallback={<div className="media-fallback" />}>
+              <Slideshow slides={slides} />
+            </Suspense>
+          </Section>
+          <Section
+            index="05"
+            title="Videos"
+            caption={`${youtube.movies.length} Sets`}
+          >
+            <Suspense fallback={<div className="media-fallback" />}>
+              <YouTubeSlider videos={youtube.movies} />
+            </Suspense>
+          </Section>
         </div>
-        <footer className="footer flex flex-col items-center p-[2rem] bg-black">
-          <dl className='flex flex-col items-center'>
-            <dt>Event Design / Organize</dt>
-            <dd>bonsai</dd>
-            <dt>Logo Design</dt>
-            <dd>piqLessss</dd>
-            <dt>Logo Retouch</dt>
-            <dd>sichemaniac</dd>
-            <dt>Logo Animation</dt>
-            <dd>melocilde</dd>
-            <dt>Background Movie</dt>
-            <dd>Kaonasy1000</dd>
-            <dt>Web Site Development</dt>
-            <dd>melocilde</dd>
+        <footer className="footer">
+          <dl className="credits">
+            {credits.map(([role, name]) => (
+              <div key={role}>
+                <dt>{role}</dt>
+                <dd>{name}</dd>
+              </div>
+            ))}
           </dl>
-          © SAVAGE-vr
+          <div className="footer-mark" aria-hidden="true">
+            <ruby>
+              SAVAGE<rt>サヴェージ</rt>
+            </ruby>
+          </div>
+          <div className="footer-bottom mono-label">
+            <span>&ldquo;FLEX the chaos&rdquo;</span>
+            <span>© SAVAGE-vr</span>
+          </div>
         </footer>
       </section>
       <Grid />

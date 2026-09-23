@@ -3,9 +3,6 @@ interface DotNavigationProps {
   currentIndex: number
   onIndexChange: (index: number) => void
   className?: string
-  dotClassName?: string
-  activeDotClassName?: string
-  useDefaultStyle?: boolean
   ariaLabel?: string
   getItemAriaLabel?: (index: number) => string
 }
@@ -15,24 +12,9 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
   currentIndex,
   onIndexChange,
   className = '',
-  dotClassName = '',
   ariaLabel = '選択',
   getItemAriaLabel,
 }) => {
-  const defaultContainerClasses = 'flex justify-center mt-4 gap-4 flex-wrap'
-  const defaultDotClasses = 'w-4 h-4 rounded-full transition-colors'
-  const defaultActiveDotClasses = 'bg-white'
-  const defaultInactiveDotClasses = 'bg-gray-400'
-
-  const containerClasses = `${defaultContainerClasses} ${className}`
-
-  const getDotClasses = (index: number) => {
-    const isActive = index === currentIndex
-    return `${defaultDotClasses} ${
-      isActive ? defaultActiveDotClasses : defaultInactiveDotClasses
-    } ${dotClassName}`
-  }
-
   const getAriaLabel = (index: number) => {
     if (getItemAriaLabel) {
       return getItemAriaLabel(index)
@@ -45,12 +27,16 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
   }
 
   return (
-    <div className={containerClasses} role="tablist" aria-label={ariaLabel}>
+    <div
+      className={`media-progress ${className}`}
+      role="tablist"
+      aria-label={ariaLabel}
+    >
       {Array.from({ length: totalItems }).map((_, index) => (
         <button
           key={index}
           onClick={() => onIndexChange(index)}
-          className={getDotClasses(index)}
+          className="media-progress-item"
           role="tab"
           aria-label={getAriaLabel(index)}
           aria-selected={index === currentIndex}
