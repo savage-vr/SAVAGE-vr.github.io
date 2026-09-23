@@ -41,7 +41,7 @@ const cameFromSite = () => {
   }
 }
 
-// "← SAVAGE": goes back when the previous page is on this site, otherwise
+// "← Prev": goes back when the previous page is on this site, otherwise
 // links to the top page (also the no-JS / new-tab behaviour)
 export const BackLink = () => {
   return (
@@ -60,7 +60,7 @@ export const BackLink = () => {
         }
       }}
     >
-      ← SAVAGE
+      ← Prev
     </Link>
   )
 }
