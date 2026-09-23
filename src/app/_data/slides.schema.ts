@@ -18,6 +18,11 @@ const SlideFileSchema = z.object({
   modifiedAt: z.string().datetime(),
 })
 
+const SlideCreditSchema = z.object({
+  author: z.string().min(1),
+  url: z.string().url(),
+})
+
 const SlideSchema = z.object({
   id: z.number().positive(),
   basename: z.string().min(1),
@@ -29,6 +34,9 @@ const SlideSchema = z.object({
   createdAt: z.string().datetime(),
   modifiedAt: z.string().datetime(),
   alternatives: z.array(SlideFileSchema),
+  credit: SlideCreditSchema.optional(),
+  // CSS object-position for images that don't fit 16:9
+  position: z.string().optional(),
 })
 
 const SlidesDataSchema = z
@@ -43,6 +51,7 @@ const SlidesDataSchema = z
 
 export type SlideMetadata = z.infer<typeof SlideMetadataSchema>
 export type SlideFile = z.infer<typeof SlideFileSchema>
+export type SlideCredit = z.infer<typeof SlideCreditSchema>
 export type Slide = z.infer<typeof SlideSchema>
 export type SlidesData = z.infer<typeof SlidesDataSchema>
 

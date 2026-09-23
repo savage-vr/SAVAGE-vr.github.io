@@ -5,6 +5,12 @@ interface DotNavigationProps {
   className?: string
   ariaLabel?: string
   getItemAriaLabel?: (index: number) => string
+  // Fills the active segment over `duration` ms, then calls onComplete
+  autoplay?: {
+    duration: number
+    paused: boolean
+    onComplete: () => void
+  }
 }
 
 export const DotNavigation: React.FC<DotNavigationProps> = ({
@@ -14,6 +20,7 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
   className = '',
   ariaLabel = '選択',
   getItemAriaLabel,
+  autoplay,
 }) => {
   const getAriaLabel = (index: number) => {
     if (getItemAriaLabel) {
@@ -28,7 +35,7 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
 
   return (
     <div
-      className={`media-progress ${className}`}
+      className={`media-progress ${autoplay ? 'is-autoplay' : ''} ${className}`}
       role="tablist"
       aria-label={ariaLabel}
     >
@@ -40,7 +47,20 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
           role="tab"
           aria-label={getAriaLabel(index)}
           aria-selected={index === currentIndex}
-        />
+        >
+          {autoplay && index === currentIndex && (
+            <span
+              // Remount on every slide change to restart the animation
+              key={currentIndex}
+              className="media-progress-fill"
+              style={{
+                animationDuration: `${autoplay.duration}ms`,
+                animationPlayState: autoplay.paused ? 'paused' : 'running',
+              }}
+              onAnimationEnd={autoplay.onComplete}
+            />
+          )}
+        </button>
       ))}
     </div>
   )

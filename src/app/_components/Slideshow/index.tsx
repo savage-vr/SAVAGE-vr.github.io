@@ -11,6 +11,8 @@ import { MediaCounter } from '../common/MediaCounter'
 import { NavigationButton } from '../common/NavigationButton'
 import '../common/media.css'
 
+const AUTOPLAY_DURATION = 6000
+
 interface SlideshowProps {
   slides: SlidesData
 }
@@ -20,12 +22,37 @@ export default function Slideshow({ slides }: SlideshowProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const slideshowRef = useRef<HTMLDivElement>(null)
+  const [autoplayEnabled, setAutoplayEnabled] = useState(false)
+  const [userPaused, setUserPaused] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const [focused, setFocused] = useState(false)
+  const [inView, setInView] = useState(false)
+  const [pageVisible, setPageVisible] = useState(true)
+
+  // No autoplay for reduced motion (animations are globally shortened there)
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setAutoplayEnabled(!query.matches)
+    update()
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    const update = () => setPageVisible(!document.hidden)
+    update()
+    document.addEventListener('visibilitychange', update)
+    return () => document.removeEventListener('visibilitychange', update)
+  }, [])
+
+  const paused = userPaused || hovered || focused || !inView || !pageVisible
 
   // IntersectionObserver for lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
+          setInView(entry.isIntersecting)
           if (entry.isIntersecting) {
             // Load current image and next few images
             const imagesToLoad = new Set<number>()
@@ -88,8 +115,23 @@ export default function Slideshow({ slides }: SlideshowProps) {
   }
 
   return (
-    <div className="slideshow" ref={slideshowRef}>
-      <div className="slideshow-container media-frame">
+    <div
+      className="slideshow"
+      ref={slideshowRef}
+      onFocus={() => setFocused(true)}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setFocused(false)
+        }
+      }}
+    >
+      <div
+        className="slideshow-container media-frame"
+        onPointerEnter={event => {
+          if (event.pointerType === 'mouse') setHovered(true)
+        }}
+        onPointerLeave={() => setHovered(false)}
+      >
         <NavigationButton
           direction="prev"
           onClick={goToPrevious}
@@ -117,7 +159,12 @@ export default function Slideshow({ slides }: SlideshowProps) {
                     />
                   )}
                   <source srcSet={slide.path} type="image/png" />
-                  <img alt={slide.alt} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                  <img alt={slide.alt} style={{
+                      objectFit: 'cover',
+                      objectPosition: slide.position,
+                      width: '100%',
+                      height: '100%',
+                    }} />
                 </picture>
               ) : (
                 <div className="media-placeholder" />
@@ -132,6 +179,28 @@ export default function Slideshow({ slides }: SlideshowProps) {
           ariaLabel="次のスライドを表示"
         />
         <MediaCounter current={currentIndex} total={slideImages.length} />
+        {autoplayEnabled && (
+          <button
+            className="media-toggle"
+            onClick={() => setUserPaused(prev => !prev)}
+            aria-pressed={userPaused}
+            aria-label={
+              userPaused ? 'スライドの自動再生を再開' : 'スライドの自動再生を停止'
+            }
+          >
+            {userPaused ? 'PLAY' : 'PAUSE'}
+          </button>
+        )}
+        {slideImages[currentIndex]?.credit && (
+          <a
+            className="media-credit"
+            href={slideImages[currentIndex].credit.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Photo by {slideImages[currentIndex].credit.author}
+          </a>
+        )}
       </div>
 
       <DotNavigation
@@ -140,6 +209,11 @@ export default function Slideshow({ slides }: SlideshowProps) {
         onIndexChange={goToSlide}
         ariaLabel="スライド選択"
         getItemAriaLabel={index => `スライド ${index + 1} を表示`}
+        autoplay={
+          autoplayEnabled
+            ? { duration: AUTOPLAY_DURATION, paused, onComplete: goToNext }
+            : undefined
+        }
       />
     </div>
   )

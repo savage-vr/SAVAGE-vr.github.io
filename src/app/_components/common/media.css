@@ -100,6 +100,26 @@
   color: var(--fg);
 }
 
+.media-credit {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.85rem;
+  z-index: 10;
+  padding: 0.15rem 0.5rem;
+  background: #000a;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--fg);
+  }
+}
+
 .media-progress {
   display: flex;
   gap: 3px;
@@ -131,8 +151,65 @@
     background: var(--fg);
   }
 
+  .is-autoplay &[aria-selected='true']::before {
+    background: var(--muted);
+  }
+
   &:focus-visible {
     outline-offset: 0;
+  }
+}
+
+.media-progress-fill {
+  position: absolute;
+  inset: 6px 0;
+  background: var(--fg);
+  transform-origin: left;
+  animation: mediaProgressFill linear forwards;
+}
+
+@keyframes mediaProgressFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.media-toggle {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  z-index: 10;
+  padding: 0.15rem 0.5rem;
+  border: 0;
+  background: #000a;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    color 0.15s;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--fg);
+  }
+}
+
+.media-frame:hover .media-toggle,
+.media-toggle:focus-visible,
+.media-toggle[aria-pressed='true'] {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .media-toggle {
+    opacity: 1;
   }
 }
 

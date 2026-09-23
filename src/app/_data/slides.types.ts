@@ -15,6 +15,11 @@ export interface SlideFile {
   modifiedAt: string
 }
 
+export interface SlideCredit {
+  author: string
+  url: string
+}
+
 export interface Slide {
   id: number
   basename: string
@@ -26,6 +31,8 @@ export interface Slide {
   createdAt: string
   modifiedAt: string
   alternatives: SlideFile[]
+  credit?: SlideCredit
+  position?: string
 }
 
 export interface SlideData {

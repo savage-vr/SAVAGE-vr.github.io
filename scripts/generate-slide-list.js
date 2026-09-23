@@ -3,6 +3,16 @@ const path = require('path')
 
 const slideDir = path.join(__dirname, '../public/slide')
 const outputPath = path.join(__dirname, '../src/app/_data/slides.json')
+const sourcesPath = path.join(
+  __dirname,
+  '../src/app/_data/gallery-sources.json'
+)
+
+// Credits for images imported from X (see scripts/import-x-images.js)
+function loadCredits() {
+  if (!fs.existsSync(sourcesPath)) return {}
+  return JSON.parse(fs.readFileSync(sourcesPath, 'utf8')).imported
+}
 
 function generateSlideList() {
   try {
@@ -59,8 +69,16 @@ function generateSlideList() {
       })
     })
 
+    const credits = loadCredits()
+
+    // Images imported from X come first, newest post first
+    const postedAt = group => credits[group.basename]?.postedAt ?? ''
+    const groups = Array.from(fileGroups.values()).sort((a, b) =>
+      postedAt(b).localeCompare(postedAt(a))
+    )
+
     // Generate slide data with multiple format support
-    const slides = Array.from(fileGroups.values()).map((group, index) => {
+    const slides = groups.map((group, index) => {
       // Sort files by preference: webp > png > jpg > jpeg > gif
       const formatPriority = { webp: 0, png: 1, jpg: 2, jpeg: 3, gif: 4 }
       group.files.sort(
@@ -71,17 +89,23 @@ function generateSlideList() {
       const primaryFile = group.files[0]
       const alternativeFormats = group.files.slice(1)
 
+      const credit = credits[group.basename]
+
       return {
         id: index + 1,
         basename: group.basename,
         filename: primaryFile.filename,
         path: primaryFile.path,
-        alt: `SAVAGEイベントのスライド ${index + 1}`,
+        alt: credit
+          ? `SAVAGEイベントの写真 ${index + 1}（撮影: ${credit.author}）`
+          : `SAVAGEイベントのスライド ${index + 1}`,
         format: primaryFile.format,
         size: primaryFile.size,
         createdAt: primaryFile.createdAt,
         modifiedAt: primaryFile.modifiedAt,
         alternatives: alternativeFormats,
+        ...(credit && { credit: { author: credit.author, url: credit.url } }),
+        ...(credit?.position && { position: credit.position }),
       }
     })
 
@@ -134,6 +158,11 @@ export interface SlideFile {
   modifiedAt: string
 }
 
+export interface SlideCredit {
+  author: string
+  url: string
+}
+
 export interface Slide {
   id: number
   basename: string
@@ -145,6 +174,8 @@ export interface Slide {
   createdAt: string
   modifiedAt: string
   alternatives: SlideFile[]
+  credit?: SlideCredit
+  position?: string
 }
 
 export interface SlideData {
