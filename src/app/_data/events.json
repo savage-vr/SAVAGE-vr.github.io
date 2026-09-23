@@ -23,6 +23,7 @@
         }
       ],
       "eventDate": "2025-06-26",
+      "flyer": "/events/2025-06-26.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/1936808402522628170"
     },
     {
@@ -150,7 +151,8 @@
         }
       ],
       "eventDate": "2025-08-31",
-      "tweets": "https://savage-vr.github.io/locked-summer-edition"
+      "flyer": "/events/2025-08-31.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/1958435777786032448"
     },
     {
       "name": "SAVAGE wave.14",
@@ -193,6 +195,7 @@
         }
       ],
       "eventDate": "2025-10-04",
+      "flyer": "/events/2025-10-04.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/1968977038959686101"
     },
     {
@@ -236,6 +239,7 @@
         }
       ],
       "eventDate": "2025-11-21",
+      "flyer": "/events/2025-11-21.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/1989528793375969401?s=20"
     },
     {
@@ -279,6 +283,7 @@
         }
       ],
       "eventDate": "2025-11-22",
+      "flyer": "/events/2025-11-21.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/1989528793375969401?s=20"
     },
     {
@@ -322,6 +327,7 @@
         }
       ],
       "eventDate": "2025-12-18",
+      "flyer": "/events/2025-12-18.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/1997520530568880434"
     },
     {
@@ -365,6 +371,7 @@
         }
       ],
       "eventDate": "2026-01-29",
+      "flyer": "/events/2026-01-29.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2013538762869834051"
     },
     {
@@ -419,7 +426,9 @@
           ]
         }
       ],
-      "eventDate": "2026-02-26"
+      "eventDate": "2026-02-26",
+      "flyer": "/events/2026-02-26.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/2024466358654947518?s=20"
     },
     {
       "name": "SAVAGE wave.20",
@@ -512,6 +521,7 @@
         }
       ],
       "eventDate": "2026-06-10",
+      "flyer": "/events/2026-06-10.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2061734576817639497"
     },
     {
@@ -555,6 +565,7 @@
         }
       ],
       "eventDate": "2026-07-09",
+      "flyer": "/events/2026-07-09.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2070481820257501339?s=20"
     },
     {
@@ -592,6 +603,7 @@
         }
       ],
       "eventDate": "2026-07-30",
+      "flyer": "/events/2026-07-30.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2080255576697934332?s=20"
     },
     {
@@ -653,6 +665,7 @@
         }
       ],
       "eventDate": "2026-08-31",
+      "flyer": "/events/2026-08-31.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2090574605262155944?s=20"
     },
     {

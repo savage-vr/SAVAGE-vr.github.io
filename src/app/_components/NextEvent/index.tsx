@@ -1,10 +1,13 @@
 'use client'
 
 import { differenceInCalendarDays, format, parseISO } from 'date-fns'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
-import { type EventsData } from '#/app/_data/events.schema'
+import { eventPath, type EventsData } from '#/app/_data/events.schema'
 import { findNextEvent } from '#/app/_utils/findNextEvent'
+
+import { EventCast } from '../EventCast'
 
 import './index.components.css'
 
@@ -66,46 +69,12 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
         {formatEventDate(nextEvent.eventDate)}
       </time>
       <h3 className="next-event-name">
-        {nextEvent.tweets ? (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            referrerPolicy="no-referrer"
-            href={nextEvent.tweets}
-            aria-label={`${nextEvent.name} - 外部リンクで詳細を見る`}
-          >
-            {nextEvent.name}
-            <span aria-hidden="true"> ↗</span>
-          </a>
-        ) : (
-          nextEvent.name
-        )}
+        <Link href={eventPath(nextEvent)}>{nextEvent.name}</Link>
       </h3>
-      <div role="group" aria-labelledby="cast-title">
-        <h4 id="cast-title" className="mono-label next-event-cast-title">
-          Line Up
-        </h4>
-        <ul className="next-event-cast" aria-label="出演者一覧">
-          {nextEvent.cast.map((member, index) => (
-            <li key={index}>
-              <span className="next-event-cast-no">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span className="next-event-cast-name">{member.name}</span>
-              <span
-                className="next-event-cast-roles"
-                aria-label={`役割: ${member.roles.join(', ')}`}
-              >
-                {member.roles.map(role => (
-                  <span key={role} className="badge" data-role={role}>
-                    {role}
-                  </span>
-                ))}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <EventCast cast={nextEvent.cast} />
+      <Link className="next-event-more mono-label" href={eventPath(nextEvent)}>
+        Flyer &amp; Details →
+      </Link>
     </div>
   )
 }

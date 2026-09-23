@@ -1,0 +1,135 @@
+.event-page {
+  max-width: 1080px;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 4rem 2.5rem 5rem;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.event-back a {
+  color: var(--muted);
+  transition: color 0.15s;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--fg);
+  }
+}
+
+.event-header {
+  margin-top: 4rem;
+}
+
+.event-date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 7vw, 3.5rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.event-name {
+  margin-top: 1rem;
+  font-family: var(--font-ibm-plex-serif);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.event-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 3.5rem;
+
+  &.no-flyer {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 640px;
+  }
+}
+
+.event-flyer {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: #000;
+  transition: border-color 0.15s;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--muted);
+  }
+}
+
+/* EventCast starts with a large top margin meant for the top page */
+.event-info .next-event-cast-title {
+  margin-top: 0;
+}
+
+.event-announcement {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 0.35em;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
+  }
+}
+
+.event-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+
+  & a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 45%;
+    overflow-wrap: anywhere;
+    transition: opacity 0.15s;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  & .event-pager-next {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+@media (max-width: 48rem) {
+  .event-page {
+    padding-inline: 1.75rem;
+  }
+
+  .event-header {
+    margin-top: 2.5rem;
+  }
+
+  .event-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+}

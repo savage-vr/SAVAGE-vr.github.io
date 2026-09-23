@@ -12,6 +12,8 @@ const EventSchema = z.object({
   cast: z.array(EventCastSchema),
   eventDate: z.string().date(),
   tweets: z.string().optional(),
+  // Path under /public; a .webp with the same basename is used when present
+  flyer: z.string().startsWith('/').optional(),
 })
 
 const EventsDataSchema = z.object({
@@ -34,3 +36,7 @@ export function safeParseEventsData(
 }
 
 export const events = validateEventsData(json)
+
+// Detail page URL; one event per day, so the date is the slug
+export const eventPath = (event: Pick<Event, 'eventDate'>) =>
+  `/events/${event.eventDate}/`

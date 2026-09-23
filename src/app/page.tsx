@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
+import { EventArchive } from './_components/EventArchive'
 import { Grid } from './_components/Grid'
 import { Logo } from './_components/Logo'
 import NextEvent from './_components/NextEvent'
@@ -219,6 +220,13 @@ export default function Home() {
           </Section>
           <Section
             index="03"
+            title="Archive"
+            caption={`${events.events.length} Events`}
+          >
+            <EventArchive events={events.events} />
+          </Section>
+          <Section
+            index="04"
             title="Members"
             caption={`${members.members.length} Crew`}
           >
@@ -235,7 +243,7 @@ export default function Home() {
             </div>
           </Section>
           <Section
-            index="04"
+            index="05"
             title="Gallery"
             caption={`${slides.slides.length} Shots`}
           >
@@ -244,7 +252,7 @@ export default function Home() {
             </Suspense>
           </Section>
           <Section
-            index="05"
+            index="06"
             title="Videos"
             caption={`${youtube.movies.length} Sets`}
           >
