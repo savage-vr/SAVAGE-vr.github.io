@@ -45,6 +45,18 @@ export default function Slideshow({ slides }: SlideshowProps) {
     return () => document.removeEventListener('visibilitychange', update)
   }, [])
 
+  // Autoplay only once most of the slideshow is on screen
+  useEffect(() => {
+    const element = slideshowRef.current
+    if (!element) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.intersectionRatio >= 0.6),
+      { threshold: [0, 0.6] }
+    )
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
   const paused = userPaused || hovered || focused || !inView || !pageVisible
 
   // IntersectionObserver for lazy loading
@@ -52,7 +64,6 @@ export default function Slideshow({ slides }: SlideshowProps) {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          setInView(entry.isIntersecting)
           if (entry.isIntersecting) {
             // Load current image and next few images
             const imagesToLoad = new Set<number>()
