@@ -28,8 +28,44 @@
   overflow-wrap: anywhere;
 }
 
+/*
+ * Keep the text inside the fixed Grid frame (lines 2rem from each edge,
+ * 1rem at <= 400px): pad past the side lines, and mask the bands outside the
+ * top/bottom lines so scrolling text slides under the frame instead of
+ * crossing it. The masks sit below the Grid lines (z-index 2).
+ */
+.event-page {
+  --frame: 2rem;
+}
+
+.event-page::before,
+.event-page::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: var(--frame);
+  background: #0a0a0a;
+  pointer-events: none;
+}
+
+.event-page::before {
+  top: 0;
+}
+
+.event-page::after {
+  bottom: 0;
+}
+
 @media (max-width: 48rem) {
   .event-page {
-    padding-inline: 1.75rem;
+    padding-inline: calc(var(--frame) + 1.25rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .event-page {
+    --frame: 1rem;
   }
 }
