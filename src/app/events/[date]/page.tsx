@@ -2,12 +2,14 @@ import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { BackLink } from '#/app/_components/BackLink'
 import { EventCast } from '#/app/_components/EventCast'
 import { Grid } from '#/app/_components/Grid'
 import { eventPath, events } from '#/app/_data/events.schema'
 
 import type { Metadata } from 'next'
 
+import '#/app/_components/common/detail.css'
 import './page.css'
 
 type Params = { date: string }
@@ -89,7 +91,7 @@ export default async function EventPage({
   return (
     <main id="main-content" className="event-page">
       <nav className="event-back mono-label">
-        <Link href="/">← SAVAGE</Link>
+        <BackLink />
       </nav>
 
       <header className="event-header">

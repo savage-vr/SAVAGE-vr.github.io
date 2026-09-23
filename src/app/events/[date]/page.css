@@ -1,23 +1,3 @@
-.event-page {
-  max-width: 1080px;
-  min-height: 100svh;
-  margin: 0 auto;
-  padding: 4rem 2.5rem 5rem;
-  color: var(--fg);
-  font-family: var(--font-sans);
-  line-height: 1.6;
-}
-
-.event-back a {
-  color: var(--muted);
-  transition: color 0.15s;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--fg);
-  }
-}
-
 .event-header {
   margin-top: 4rem;
 }
@@ -29,14 +9,6 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.04em;
   line-height: 1;
-}
-
-.event-name {
-  margin-top: 1rem;
-  font-family: var(--font-ibm-plex-serif);
-  font-size: clamp(1.75rem, 5vw, 2.75rem);
-  line-height: 1.2;
-  overflow-wrap: anywhere;
 }
 
 .event-body {
@@ -119,10 +91,6 @@
 }
 
 @media (max-width: 48rem) {
-  .event-page {
-    padding-inline: 1.75rem;
-  }
-
   .event-header {
     margin-top: 2.5rem;
   }

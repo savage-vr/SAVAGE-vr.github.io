@@ -1,5 +1,6 @@
 import { IBM_Plex_Serif } from 'next/font/google'
 
+import { NavigationTracker } from './_components/BackLink'
 import './globals.css'
 
 const ibm = IBM_Plex_Serif({
@@ -19,6 +20,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           メインコンテンツにスキップ
         </a>
+        <NavigationTracker />
         {children}
       </body>
     </html>

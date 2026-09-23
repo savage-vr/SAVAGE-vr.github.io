@@ -123,3 +123,15 @@
     }
   }
 }
+
+.profile-name a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.15s;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
+  }
+}

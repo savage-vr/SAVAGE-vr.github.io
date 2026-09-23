@@ -1,4 +1,7 @@
+import Link from 'next/link'
+
 import { type EventCast as Cast } from '#/app/_data/events.schema'
+import { personPath } from '#/app/_data/people'
 
 import './index.components.css'
 
@@ -14,7 +17,12 @@ export const EventCast: React.FC<{ cast: Cast[] }> = ({ cast }) => {
             <span className="next-event-cast-no">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span className="next-event-cast-name">{member.name}</span>
+            <Link
+              className="next-event-cast-name"
+              href={personPath(member.name)}
+            >
+              {member.name}
+            </Link>
             <span
               className="next-event-cast-roles"
               aria-label={`役割: ${member.roles.join(', ')}`}

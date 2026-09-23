@@ -1,4 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
+
+import { personPath } from '#/app/_data/people'
 
 import { ProfileImage } from './ProfileImage'
 import './index.components.css'
@@ -41,7 +44,7 @@ export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
       <ProfileImage name={name} imgSrc={imgSrc} />
       <div className="profile-info">
         <h3 id={`profile-${name}`} className="profile-name">
-          {name}
+          <Link href={personPath(name)}>{name}</Link>
         </h3>
         <ul className="profile-roles" aria-label={`${name}の役割`}>
           {roles.map((r, index) => (
