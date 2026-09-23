@@ -13,7 +13,10 @@
   visibility: visible;
 }
 
-.logo.is-webgl #logo {
+.logo.is-webgl-init #logo {
   animation: none;
+}
+
+.logo.is-webgl #logo {
   opacity: 0;
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { LogoSvg } from './LogoSvg'
 import { createLogoRenderer } from './renderer'
@@ -10,7 +10,6 @@ export const Logo = () => {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
-  const [webgl, setWebgl] = useState(false)
 
   useEffect(() => {
     const wrapper = wrapperRef.current
@@ -28,15 +27,20 @@ export const Logo = () => {
     }
     if (!renderer) return
     const active = renderer
-    // Hides the SVG and stops its CSS float so it can be measured
-    setWebgl(true)
+    // Stop the SVG's CSS float so it can be measured; it stays visible until
+    // the canvas has drawn its first frame (an undrawn canvas can flash white)
+    wrapper.classList.add('is-webgl-init')
 
     const resize = () => {
       const box = canvas.getBoundingClientRect()
       active.resize(box.width, box.height, svg.getBoundingClientRect(), box)
     }
-    // The canvas is sized in vw/svh, so watch it (not the fixed-size SVG box)
-    const observer = new ResizeObserver(resize)
+    // Resizing clears the canvas, so only flag it here and resize right
+    // before the next render. The canvas is sized in vw/svh, so watch it too.
+    let needsResize = true
+    const observer = new ResizeObserver(() => {
+      needsResize = true
+    })
     observer.observe(canvas)
     observer.observe(wrapper)
 
@@ -54,20 +58,22 @@ export const Logo = () => {
       frame = requestAnimationFrame(loop)
       // The hero sits behind the page; skip frames once it's covered
       if (document.hidden || window.scrollY > window.innerHeight * 1.5) return
-      if (!start) {
-        start = now
+      if (needsResize) {
+        needsResize = false
         resize()
       }
+      if (!start) start = now
       const time = (now - start) / 1000
       pointer[0] += (target[0] - pointer[0]) * 0.05
       pointer[1] += (target[1] - pointer[1]) * 0.05
       active.render(time, pointer, Math.min(1, time / 0.3))
+      wrapper.classList.add('is-webgl')
     }
     frame = requestAnimationFrame(loop)
 
     const onContextLost = () => {
       cancelAnimationFrame(frame)
-      setWebgl(false)
+      wrapper.classList.remove('is-webgl-init', 'is-webgl')
     }
     canvas.addEventListener('webglcontextlost', onContextLost)
 
@@ -77,13 +83,14 @@ export const Logo = () => {
       window.removeEventListener('pointermove', onPointerMove)
       canvas.removeEventListener('webglcontextlost', onContextLost)
       active.dispose()
+      wrapper.classList.remove('is-webgl-init', 'is-webgl')
     }
   }, [])
 
   return (
     <div
       ref={wrapperRef}
-      className={`logo relative flex items-center justify-center z-10 ${webgl ? 'is-webgl' : ''}`}
+      className="logo relative flex items-center justify-center z-10"
     >
       <LogoSvg ref={svgRef} />
       <canvas ref={canvasRef} className="logo-canvas" aria-hidden="true" />

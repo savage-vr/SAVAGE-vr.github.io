@@ -347,7 +347,8 @@ export function createLogoRenderer(
     gl.deleteTexture(coverageTex)
     gl.deleteTexture(revealTex)
     Object.values(programs).forEach(p => gl.deleteProgram(p.program))
-    gl.getExtension('WEBGL_lose_context')?.loseContext()
+    // No loseContext(): React may mount again on the same canvas (Strict Mode,
+    // HMR) and would get the lost context back from getContext()
   }
 
   return { resize, render, dispose }
