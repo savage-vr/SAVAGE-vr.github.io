@@ -32,23 +32,25 @@ export async function generateMetadata({
   if (!person) return {}
   const title = `${person.name} | SAVAGE`
   const description = `SAVAGE 出演 ${person.appearances.length} 回 (${person.roles.join(' / ')})`
-  const image = person.member?.imgSrc ?? '/logo-fill.jpg'
+  // Crew: their photo as a small card. Guests: the site card (/og/top.png)
+  const image = person.member
+    ? { url: person.member.imgSrc, alt: person.name }
+    : { url: '/og/top.png', width: 1200, height: 630, alt: 'SAVAGE' }
   return {
     title,
     description,
-    metadataBase: new URL('https://savage-vr.github.io'),
     alternates: { canonical: personPath(person.name) },
     openGraph: {
       title,
       description,
       url: personPath(person.name),
       siteName: 'SAVAGE',
-      images: [{ url: image, alt: person.name }],
+      images: [image],
       locale: 'ja_JP',
       type: 'profile',
     },
     twitter: {
-      card: 'summary',
+      card: person.member ? 'summary' : 'summary_large_image',
       title,
       description,
       site: '@vrcsavageinfo',

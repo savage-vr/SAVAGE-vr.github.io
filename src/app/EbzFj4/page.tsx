@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
     description,
-    url: 'https://savage-vr.github.io/Ebzfj4',
+    url: '/EbzFj4/',
     siteName: 'SAVAGE',
+    images: [{ url: '/og/top.png', width: 1200, height: 630, alt: 'SAVAGE' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description,
     site: '@vrcsavageinfo',
     creator: '@vrcsavageinfo',
-    images: ['/logo-fill.jpg'],
+    images: ['/og/top.png'],
   },
 }
 
