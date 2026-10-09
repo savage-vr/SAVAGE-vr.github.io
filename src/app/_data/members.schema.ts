@@ -11,6 +11,8 @@ const MemberSchema = z.object({
 
 const MembersDataSchema = z.object({
   members: z.array(MemberSchema),
+  // Former crew (OB): keep their profile on the member page, off the top page
+  alumni: z.array(MemberSchema).default([]),
 })
 
 export type Member = z.infer<typeof MemberSchema>

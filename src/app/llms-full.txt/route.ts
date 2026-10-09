@@ -23,7 +23,7 @@ export function GET() {
   })
   const members = agentMembers.map(
     m =>
-      `- ${m.name}${m.crew ? ' (crew)' : ''}: ${m.appearances} appearances (DJ ${m.asDJ}, VJ ${m.asVJ}) ${m.url}`
+      `- ${m.name}${m.crew ? ' (crew)' : m.alumni ? ' (OB)' : ''}: ${m.appearances} appearances (DJ ${m.asDJ}, VJ ${m.asVJ}) ${m.url}`
   )
   const text = `# ${SITE.name} — full event history
 

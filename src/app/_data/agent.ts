@@ -47,7 +47,8 @@ export const agentEvents = [...events.events]
 
 export const agentMembers = people.map(person => ({
   name: person.name,
-  crew: !!person.member,
+  crew: !!person.member && !person.alumni,
+  alumni: person.alumni,
   roles: person.member?.roles ?? person.roles,
   appearances: person.appearances.length,
   asDJ: person.appearances.filter(a => a.roles.includes('DJ')).length,

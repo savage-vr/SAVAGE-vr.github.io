@@ -87,7 +87,9 @@ export default async function MemberPage({
           />
         )}
         <div>
-          <p className="mono-label">{member ? 'SAVAGE Crew' : 'Guest'}</p>
+          <p className="mono-label">
+            {person.alumni ? 'SAVAGE OB' : member ? 'SAVAGE Crew' : 'Guest'}
+          </p>
           <h1 className="event-name member-name">{person.name}</h1>
           <ul className="member-roles">
             {(member?.roles ?? person.roles).map(role => (
