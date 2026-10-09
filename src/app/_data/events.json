@@ -1,6 +1,302 @@
 {
   "events": [
     {
+      "name": "SAVAGE Vol.1",
+      "cast": [
+        {
+          "name": "bonsai",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "Lazi",
+          "roles": [
+            "DJ"
+          ]
+        }
+      ],
+      "eventDate": "2024-11-12",
+      "flyer": "/events/2024-11-12.jpg",
+      "tweets": "https://x.com/iamtakerd/status/1855242426488877255?s=20"
+    },
+    {
+      "name": "SAVAGE Vol.2",
+      "cast": [
+        {
+          "name": "bonsai",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "AuroRangia",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "わヴぇふぃる",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "Lagita",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2024-12-16",
+      "flyer": "/events/2024-12-16.jpg",
+      "tweets": "https://x.com/iamtakerd/status/1864288731198574749?s=20"
+    },
+    {
+      "name": "SAVAGE Vol.3",
+      "cast": [
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "torikyatt",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "monoton",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "MeltyPotato",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "Fallen-Angel_R-K",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "Lagita",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2025-01-22",
+      "flyer": "/events/2025-01-22.jpg",
+      "tweets": "https://x.com/iamtakerd/status/1875904304336560320?s=20"
+    },
+    {
+      "name": "SAVAGE Vol.4",
+      "cast": [
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": [
+            "DJ"
+          ]
+        }
+      ],
+      "eventDate": "2025-02-13",
+      "flyer": "/events/2025-02-13.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/1885626131170353527?s=20"
+    },
+    {
+      "name": "SAVAGE Spring Edition",
+      "cast": [
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "torikyatt",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "七草くりむ",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "Lagita",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "切り昆布",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2025-04-23",
+      "flyer": "/events/2025-04-23.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/1911728109671661637?s=20"
+    },
+    {
+      "name": "SAVAGE Vol.7",
+      "cast": [
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "fuji_Glicine",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "RoastPotato",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "切り昆布",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2025-05-21",
+      "flyer": "/events/2025-05-21.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/1922154401583567025?s=20"
+    },
+    {
+      "name": "SAVAGE #injellycore Edition",
+      "cast": [
+        {
+          "name": "bonsai",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "Noshahr",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2025-06-14",
+      "flyer": "/events/2025-06-14.jpg",
+      "tweets": "https://x.com/vrcsavageinfo/status/1929914292620669020?s=20"
+    },
+    {
       "name": "SAVAGE Vol.9",
       "cast": [
         {

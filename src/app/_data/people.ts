@@ -12,12 +12,15 @@ export type Person = {
   appearances: Appearance[] // newest first
   roles: Array<'DJ' | 'VJ'>
   member?: Member
+  alumni: boolean
 }
 
 // Romaji used in the announcement posts, for names written in Japanese
 const SLUG_ALIASES: Record<string, string> = {
   みや: 'mya',
   切り昆布: 'kirikombu',
+  七草くりむ: 'crim-nanakusa',
+  わヴぇふぃる: 'wavefilw',
 }
 
 // Short stable id (FNV-1a) for names that have no ASCII form
@@ -50,12 +53,15 @@ export const people: Person[] = (() => {
   )
   for (const event of newestFirst) {
     for (const cast of event.cast) {
+      const current = members.members.find(m => m.name === cast.name)
+      const alumnus = members.alumni.find(m => m.name === cast.name)
       const person = byName.get(cast.name) ?? {
         name: cast.name,
         slug: personSlug(cast.name),
         appearances: [],
         roles: [],
-        member: members.members.find(m => m.name === cast.name),
+        member: current ?? alumnus,
+        alumni: !current && !!alumnus,
       }
       person.appearances.push({ event, roles: cast.roles })
       for (const role of cast.roles) {
