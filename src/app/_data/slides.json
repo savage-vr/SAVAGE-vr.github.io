@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "total": 29,
-    "generatedAt": "2026-09-23T05:51:00.887Z",
+    "total": 32,
+    "generatedAt": "2026-10-09T04:33:24.161Z",
     "directory": "/public/slide",
     "formats": [
       "jpg",
@@ -12,10 +12,85 @@
   "slides": [
     {
       "id": 1,
+      "basename": "x_2108347235067199896_1",
+      "filename": "x_2108347235067199896_1.jpg",
+      "path": "/slide/x_2108347235067199896_1.jpg",
+      "alt": "SAVAGEイベントの写真 1（撮影: @_unaunq）",
+      "format": "jpg",
+      "size": 143056,
+      "createdAt": "2026-10-09T04:33:22.925Z",
+      "modifiedAt": "2026-10-09T04:33:22.955Z",
+      "alternatives": [
+        {
+          "filename": "x_2108347235067199896_1.webp",
+          "path": "/slide/x_2108347235067199896_1.webp",
+          "format": "webp",
+          "size": 45354,
+          "createdAt": "2026-10-09T04:33:22.956Z",
+          "modifiedAt": "2026-10-09T04:33:23.078Z"
+        }
+      ],
+      "credit": {
+        "author": "@_unaunq",
+        "url": "https://x.com/_unaunq/status/2108347235067199896"
+      }
+    },
+    {
+      "id": 2,
+      "basename": "x_2108347235067199896_2",
+      "filename": "x_2108347235067199896_2.jpg",
+      "path": "/slide/x_2108347235067199896_2.jpg",
+      "alt": "SAVAGEイベントの写真 2（撮影: @_unaunq）",
+      "format": "jpg",
+      "size": 199679,
+      "createdAt": "2026-10-09T04:33:23.410Z",
+      "modifiedAt": "2026-10-09T04:33:23.467Z",
+      "alternatives": [
+        {
+          "filename": "x_2108347235067199896_2.webp",
+          "path": "/slide/x_2108347235067199896_2.webp",
+          "format": "webp",
+          "size": 67916,
+          "createdAt": "2026-10-09T04:33:23.468Z",
+          "modifiedAt": "2026-10-09T04:33:23.619Z"
+        }
+      ],
+      "credit": {
+        "author": "@_unaunq",
+        "url": "https://x.com/_unaunq/status/2108347235067199896"
+      }
+    },
+    {
+      "id": 3,
+      "basename": "x_2108347137323110440_1",
+      "filename": "x_2108347137323110440_1.jpg",
+      "path": "/slide/x_2108347137323110440_1.jpg",
+      "alt": "SAVAGEイベントの写真 3（撮影: @_unaunq）",
+      "format": "jpg",
+      "size": 216113,
+      "createdAt": "2026-10-09T04:33:23.929Z",
+      "modifiedAt": "2026-10-09T04:33:23.983Z",
+      "alternatives": [
+        {
+          "filename": "x_2108347137323110440_1.webp",
+          "path": "/slide/x_2108347137323110440_1.webp",
+          "format": "webp",
+          "size": 81964,
+          "createdAt": "2026-10-09T04:33:23.984Z",
+          "modifiedAt": "2026-10-09T04:33:24.135Z"
+        }
+      ],
+      "credit": {
+        "author": "@_unaunq",
+        "url": "https://x.com/_unaunq/status/2108347137323110440"
+      }
+    },
+    {
+      "id": 4,
       "basename": "x_2094797821711159351_2",
       "filename": "x_2094797821711159351_2.jpg",
       "path": "/slide/x_2094797821711159351_2.jpg",
-      "alt": "SAVAGEイベントの写真 1（撮影: @nkkm_vrc）",
+      "alt": "SAVAGEイベントの写真 4（撮影: @nkkm_vrc）",
       "format": "jpg",
       "size": 111812,
       "createdAt": "2026-09-23T05:43:11.962Z",
@@ -36,11 +111,11 @@
       }
     },
     {
-      "id": 2,
+      "id": 5,
       "basename": "x_2082852364009324598_1",
       "filename": "x_2082852364009324598_1.jpg",
       "path": "/slide/x_2082852364009324598_1.jpg",
-      "alt": "SAVAGEイベントの写真 2（撮影: @Neve2o26）",
+      "alt": "SAVAGEイベントの写真 5（撮影: @Neve2o26）",
       "format": "jpg",
       "size": 202817,
       "createdAt": "2026-09-23T05:43:12.362Z",
@@ -61,11 +136,11 @@
       }
     },
     {
-      "id": 3,
+      "id": 6,
       "basename": "x_2082852364009324598_2",
       "filename": "x_2082852364009324598_2.jpg",
       "path": "/slide/x_2082852364009324598_2.jpg",
-      "alt": "SAVAGEイベントの写真 3（撮影: @Neve2o26）",
+      "alt": "SAVAGEイベントの写真 6（撮影: @Neve2o26）",
       "format": "jpg",
       "size": 126101,
       "createdAt": "2026-09-23T05:43:12.756Z",
@@ -86,11 +161,11 @@
       }
     },
     {
-      "id": 4,
+      "id": 7,
       "basename": "x_2082852364009324598_4",
       "filename": "x_2082852364009324598_4.jpg",
       "path": "/slide/x_2082852364009324598_4.jpg",
-      "alt": "SAVAGEイベントの写真 4（撮影: @Neve2o26）",
+      "alt": "SAVAGEイベントの写真 7（撮影: @Neve2o26）",
       "format": "jpg",
       "size": 169909,
       "createdAt": "2026-09-23T05:43:13.110Z",
@@ -111,11 +186,11 @@
       }
     },
     {
-      "id": 5,
+      "id": 8,
       "basename": "x_2075216322812924134_1",
       "filename": "x_2075216322812924134_1.jpg",
       "path": "/slide/x_2075216322812924134_1.jpg",
-      "alt": "SAVAGEイベントの写真 5（撮影: @vrcsavageinfo）",
+      "alt": "SAVAGEイベントの写真 8（撮影: @vrcsavageinfo）",
       "format": "jpg",
       "size": 421978,
       "createdAt": "2026-09-23T05:43:13.513Z",
@@ -136,11 +211,11 @@
       }
     },
     {
-      "id": 6,
+      "id": 9,
       "basename": "x_2075216322812924134_2",
       "filename": "x_2075216322812924134_2.jpg",
       "path": "/slide/x_2075216322812924134_2.jpg",
-      "alt": "SAVAGEイベントの写真 6（撮影: @vrcsavageinfo）",
+      "alt": "SAVAGEイベントの写真 9（撮影: @vrcsavageinfo）",
       "format": "jpg",
       "size": 538587,
       "createdAt": "2026-09-23T05:43:15.443Z",
@@ -161,11 +236,11 @@
       }
     },
     {
-      "id": 7,
+      "id": 10,
       "basename": "x_2075200595473162535_1",
       "filename": "x_2075200595473162535_1.jpg",
       "path": "/slide/x_2075200595473162535_1.jpg",
-      "alt": "SAVAGEイベントの写真 7（撮影: @vrcsavageinfo）",
+      "alt": "SAVAGEイベントの写真 10（撮影: @vrcsavageinfo）",
       "format": "jpg",
       "size": 575113,
       "createdAt": "2026-09-23T05:43:16.807Z",
@@ -186,11 +261,11 @@
       }
     },
     {
-      "id": 8,
+      "id": 11,
       "basename": "x_2075199292013510802_1",
       "filename": "x_2075199292013510802_1.jpg",
       "path": "/slide/x_2075199292013510802_1.jpg",
-      "alt": "SAVAGEイベントの写真 8（撮影: @StellaNeCoNya）",
+      "alt": "SAVAGEイベントの写真 11（撮影: @StellaNeCoNya）",
       "format": "jpg",
       "size": 371516,
       "createdAt": "2026-09-23T05:43:18.409Z",
@@ -211,11 +286,11 @@
       }
     },
     {
-      "id": 9,
+      "id": 12,
       "basename": "x_2064737007381987797_2",
       "filename": "x_2064737007381987797_2.jpg",
       "path": "/slide/x_2064737007381987797_2.jpg",
-      "alt": "SAVAGEイベントの写真 9（撮影: @yuccue）",
+      "alt": "SAVAGEイベントの写真 12（撮影: @yuccue）",
       "format": "jpg",
       "size": 246448,
       "createdAt": "2026-09-23T05:43:19.179Z",
@@ -236,11 +311,11 @@
       }
     },
     {
-      "id": 10,
+      "id": 13,
       "basename": "x_2064736889140359478_1",
       "filename": "x_2064736889140359478_1.jpg",
       "path": "/slide/x_2064736889140359478_1.jpg",
-      "alt": "SAVAGEイベントの写真 10（撮影: @yuccue）",
+      "alt": "SAVAGEイベントの写真 13（撮影: @yuccue）",
       "format": "jpg",
       "size": 259709,
       "createdAt": "2026-09-23T05:43:19.810Z",
@@ -261,11 +336,11 @@
       }
     },
     {
-      "id": 11,
+      "id": 14,
       "basename": "x_2064726307502715354_1",
       "filename": "x_2064726307502715354_1.jpg",
       "path": "/slide/x_2064726307502715354_1.jpg",
-      "alt": "SAVAGEイベントの写真 11（撮影: @Neve2o26）",
+      "alt": "SAVAGEイベントの写真 14（撮影: @Neve2o26）",
       "format": "jpg",
       "size": 472356,
       "createdAt": "2026-09-23T05:43:20.666Z",
@@ -286,11 +361,11 @@
       }
     },
     {
-      "id": 12,
+      "id": 15,
       "basename": "x_2064724754628792478_4",
       "filename": "x_2064724754628792478_4.jpg",
       "path": "/slide/x_2064724754628792478_4.jpg",
-      "alt": "SAVAGEイベントの写真 12（撮影: @Neve2o26）",
+      "alt": "SAVAGEイベントの写真 15（撮影: @Neve2o26）",
       "format": "jpg",
       "size": 490285,
       "createdAt": "2026-09-23T05:43:21.311Z",
@@ -311,11 +386,11 @@
       }
     },
     {
-      "id": 13,
+      "id": 16,
       "basename": "x_2041528653004300667_1",
       "filename": "x_2041528653004300667_1.jpg",
       "path": "/slide/x_2041528653004300667_1.jpg",
-      "alt": "SAVAGEイベントの写真 13（撮影: @yuccue）",
+      "alt": "SAVAGEイベントの写真 16（撮影: @yuccue）",
       "format": "jpg",
       "size": 404982,
       "createdAt": "2026-09-23T05:43:21.992Z",
@@ -337,11 +412,11 @@
       "position": "50% 30%"
     },
     {
-      "id": 14,
+      "id": 17,
       "basename": "x_2041517249471918521_1",
       "filename": "x_2041517249471918521_1.jpg",
       "path": "/slide/x_2041517249471918521_1.jpg",
-      "alt": "SAVAGEイベントの写真 14（撮影: @yuccue）",
+      "alt": "SAVAGEイベントの写真 17（撮影: @yuccue）",
       "format": "jpg",
       "size": 264035,
       "createdAt": "2026-09-23T05:43:23.230Z",
@@ -362,11 +437,11 @@
       }
     },
     {
-      "id": 15,
+      "id": 18,
       "basename": "x_2041500716032987630_1",
       "filename": "x_2041500716032987630_1.jpg",
       "path": "/slide/x_2041500716032987630_1.jpg",
-      "alt": "SAVAGEイベントの写真 15（撮影: @iamtakerd）",
+      "alt": "SAVAGEイベントの写真 18（撮影: @iamtakerd）",
       "format": "jpg",
       "size": 65207,
       "createdAt": "2026-09-23T05:43:23.847Z",
@@ -387,11 +462,11 @@
       }
     },
     {
-      "id": 16,
+      "id": 19,
       "basename": "x_2038249355636064718_1",
       "filename": "x_2038249355636064718_1.jpg",
       "path": "/slide/x_2038249355636064718_1.jpg",
-      "alt": "SAVAGEイベントの写真 16（撮影: @redmond_Unity）",
+      "alt": "SAVAGEイベントの写真 19（撮影: @redmond_Unity）",
       "format": "jpg",
       "size": 173109,
       "createdAt": "2026-09-23T05:43:24.122Z",
@@ -412,11 +487,11 @@
       }
     },
     {
-      "id": 17,
+      "id": 20,
       "basename": "x_2027047137306169649_2",
       "filename": "x_2027047137306169649_2.jpg",
       "path": "/slide/x_2027047137306169649_2.jpg",
-      "alt": "SAVAGEイベントの写真 17（撮影: @hareno_tikumori）",
+      "alt": "SAVAGEイベントの写真 20（撮影: @hareno_tikumori）",
       "format": "jpg",
       "size": 741364,
       "createdAt": "2026-09-23T05:43:24.758Z",
@@ -437,11 +512,11 @@
       }
     },
     {
-      "id": 18,
+      "id": 21,
       "basename": "x_2027028309167714310_3",
       "filename": "x_2027028309167714310_3.jpg",
       "path": "/slide/x_2027028309167714310_3.jpg",
-      "alt": "SAVAGEイベントの写真 18（撮影: @TsR_VRC）",
+      "alt": "SAVAGEイベントの写真 21（撮影: @TsR_VRC）",
       "format": "jpg",
       "size": 1007442,
       "createdAt": "2026-09-23T05:43:26.014Z",
@@ -462,11 +537,11 @@
       }
     },
     {
-      "id": 19,
+      "id": 22,
       "basename": "x_2026993541491363876_1",
       "filename": "x_2026993541491363876_1.jpg",
       "path": "/slide/x_2026993541491363876_1.jpg",
-      "alt": "SAVAGEイベントの写真 19（撮影: @yuccue）",
+      "alt": "SAVAGEイベントの写真 22（撮影: @yuccue）",
       "format": "jpg",
       "size": 355992,
       "createdAt": "2026-09-23T05:43:27.404Z",
@@ -487,11 +562,11 @@
       }
     },
     {
-      "id": 20,
+      "id": 23,
       "basename": "VRChat_2025-01-22_23-04-06.240_1920x1080",
       "filename": "VRChat_2025-01-22_23-04-06.240_1920x1080.png",
       "path": "/slide/VRChat_2025-01-22_23-04-06.240_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 20",
+      "alt": "SAVAGEイベントのスライド 23",
       "format": "png",
       "size": 1809866,
       "createdAt": "2026-09-23T05:07:31.338Z",
@@ -508,11 +583,11 @@
       ]
     },
     {
-      "id": 21,
+      "id": 24,
       "basename": "VRChat_2025-01-22_23-55-28.766_1920x1080",
       "filename": "VRChat_2025-01-22_23-55-28.766_1920x1080.png",
       "path": "/slide/VRChat_2025-01-22_23-55-28.766_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 21",
+      "alt": "SAVAGEイベントのスライド 24",
       "format": "png",
       "size": 1637399,
       "createdAt": "2026-09-23T05:07:31.341Z",
@@ -529,11 +604,11 @@
       ]
     },
     {
-      "id": 22,
+      "id": 25,
       "basename": "VRChat_2025-04-23_21-02-21.982_1920x1080",
       "filename": "VRChat_2025-04-23_21-02-21.982_1920x1080.png",
       "path": "/slide/VRChat_2025-04-23_21-02-21.982_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 22",
+      "alt": "SAVAGEイベントのスライド 25",
       "format": "png",
       "size": 1768435,
       "createdAt": "2026-09-23T05:07:31.341Z",
@@ -550,11 +625,11 @@
       ]
     },
     {
-      "id": 23,
+      "id": 26,
       "basename": "VRChat_2025-04-23_23-04-09.170_2560x1440",
       "filename": "VRChat_2025-04-23_23-04-09.170_2560x1440.png",
       "path": "/slide/VRChat_2025-04-23_23-04-09.170_2560x1440.png",
-      "alt": "SAVAGEイベントのスライド 23",
+      "alt": "SAVAGEイベントのスライド 26",
       "format": "png",
       "size": 1721071,
       "createdAt": "2026-09-23T05:07:31.343Z",
@@ -571,11 +646,11 @@
       ]
     },
     {
-      "id": 24,
+      "id": 27,
       "basename": "VRChat_2025-04-23_23-47-33.143_2560x1440",
       "filename": "VRChat_2025-04-23_23-47-33.143_2560x1440.png",
       "path": "/slide/VRChat_2025-04-23_23-47-33.143_2560x1440.png",
-      "alt": "SAVAGEイベントのスライド 24",
+      "alt": "SAVAGEイベントのスライド 27",
       "format": "png",
       "size": 1514929,
       "createdAt": "2026-09-23T05:07:31.344Z",
@@ -592,11 +667,11 @@
       ]
     },
     {
-      "id": 25,
+      "id": 28,
       "basename": "VRChat_2025-04-23_23-48-18.239_1920x1080",
       "filename": "VRChat_2025-04-23_23-48-18.239_1920x1080.png",
       "path": "/slide/VRChat_2025-04-23_23-48-18.239_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 25",
+      "alt": "SAVAGEイベントのスライド 28",
       "format": "png",
       "size": 2006879,
       "createdAt": "2026-09-23T05:07:31.346Z",
@@ -613,11 +688,11 @@
       ]
     },
     {
-      "id": 26,
+      "id": 29,
       "basename": "VRChat_2025-04-23_23-50-40.674_2560x1440",
       "filename": "VRChat_2025-04-23_23-50-40.674_2560x1440.png",
       "path": "/slide/VRChat_2025-04-23_23-50-40.674_2560x1440.png",
-      "alt": "SAVAGEイベントのスライド 26",
+      "alt": "SAVAGEイベントのスライド 29",
       "format": "png",
       "size": 1802481,
       "createdAt": "2026-09-23T05:07:31.347Z",
@@ -634,11 +709,11 @@
       ]
     },
     {
-      "id": 27,
+      "id": 30,
       "basename": "VRChat_2025-04-24_00-31-35.116_1920x1080",
       "filename": "VRChat_2025-04-24_00-31-35.116_1920x1080.png",
       "path": "/slide/VRChat_2025-04-24_00-31-35.116_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 27",
+      "alt": "SAVAGEイベントのスライド 30",
       "format": "png",
       "size": 2769375,
       "createdAt": "2026-09-23T05:07:31.348Z",
@@ -655,11 +730,11 @@
       ]
     },
     {
-      "id": 28,
+      "id": 31,
       "basename": "VRChat_2025-05-21_20-48-45.318_1920x1080",
       "filename": "VRChat_2025-05-21_20-48-45.318_1920x1080.png",
       "path": "/slide/VRChat_2025-05-21_20-48-45.318_1920x1080.png",
-      "alt": "SAVAGEイベントのスライド 28",
+      "alt": "SAVAGEイベントのスライド 31",
       "format": "png",
       "size": 1514571,
       "createdAt": "2026-09-23T05:07:31.354Z",
@@ -676,11 +751,11 @@
       ]
     },
     {
-      "id": 29,
+      "id": 32,
       "basename": "VRChat_2025-05-21_22-28-57.684_1920x1080",
       "filename": "VRChat_2025-05-21_22-28-57.684_1920x1080.webp",
       "path": "/slide/VRChat_2025-05-21_22-28-57.684_1920x1080.webp",
-      "alt": "SAVAGEイベントのスライド 29",
+      "alt": "SAVAGEイベントのスライド 32",
       "format": "webp",
       "size": 1421193,
       "createdAt": "2026-09-23T05:07:31.355Z",
