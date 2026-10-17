@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SAVAGE | 8/32 LOCKED SUMMER EDITION',
     description: 'In summer, the song sings itself',
-    url: 'https://savage-vr.github.io/locked-summer-edition',
+    url: 'https://savage-vrc.club/locked-summer-edition',
     siteName: 'SAVAGE',
     images: [
       {

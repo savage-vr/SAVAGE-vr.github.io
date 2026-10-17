@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://savage-vr.github.io/sitemap.xml
+Sitemap: https://savage-vrc.club/sitemap.xml

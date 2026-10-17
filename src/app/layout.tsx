@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 // Resolves relative OG / canonical URLs on every page
 export const metadata: Metadata = {
-  metadataBase: new URL('https://savage-vr.github.io'),
+  metadataBase: new URL('https://savage-vrc.club'),
 }
 
 const ibm = IBM_Plex_Serif({

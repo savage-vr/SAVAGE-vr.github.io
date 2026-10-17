@@ -5,7 +5,7 @@ import { people, personPath } from './people'
 
 export const SITE = {
   name: 'SAVAGE',
-  url: 'https://savage-vr.github.io',
+  url: 'https://savage-vrc.club',
   tagline: 'FLEX the chaos',
   description:
     'SAVAGE は、不思議で魅惑的な空気感を大切にする、VRChat 上のクラブイベントです。時折テーマを設け、その世界観に深く浸るように構成された DJ セットが特徴です。',
