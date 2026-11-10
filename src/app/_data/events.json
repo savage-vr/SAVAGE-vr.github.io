@@ -1039,6 +1039,60 @@
       "eventDate": "2026-10-08",
       "flyer": "/events/2026-10-08.jpg",
       "tweets": "https://x.com/vrcsavageinfo/status/2102895988684022098?s=20"
+    },
+    {
+      "name": "SAVAGE wave.27",
+      "cast": [
+        {
+          "name": "RoastPotato",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "melocilde",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "piqLessss",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "Izena",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "bonsai",
+          "roles": [
+            "DJ"
+          ]
+        },
+        {
+          "name": "sichemaniac",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "nomecore",
+          "roles": [
+            "VJ"
+          ]
+        },
+        {
+          "name": "misumi",
+          "roles": [
+            "VJ"
+          ]
+        }
+      ],
+      "eventDate": "2026-11-23"
     }
   ]
 }
