@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absolute(personPath(person.name)),
       lastModified: person.appearances[0]?.event.eventDate,
     })),
-    { url: absolute('/EbzFj4/') },
+    { url: absolute('/news/2025-11-14/'), lastModified: '2025-11-14' },
+    { url: absolute('/news/2026-11-11/'), lastModified: '2026-11-11' },
   ]
 }

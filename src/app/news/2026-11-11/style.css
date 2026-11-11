@@ -1,0 +1,8 @@
+.header {
+  background-color: rgba(1, 1, 1, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.article {
+  font-family:YuGothic,"Yu Gothic Medium","Yu Gothic","-apple-system","Hiragino Kaku Gothic ProN","Hiragino Sans",Verdana,Meiryo,sans-serif;
+}

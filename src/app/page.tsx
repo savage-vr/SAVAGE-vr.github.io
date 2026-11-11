@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { Suspense } from 'react'
 
 import { EventArchive } from './_components/EventArchive'
@@ -97,6 +98,12 @@ const credits: Array<[string, string]> = [
   ['Logo Animation', 'melocilde'],
   ['Background Movie', 'Kaonasy1000'],
   ['Web Site Development', 'melocilde'],
+]
+
+// Each article is its own page under app/news/<date>/, newest first
+const news: Array<[string, string]> = [
+  ['2026-11-11', 'Izena 加入のお知らせ'],
+  ['2025-11-14', 'fuji_Glicine 脱退のお知らせ'],
 ]
 
 const DESCRIPTION =
@@ -266,6 +273,26 @@ export default function Home() {
             <Suspense fallback={<div className="media-fallback" />}>
               <YouTubeSlider videos={youtube.movies} />
             </Suspense>
+          </Section>
+          <Section index="07" title="News" caption={`${news.length} Posts`}>
+            <div className="event-archive-wrap">
+              <ul className="event-archive">
+                {news.map(([date, title]) => (
+                  <li key={date}>
+                    <Link href={`/news/${date}/`}>
+                      <time className="event-archive-date" dateTime={date}>
+                        {date.replaceAll('-', '.')}
+                      </time>
+                      <span className="event-archive-name">{title}</span>
+                      <span className="event-archive-meta mono-label">
+                        Read
+                        <span aria-hidden="true"> →</span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Section>
         </div>
         <footer className="footer">

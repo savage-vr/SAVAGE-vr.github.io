@@ -1,0 +1,90 @@
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+
+import "./style.css"
+
+const description = "この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が2025年11月23日の SAVAGE の出演を最後に 脱退する運びとなりましたので、お知らせいたします。"
+
+export const metadata: Metadata = {
+  title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
+  description,
+  openGraph: {
+    title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
+    description,
+    url: '/news/2025-11-14/',
+    siteName: 'SAVAGE',
+    images: [{ url: '/og/top.png', width: 1200, height: 630, alt: 'SAVAGE' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SAVAGE - fuji_Glicine 脱退のお知らせ',
+    description,
+    site: '@vrcsavageinfo',
+    creator: '@vrcsavageinfo',
+    images: ['/og/top.png'],
+  },
+}
+
+export default function Home() {
+  return (
+    <main id="main-content" className="w-full">
+      <article>
+        <header className="fixed w-full flex justify-center z-100 header">
+          <Link href="/">
+            <div className="flex flex-col items-center justify-center p-8 z-100">
+              <aside className="text-xs">サヴェージ</aside>
+              <h1 className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
+                SAVAGE
+              </h1>
+            </div>
+          </Link>
+        </header>
+        <div className="flex justify-center p-8 pt-32 z-10 img">
+          <Image
+            alt="SAVAGE DJ fuji_Glicine 脱退のお知らせ"
+            width="1600"
+            height="900"
+            className="flex items-center justify-center z-10"
+            src="/news/2025-11-14/thank_you.png"
+          />
+        </div>
+        <div className="flex flex-col justiy-center max-w-196 m-auto p-11">
+          <h2 className="text-2xl font-[family-name:var(--font-ibm-plex-serif)]">
+            SAVAGE - fuji_Glicine 脱退のお知らせ
+          </h2>
+          <p className="text-right">
+            Published:
+            <time className="ml-2" dateTime="2025-11-14">
+              2025.11.14
+            </time>
+          </p>
+          <p className="mt-8 article">
+            この度、SAVAGE 発足当初からメンバーとして活動していた fuji_Glicine が
+            <time dateTime="2025-11-23">2025年11月22日の SAVAGE</time> の出演を最後に
+            脱退する運びとなりましたので、お知らせいたします。
+            <br />
+            <br />
+            fuji_Glicine は 2024年11月に発足したSAVAGEの初期メンバーとして加入。
+            高いBPM帯の Drum&#39;n&#39;Bass / Liquid Funk / UK Hardcore / J-Core などを中心をプレイし他のメンバーにはできない領域のDJを多数披露プレイしていただきました。
+            <br />
+            <br />
+            SAVAGE 以外での活躍も目覚ましく、VRC上で UK Hardcore / Mainstream Hardcore シーンの盛り上げに貢献してきました。
+            <br />
+            <br />
+            fuji_Glicineのこれまでの貢献に感謝するとともに、今後のさらなる飛躍を心より願っています。
+          </p>
+          <div className="pt-8">
+            <h3 className="text-sm">Links</h3>
+            <p>
+              fuji_Glicine - <Link className="underline" href="https://x.com/fuji_COREmania">X</Link> / <Link className="underline" href="https://www.mixcloud.com/Glicine/">Mixcloud</Link>
+            </p>
+          </div>
+        </div>
+        <footer className="border-t-1  footer flex flex-col items-center p-[4rem]">
+          © SAVAGE-vr
+        </footer>
+      </article>
+    </main>
+  )
+}
