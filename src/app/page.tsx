@@ -102,7 +102,7 @@ const credits: Array<[string, string]> = [
 
 // Each article is its own page under app/news/<date>/, newest first
 const news: Array<[string, string]> = [
-  ['2026-11-11', 'Izena 加入のお知らせ'],
+  ['2026-11-14', 'Izena 加入のお知らせ'],
   ['2025-11-14', 'fuji_Glicine 脱退のお知らせ'],
 ]
 

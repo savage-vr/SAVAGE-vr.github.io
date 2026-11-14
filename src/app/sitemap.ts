@@ -23,6 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: person.appearances[0]?.event.eventDate,
     })),
     { url: absolute('/news/2025-11-14/'), lastModified: '2025-11-14' },
-    { url: absolute('/news/2026-11-11/'), lastModified: '2026-11-11' },
+    { url: absolute('/news/2026-11-14/'), lastModified: '2026-11-14' },
   ]
 }
