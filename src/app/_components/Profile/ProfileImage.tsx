@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 
 type Props = {
   name: string
-  imgSrc: string
+  imgSrc?: string
 }
 
 export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
@@ -36,7 +36,11 @@ export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
 
   return (
     <div className="profile-image-container" ref={imageRef}>
-      {isVisible ? (
+      {!imgSrc ? (
+        <div className="profile-image profile-image-placeholder profile-no-image mono-label">
+          No image
+        </div>
+      ) : isVisible ? (
         <Image
           className="profile-image"
           src={imgSrc}

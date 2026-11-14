@@ -32,9 +32,10 @@ export async function generateMetadata({
   if (!person) return {}
   const title = `${person.name} | SAVAGE`
   const description = `SAVAGE 出演 ${person.appearances.length} 回 (${person.roles.join(' / ')})`
-  // Crew: their photo as a small card. Guests: the site card (/og/top.png)
-  const image = person.member
-    ? { url: person.member.imgSrc, alt: person.name }
+  // Crew: their photo as a small card. Guests and crew without a photo: the site card (/og/top.png)
+  const photo = person.member?.imgSrc
+  const image = photo
+    ? { url: photo, alt: person.name }
     : { url: '/og/top.png', width: 1200, height: 630, alt: 'SAVAGE' }
   return {
     title,
@@ -50,7 +51,7 @@ export async function generateMetadata({
       type: 'profile',
     },
     twitter: {
-      card: person.member ? 'summary' : 'summary_large_image',
+      card: photo ? 'summary' : 'summary_large_image',
       title,
       description,
       site: '@vrcsavageinfo',
@@ -77,15 +78,20 @@ export default async function MemberPage({
       </nav>
 
       <header className="member-header">
-        {member && (
-          <Image
-            className="member-photo"
-            src={member.imgSrc}
-            alt={`${person.name}'s picture`}
-            width={160}
-            height={160}
-          />
-        )}
+        {member &&
+          (member.imgSrc ? (
+            <Image
+              className="member-photo"
+              src={member.imgSrc}
+              alt={`${person.name}'s picture`}
+              width={160}
+              height={160}
+            />
+          ) : (
+            <div className="member-photo member-no-image mono-label">
+              No image
+            </div>
+          ))}
         <div>
           <p className="mono-label">
             {person.alumni ? 'SAVAGE OB' : member ? 'SAVAGE Crew' : 'Guest'}

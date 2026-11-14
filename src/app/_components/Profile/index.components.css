@@ -60,6 +60,12 @@
   background: #151515;
 }
 
+.profile-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .profile:hover {
   .profile-image {
     filter: none;

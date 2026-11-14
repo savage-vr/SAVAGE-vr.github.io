@@ -4,7 +4,8 @@ import json from './members.json'
 
 const MemberSchema = z.object({
   name: z.string(),
-  imgSrc: z.string(),
+  // Omit until they send a photo; a blank square is shown instead
+  imgSrc: z.string().optional(),
   roles: z.array(z.enum(['BOSS', 'DJ', 'VJ'])),
   links: z.array(z.tuple([z.string(), z.string().url()])),
 })

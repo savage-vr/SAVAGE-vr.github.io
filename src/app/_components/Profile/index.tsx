@@ -8,7 +8,7 @@ import './index.components.css'
 
 type Props = {
   name: string
-  imgSrc: string
+  imgSrc?: string
   roles: Array<'BOSS' | 'DJ' | 'VJ'>
   links: Array<[string, string]> // tuple of [title, url]
 }

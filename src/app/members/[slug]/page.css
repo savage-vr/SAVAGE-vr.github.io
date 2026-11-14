@@ -17,6 +17,13 @@
   object-fit: cover;
 }
 
+.member-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #151515;
+}
+
 .member-name {
   margin-top: 0.5rem;
 }
