@@ -4,26 +4,29 @@ import HLS from "hls.js"
 import { useEffect, useState, useCallback } from "react"
 
 const src = "/movie/video.m3u8"
-const fallback = "movie/savage_bg.mp4"
+const fallback = "/movie/savege_bg_compress.mp4"
 
 export default function Video() {
   const [load, setLoad] = useState(false)
   const [animation, setAnimation] = useState(false)
-  const callback = useCallback(() => {
-    setAnimation(true)
-  }, [])
-  const ref = useCallback((node: HTMLVideoElement) => {
-    if (node) {
-      if (HLS.isSupported()) {
-        const hls = new HLS()
-        hls.loadSource(src)
-        hls.attachMedia(node)
-        node.addEventListener("play", callback)
-      } else if (node.canPlayType('application/vnd.apple.mpegurl')) {
-        node.src = src;
-      } else {
-        node.src = fallback
-      }
+  const ref = useCallback((node: HTMLVideoElement | null) => {
+    if (!node) return
+    // The video stays at opacity 0 until it starts playing, on every playback path
+    const onPlay = () => setAnimation(true)
+    node.addEventListener("play", onPlay)
+    let hls: HLS | undefined
+    if (HLS.isSupported()) {
+      hls = new HLS()
+      hls.loadSource(src)
+      hls.attachMedia(node)
+    } else if (node.canPlayType('application/vnd.apple.mpegurl')) {
+      node.src = src
+    } else {
+      node.src = fallback
+    }
+    return () => {
+      node.removeEventListener("play", onPlay)
+      hls?.destroy()
     }
   }, [])
   useEffect(() => {

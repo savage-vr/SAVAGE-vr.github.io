@@ -27,7 +27,7 @@
 .locked-summer {
   top: 0;
   left: 0;
-  display: fixed;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   z-index: 10;

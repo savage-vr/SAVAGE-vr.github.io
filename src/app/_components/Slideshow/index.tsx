@@ -11,6 +11,8 @@ import { MediaCounter } from '../common/MediaCounter'
 import { NavigationButton } from '../common/NavigationButton'
 import '../common/media.css'
 
+import { Lightbox } from './Lightbox'
+
 const AUTOPLAY_DURATION = 6000
 
 interface SlideshowProps {
@@ -28,6 +30,9 @@ export default function Slideshow({ slides }: SlideshowProps) {
   const [focused, setFocused] = useState(false)
   const [inView, setInView] = useState(false)
   const [pageVisible, setPageVisible] = useState(true)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  // Announce the slide only after user navigation, never on autoplay
+  const [announce, setAnnounce] = useState(false)
 
   // No autoplay for reduced motion (animations are globally shortened there)
   useEffect(() => {
@@ -57,7 +62,8 @@ export default function Slideshow({ slides }: SlideshowProps) {
     return () => observer.disconnect()
   }, [])
 
-  const paused = userPaused || hovered || focused || !inView || !pageVisible
+  const paused =
+    userPaused || hovered || focused || !inView || !pageVisible || lightboxOpen
 
   // IntersectionObserver for lazy loading
   useEffect(() => {
@@ -125,10 +131,32 @@ export default function Slideshow({ slides }: SlideshowProps) {
     })
   }
 
+  const userPrevious = () => {
+    setAnnounce(true)
+    goToPrevious()
+  }
+
+  const userNext = () => {
+    setAnnounce(true)
+    goToNext()
+  }
+
+  const userGoToSlide = (index: number) => {
+    setAnnounce(true)
+    goToSlide(index)
+  }
+
+  const autoplayNext = () => {
+    setAnnounce(false)
+    goToNext()
+  }
+
   return (
-    <div
+    <section
       className="slideshow"
       ref={slideshowRef}
+      aria-roledescription="carousel"
+      aria-label="ギャラリー"
       onFocus={() => setFocused(true)}
       onBlur={event => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
@@ -145,15 +173,18 @@ export default function Slideshow({ slides }: SlideshowProps) {
       >
         <NavigationButton
           direction="prev"
-          onClick={goToPrevious}
+          onClick={userPrevious}
           ariaLabel="前のスライドを表示"
         />
 
-        <div className="slideshow-images" role="img" aria-live="polite">
+        <div className="slideshow-images">
           {slideImages.map((slide, index) => (
             <div
               key={slide.path}
               className={`slideshow-slide ${index === currentIndex ? 'active' : ''}`}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} / ${slideImages.length}`}
             >
               {loadedImages.has(index) ? (
                 <picture
@@ -182,11 +213,16 @@ export default function Slideshow({ slides }: SlideshowProps) {
               )}
             </div>
           ))}
+          <button
+            className="slideshow-zoom"
+            onClick={() => setLightboxOpen(true)}
+            aria-label={`画像 ${currentIndex + 1} を拡大表示`}
+          />
         </div>
 
         <NavigationButton
           direction="next"
-          onClick={goToNext}
+          onClick={userNext}
           ariaLabel="次のスライドを表示"
         />
         <MediaCounter current={currentIndex} total={slideImages.length} />
@@ -217,15 +253,28 @@ export default function Slideshow({ slides }: SlideshowProps) {
       <DotNavigation
         totalItems={slideImages.length}
         currentIndex={currentIndex}
-        onIndexChange={goToSlide}
+        onIndexChange={userGoToSlide}
         ariaLabel="スライド選択"
         getItemAriaLabel={index => `スライド ${index + 1} を表示`}
         autoplay={
           autoplayEnabled
-            ? { duration: AUTOPLAY_DURATION, paused, onComplete: goToNext }
+            ? { duration: AUTOPLAY_DURATION, paused, onComplete: autoplayNext }
             : undefined
         }
       />
-    </div>
+
+      <p className="sr-only" role="status" aria-live="polite">
+        {announce ? `スライド ${currentIndex + 1} / ${slideImages.length}` : ''}
+      </p>
+
+      <Lightbox
+        slides={slideImages}
+        index={currentIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onPrevious={userPrevious}
+        onNext={userNext}
+      />
+    </section>
   )
 }

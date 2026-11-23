@@ -12,8 +12,8 @@ import { EventCast } from '../EventCast'
 import './index.components.css'
 
 const formatEventDate = (dateString: string): string => {
-  const date = new Date(dateString)
-  return format(date, 'yyyy.MM.dd')
+  // parseISO reads a date-only string as local midnight; new Date() reads it as UTC
+  return format(parseISO(dateString), 'yyyy.MM.dd')
 }
 
 const formatCountdown = (dateString: string): string => {
