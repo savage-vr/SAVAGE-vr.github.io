@@ -1,57 +1,26 @@
-'use client'
-
 import Image from 'next/image'
-import { useState, useEffect, useRef } from 'react'
 
 type Props = {
-  name: string
   imgSrc?: string
 }
 
-export const ProfileImage: React.FC<Props> = ({ name, imgSrc }) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const imageRef = useRef<HTMLDivElement>(null)
-
-  // IntersectionObserver for lazy loading
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: '50px' }
-    )
-
-    if (imageRef.current) {
-      observer.observe(imageRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
+// The member's name is the card's adjacent heading, so the photo is decorative
+// (alt=""). next/image lazy-loads natively (loading="lazy") by default.
+export const ProfileImage: React.FC<Props> = ({ imgSrc }) => {
   return (
-    <div className="profile-image-container" ref={imageRef}>
-      {!imgSrc ? (
-        <div className="profile-image profile-image-placeholder profile-no-image mono-label">
-          No image
-        </div>
-      ) : isVisible ? (
+    <div className="profile-image-container">
+      {imgSrc ? (
         <Image
           className="profile-image"
           src={imgSrc}
-          alt={`${name}'s picture`}
+          alt=""
           width="200"
           height="200"
-          onLoad={() => setIsImageLoaded(true)}
-          style={{ opacity: isImageLoaded ? 1 : 0 }}
         />
       ) : (
-        <div className="profile-image profile-image-placeholder" />
+        <div className="profile-image profile-image-placeholder profile-no-image mono-label">
+          No image
+        </div>
       )}
     </div>
   )

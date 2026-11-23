@@ -34,9 +34,10 @@ export default function Home() {
           <Link href="/">
             <div className="flex flex-col items-center justify-center p-8 z-100">
               <aside className="text-xs">サヴェージ</aside>
-              <h1 className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
+              {/* Site logo, not the page heading: the article title is the h1 */}
+              <p className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
                 SAVAGE
-              </h1>
+              </p>
             </div>
           </Link>
         </header>
@@ -50,9 +51,9 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col justiy-center max-w-196 m-auto p-11">
-          <h2 className="text-2xl font-[family-name:var(--font-ibm-plex-serif)]">
+          <h1 className="news-title text-2xl font-[family-name:var(--font-ibm-plex-serif)]">
             SAVAGE - fuji_Glicine 脱退のお知らせ
-          </h2>
+          </h1>
           <p className="text-right">
             Published:
             <time className="ml-2" dateTime="2025-11-14">
@@ -75,7 +76,7 @@ export default function Home() {
             fuji_Glicineのこれまでの貢献に感謝するとともに、今後のさらなる飛躍を心より願っています。
           </p>
           <div className="pt-8">
-            <h3 className="text-sm">Links</h3>
+            <h2 className="news-heading text-sm">Links</h2>
             <p>
               fuji_Glicine - <Link className="underline" href="https://x.com/fuji_COREmania">X</Link> / <Link className="underline" href="https://www.mixcloud.com/Glicine/">Mixcloud</Link>
             </p>

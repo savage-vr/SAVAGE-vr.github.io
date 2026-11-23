@@ -3,7 +3,7 @@ import './page.css'
 
 export default function Home() {
   return (
-    <main className="w-full h-full flex flex-col">
+    <main id="main-content" tabIndex={-1} className="w-full h-full flex flex-col focus:outline-none">
       <div className="flex flex-col justify-center items-center locked-summer">
         <div className="logo-container">
           <img src="/logo.png" alt="Logo" className="logo" />
@@ -40,7 +40,7 @@ export default function Home() {
               Please post your memory of summer....
             </a>
           </p>
-          <p className="maxim text-xl font-[family-name:var(--font-ibm-plex-serif)]">
+          <p lang="en" className="maxim text-xl font-[family-name:var(--font-ibm-plex-serif)]">
             &ldquo;In summer, the song sings itself&rdquo;
           </p>
           <p className="flex flex-col justify-center items-center drop-shadow-lg text-xl font-[family-name:var(--font-ibm-plex-serif)]">

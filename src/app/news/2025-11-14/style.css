@@ -5,4 +5,12 @@
 
 .article {
   font-family:YuGothic,"Yu Gothic Medium","Yu Gothic","-apple-system","Hiragino Kaku Gothic ProN","Hiragino Sans",Verdana,Meiryo,sans-serif;
+  /* Comfortable leading for Japanese body copy */
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.news-title,
+.news-heading {
+  text-wrap: balance;
 }

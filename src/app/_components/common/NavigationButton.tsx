@@ -17,6 +17,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
 }) => {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={`media-nav ${direction} ${className}`}
       aria-label={ariaLabel}

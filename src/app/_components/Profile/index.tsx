@@ -41,7 +41,7 @@ export const Role: React.FC<{ role: 'BOSS' | 'DJ' | 'VJ' }> = ({ role }) => {
 export const Profile: React.FC<Props> = ({ name, roles, imgSrc, links }) => {
   return (
     <article className="profile" aria-labelledby={`profile-${name}`}>
-      <ProfileImage name={name} imgSrc={imgSrc} />
+      <ProfileImage imgSrc={imgSrc} />
       <div className="profile-info">
         <h3 id={`profile-${name}`} className="profile-name">
           <Link href={personPath(name)}>{name}</Link>

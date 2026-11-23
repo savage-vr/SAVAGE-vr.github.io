@@ -180,7 +180,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="w-full">
-      <section className="hero fixed w-full h-screen flex flex-col items-center justify-center bg-black p-20 fadeIn z-1">
+      <section className="hero fixed w-full h-dvh flex flex-col items-center justify-center bg-black p-20 fadeIn z-1">
         <Video />
         <Logo />
         <Savage />
@@ -189,7 +189,8 @@ export default function Home() {
       </section>
       <section className="second-section">
         <div className="content">
-          <div id="main-content" />
+          {/* Skip-link target: focusable so focus (not just scroll) moves here */}
+          <div id="main-content" tabIndex={-1} className="focus:outline-none" />
           <Section index="01" title="About" caption="VRChat Club Event">
             <About />
             <ul className="chip-links">

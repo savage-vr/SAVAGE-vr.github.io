@@ -122,7 +122,7 @@ export default async function EventPage({
           </a>
         )}
         <div className="event-info">
-          <EventCast cast={event.cast} />
+          <EventCast cast={event.cast} headingLevel={2} />
           {event.tweets && (
             <a
               className="event-announcement mono-label"

@@ -34,9 +34,10 @@ export default function Home() {
           <Link href="/">
             <div className="flex flex-col items-center justify-center p-8 z-100">
               <aside className="text-xs">サヴェージ</aside>
-              <h1 className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
+              {/* Site logo, not the page heading: the article title is the h1 */}
+              <p className="text-4xl font-[family-name:var(--font-ibm-plex-serif)]">
                 SAVAGE
-              </h1>
+              </p>
             </div>
           </Link>
         </header>
@@ -50,9 +51,9 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col justiy-center max-w-196 m-auto p-11">
-          <h2 className="text-2xl font-[family-name:var(--font-ibm-plex-serif)]">
+          <h1 className="news-title text-2xl font-[family-name:var(--font-ibm-plex-serif)]">
             SAVAGE - Izena 加入のお知らせ
-          </h2>
+          </h1>
           <p className="text-right">
             Published:
             <time className="ml-2" dateTime="2026-11-14">
@@ -70,7 +71,7 @@ export default function Home() {
             新たな仲間を迎えた SAVAGE を、今後ともよろしくお願いいたします。
           </p>
           <div className="pt-8">
-            <h3 className="text-sm">Links</h3>
+            <h2 className="news-heading text-sm">Links</h2>
             <p>
               Izena - <Link className="underline" href="https://x.com/Izena714">X</Link> / <Link className="underline" href="/members/izena/">出演履歴</Link>
             </p>

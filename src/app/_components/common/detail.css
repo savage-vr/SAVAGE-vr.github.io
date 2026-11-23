@@ -26,6 +26,7 @@
   font-size: clamp(1.75rem, 5vw, 2.75rem);
   line-height: 1.2;
   overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 /*

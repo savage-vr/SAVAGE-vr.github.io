@@ -1,10 +1,11 @@
 'use client'
 
-import { format, parseISO, startOfDay } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { eventPath, type Event } from '#/app/_data/events.schema'
+import { tokyoDateString } from '#/app/_utils/findNextEvent'
 
 import './index.components.css'
 
@@ -16,19 +17,31 @@ export const EventArchive: React.FC<{ events: Event[] }> = ({ events }) => {
   const sorted = [...events].sort((a, b) =>
     b.eventDate.localeCompare(a.eventDate)
   )
-  // "Upcoming" depends on today, so it's only known in the browser
+  // "Upcoming" depends on today (in Tokyo), so it's only known in the browser
   const [today, setToday] = useState<string | null>(null)
   useEffect(() => {
-    setToday(format(startOfDay(new Date()), 'yyyy-MM-dd'))
+    setToday(tokyoDateString())
   }, [])
 
   const [page, setPage] = useState(0)
+  // Empty on initial load; only announce after the user pages
+  const [announcement, setAnnouncement] = useState('')
   const pageCount = Math.ceil(sorted.length / PAGE_SIZE)
   const visible = sorted.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+  const isFirst = page === 0
+  const isLast = page === pageCount - 1
+
+  const goTo = (next: number) => {
+    // aria-disabled keeps the button focusable, so the no-op happens here
+    if (next < 0 || next > pageCount - 1) return
+    setPage(next)
+    setAnnouncement(`Page ${next + 1} / ${pageCount}`)
+  }
 
   return (
     <div className="event-archive-wrap">
-      <ul className="event-archive" aria-live="polite">
+      {/* role="list": Safari drops list semantics with list-style: none */}
+      <ul className="event-archive" role="list">
         {visible.map(event => (
           <li key={event.eventDate}>
             <Link href={eventPath(event)}>
@@ -57,25 +70,31 @@ export const EventArchive: React.FC<{ events: Event[] }> = ({ events }) => {
           aria-label="アーカイブのページ"
         >
           <button
-            onClick={() => setPage(p => Math.max(p - 1, 0))}
-            disabled={page === 0}
-            aria-label="新しいイベントを表示"
+            type="button"
+            onClick={() => goTo(page - 1)}
+            aria-disabled={isFirst ? 'true' : undefined}
           >
-            ← Newer
+            <span aria-hidden="true">← </span>Newer
+            <span className="sr-only"> events</span>
           </button>
           <span className="event-archive-page">
             <span className="event-archive-page-current">{pad(page + 1)}</span>{' '}
             / {pad(pageCount)}
           </span>
           <button
-            onClick={() => setPage(p => Math.min(p + 1, pageCount - 1))}
-            disabled={page === pageCount - 1}
-            aria-label="古いイベントを表示"
+            type="button"
+            onClick={() => goTo(page + 1)}
+            aria-disabled={isLast ? 'true' : undefined}
           >
-            Older →
+            Older
+            <span className="sr-only"> events</span>
+            <span aria-hidden="true"> →</span>
           </button>
         </nav>
       )}
+      <p className="sr-only" role="status">
+        {announcement}
+      </p>
     </div>
   )
 }

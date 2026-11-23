@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 import { eventPath, type EventsData } from '#/app/_data/events.schema'
-import { findNextEvent } from '#/app/_utils/findNextEvent'
+import { findNextEvent, tokyoDateString } from '#/app/_utils/findNextEvent'
 
 import { EventCast } from '../EventCast'
 
@@ -17,7 +17,12 @@ const formatEventDate = (dateString: string): string => {
 }
 
 const formatCountdown = (dateString: string): string => {
-  const days = differenceInCalendarDays(parseISO(dateString), new Date())
+  // Count calendar days from today in Tokyo (where events are held), not the
+  // viewer's local date
+  const days = differenceInCalendarDays(
+    parseISO(dateString),
+    parseISO(tokyoDateString())
+  )
   if (days <= 0) return 'Tonight'
   if (days === 1) return 'Tomorrow'
   return `In ${days} days`
@@ -38,12 +43,12 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
 
   if (!nextEvent) {
     return (
-      <div className="next-event" role="region" aria-live="polite">
+      <div className="next-event">
         <div className="next-event-meta mono-label">Stay tuned</div>
         <p className="next-event-date" aria-hidden="true">
           TBA
         </p>
-        <p className="next-event-empty" role="status">
+        <p className="next-event-empty">
           現在予定されているイベントはありません
         </p>
       </div>
@@ -51,21 +56,13 @@ export const NextEvent: React.FC<NextEventProps> = ({ events }) => {
   }
 
   return (
-    <div
-      className="next-event"
-      role="region"
-      aria-live="polite"
-      aria-label="次のイベント"
-    >
+    <div className="next-event">
       <div className="next-event-meta mono-label">
         <span className="next-event-live" aria-hidden="true" />
         <span>{formatCountdown(nextEvent.eventDate)}</span>
       </div>
-      <time
-        className="next-event-date"
-        dateTime={nextEvent.eventDate}
-        aria-label={`開催日: ${formatEventDate(nextEvent.eventDate)}`}
-      >
+      <time className="next-event-date" dateTime={nextEvent.eventDate}>
+        <span className="sr-only">開催日: </span>
         {formatEventDate(nextEvent.eventDate)}
       </time>
       <h3 className="next-event-name">

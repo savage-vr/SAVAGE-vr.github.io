@@ -6,7 +6,8 @@ export const ScrollDown = () => {
   const handleScrollDown = () => {
     const mainContent = document.getElementById('main-content')
     if (mainContent) {
-      mainContent.scrollIntoView({ behavior: 'smooth' })
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      mainContent.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' })
     }
   }
 

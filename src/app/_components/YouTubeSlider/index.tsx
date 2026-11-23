@@ -16,10 +16,11 @@ interface YouTubeSliderProps {
   videos: YouTubeVideo[]
 }
 
-const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
-  video,
-  isVisible,
-}) => {
+const VideoFrame: React.FC<{
+  video: YouTubeVideo
+  isVisible: boolean
+  label: string
+}> = ({ video, isVisible, label }) => {
   const [shouldLoad, setShouldLoad] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -43,7 +44,12 @@ const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
   }, [shouldLoad])
 
   return (
-    <div key={video.id} className="w-full flex-shrink-0">
+    <div
+      className="media-slide"
+      role="group"
+      aria-roledescription="slide"
+      aria-label={label}
+    >
       <div ref={containerRef} className="aspect-video">
         {shouldLoad && isVisible ? (
           <iframe
@@ -82,32 +88,105 @@ const VideoFrame: React.FC<{ video: YouTubeVideo; isVisible: boolean }> = ({
 }
 
 export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
+  const trackRef = useRef<HTMLDivElement>(null)
+  // Marker state: follows the scroll position, or the pending click target
   const [currentIndex, setCurrentIndex] = useState(0)
+  // Index the track last settled on; announcements only fire when it changes
+  const [settledIndex, setSettledIndex] = useState<number | null>(null)
+  // Slide a button/marker click is scrolling to, so rapid clicks build on it
+  const pendingRef = useRef<number | null>(null)
 
-  const nextVideo = () => {
-    setCurrentIndex(prev => (prev + 1) % videos.length)
+  // Nearest slide from the track's horizontal scroll position
+  const nearestIndex = () => {
+    const track = trackRef.current
+    if (!track || track.clientWidth === 0) return 0
+    const index = Math.round(track.scrollLeft / track.clientWidth)
+    return Math.min(videos.length - 1, Math.max(0, index))
   }
 
-  const prevVideo = () => {
-    setCurrentIndex(prev => (prev - 1 + videos.length) % videos.length)
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+
+    let frame = 0
+    let debounce: ReturnType<typeof setTimeout> | undefined
+
+    const settle = () => {
+      pendingRef.current = null
+      const index = nearestIndex()
+      setCurrentIndex(index)
+      setSettledIndex(prev => (prev === null && index === 0 ? null : index))
+    }
+
+    const onScroll = () => {
+      if (pendingRef.current === null && !frame) {
+        frame = requestAnimationFrame(() => {
+          frame = 0
+          if (pendingRef.current === null) setCurrentIndex(nearestIndex())
+        })
+      }
+    }
+
+    // scrollend where supported, otherwise a debounced scroll fallback
+    const supportsScrollEnd = 'onscrollend' in window
+    const onScrollFallback = () => {
+      clearTimeout(debounce)
+      debounce = setTimeout(settle, 120)
+    }
+
+    track.addEventListener('scroll', onScroll, { passive: true })
+    if (supportsScrollEnd) {
+      track.addEventListener('scrollend', settle)
+    } else {
+      track.addEventListener('scroll', onScrollFallback, { passive: true })
+    }
+
+    return () => {
+      cancelAnimationFrame(frame)
+      clearTimeout(debounce)
+      track.removeEventListener('scroll', onScroll)
+      track.removeEventListener('scrollend', settle)
+      track.removeEventListener('scroll', onScrollFallback)
+    }
+    // nearestIndex only reads the ref and videos.length
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videos.length])
+
+  // Controls only start scrolling; state follows the scroll position
+  const scrollToIndex = (index: number) => {
+    const track = trackRef.current
+    const slide = track?.children[index]
+    if (!track || !slide) return
+    pendingRef.current = index
+    setCurrentIndex(index)
+    const trackBox = track.getBoundingClientRect()
+    const slideBox = slide.getBoundingClientRect()
+    // Smoothness comes from CSS scroll-behavior (motion-gated)
+    track.scrollBy({
+      left:
+        slideBox.left +
+        slideBox.width / 2 -
+        (trackBox.left + trackBox.width / 2),
+    })
   }
+
+  // Loops: next from the last slide scrolls back to the first, and vice versa
+  const nextVideo = () =>
+    scrollToIndex(((pendingRef.current ?? nearestIndex()) + 1) % videos.length)
+
+  const prevVideo = () =>
+    scrollToIndex(
+      ((pendingRef.current ?? nearestIndex()) - 1 + videos.length) %
+        videos.length
+    )
 
   return (
-    <div className="w-full">
+    <section
+      className="w-full"
+      aria-roledescription="carousel"
+      aria-label="動画"
+    >
       <div className="media-frame">
-        <div
-          className="flex transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)]"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {videos.map((video, index) => (
-            <VideoFrame
-              key={video.id}
-              video={video}
-              isVisible={index === currentIndex}
-            />
-          ))}
-        </div>
-
         {videos.length > 1 && (
           <>
             <NavigationButton
@@ -122,12 +201,31 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
             />
           </>
         )}
+
+        <div
+          ref={trackRef}
+          className="media-track"
+          // Focusable so the native scroller works from the keyboard
+          tabIndex={0}
+          role="group"
+          aria-label="動画一覧"
+        >
+          {videos.map((video, index) => (
+            <VideoFrame
+              key={video.id}
+              video={video}
+              isVisible={index === currentIndex}
+              label={`${index + 1} / ${videos.length}`}
+            />
+          ))}
+        </div>
       </div>
 
       <DotNavigation
         totalItems={videos.length}
         currentIndex={currentIndex}
-        onIndexChange={setCurrentIndex}
+        onIndexChange={scrollToIndex}
+        ariaLabel="動画選択"
         getItemAriaLabel={index => `動画${index + 1}を表示`}
       />
 
@@ -137,7 +235,14 @@ export const YouTubeSlider: React.FC<YouTubeSliderProps> = ({ videos }) => {
           <span>{videos[currentIndex].title}</span>
         </p>
       )}
-    </div>
+
+      {/* Announced after scrolling settles on a new slide, never on load */}
+      <p className="sr-only" role="status" aria-live="polite">
+        {settledIndex !== null && videos[settledIndex]
+          ? `動画 ${settledIndex + 1} / ${videos.length}: ${videos[settledIndex].title}`
+          : ''}
+      </p>
+    </section>
   )
 }
 

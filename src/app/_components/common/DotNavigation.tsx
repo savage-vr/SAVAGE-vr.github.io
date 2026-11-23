@@ -34,19 +34,18 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
   }
 
   return (
-    <div
+    <nav
       className={`media-progress ${autoplay ? 'is-autoplay' : ''} ${className}`}
-      role="tablist"
       aria-label={ariaLabel}
     >
       {Array.from({ length: totalItems }).map((_, index) => (
         <button
           key={index}
+          type="button"
           onClick={() => onIndexChange(index)}
           className="media-progress-item"
-          role="tab"
           aria-label={getAriaLabel(index)}
-          aria-selected={index === currentIndex}
+          aria-current={index === currentIndex ? 'true' : undefined}
         >
           {autoplay && index === currentIndex && (
             <span
@@ -62,7 +61,7 @@ export const DotNavigation: React.FC<DotNavigationProps> = ({
           )}
         </button>
       ))}
-    </div>
+    </nav>
   )
 }
 

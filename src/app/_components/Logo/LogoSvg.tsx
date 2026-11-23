@@ -10,6 +10,8 @@ export const LogoSvg = forwardRef<SVGSVGElement>(function LogoSvg(_, ref) {
       height="500"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 595.28 841.89"
+      aria-hidden="true"
+      focusable="false"
     >
       <line className="cls-4" x1="86.77" y1="242.69" x2="420.73" y2="242.69" />
       <line className="cls-4" x1="22.24" y1="318.55" x2="520.81" y2="318.55" />

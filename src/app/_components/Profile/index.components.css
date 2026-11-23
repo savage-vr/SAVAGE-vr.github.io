@@ -9,13 +9,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem 1rem;
   }
-
-  .profile-name {
-    font-size: 1.125rem;
-  }
 }
 
 .profile {
+  /* カード自身の幅で中身のサイズを決める */
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -50,10 +48,13 @@
   height: 100%;
   object-fit: cover;
   filter: grayscale(1) contrast(1.1);
-  transition:
-    filter 0.5s ease,
-    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
-    opacity 0.3s ease-in-out;
+  transition: filter 0.5s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      filter 0.5s ease,
+      transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
 }
 
 .profile-image-placeholder {
@@ -66,10 +67,13 @@
   justify-content: center;
 }
 
-.profile:hover {
+.profile:is(:hover, :focus-within) {
   .profile-image {
     filter: none;
-    transform: scale(1.04);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transform: scale(1.04);
+    }
   }
 
   .profile-image-container::after {
@@ -89,6 +93,13 @@
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
+}
+
+/* 2 カラム表示時のカード幅 (15rem 未満) では名前を小さく */
+@container (width < 15rem) {
+  .profile-name {
+    font-size: 1.125rem;
+  }
 }
 
 .profile-roles {
@@ -118,14 +129,21 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
-    transition:
-      color 0.15s,
-      padding 0.2s ease;
+    transition: color 0.15s;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        color 0.15s,
+        padding 0.2s ease;
+    }
 
     &:hover,
     &:focus-visible {
       color: var(--fg);
-      padding-left: 0.4rem;
+
+      @media (prefers-reduced-motion: no-preference) {
+        padding-left: 0.4rem;
+      }
     }
   }
 }

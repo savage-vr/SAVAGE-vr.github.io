@@ -83,9 +83,11 @@ export default async function MemberPage({
             <Image
               className="member-photo"
               src={member.imgSrc}
-              alt={`${person.name}'s picture`}
+              alt={person.name}
               width={160}
               height={160}
+              loading="eager"
+              fetchPriority="high"
             />
           ) : (
             <div className="member-photo member-no-image mono-label">
@@ -132,7 +134,9 @@ export default async function MemberPage({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {title} ↗
+                {title}
+                <span aria-hidden="true"> ↗</span>
+                <span className="sr-only">（新しいタブで開く）</span>
               </a>
             </li>
           ))}

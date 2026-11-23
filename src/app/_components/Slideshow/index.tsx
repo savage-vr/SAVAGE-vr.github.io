@@ -15,6 +15,9 @@ import { Lightbox } from './Lightbox'
 
 const AUTOPLAY_DURATION = 6000
 
+const webpFor = (slide: SlidesData['slides'][number]) =>
+  slide.alternatives.find(alt => alt.format === 'webp')?.path
+
 interface SlideshowProps {
   slides: SlidesData
 }
@@ -22,7 +25,6 @@ interface SlideshowProps {
 export default function Slideshow({ slides }: SlideshowProps) {
   const slideImages = slides.slides
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const slideshowRef = useRef<HTMLDivElement>(null)
   const [autoplayEnabled, setAutoplayEnabled] = useState(false)
   const [userPaused, setUserPaused] = useState(false)
@@ -34,7 +36,7 @@ export default function Slideshow({ slides }: SlideshowProps) {
   // Announce the slide only after user navigation, never on autoplay
   const [announce, setAnnounce] = useState(false)
 
-  // No autoplay for reduced motion (animations are globally shortened there)
+  // No autoplay for reduced motion (its progress animation is motion-gated in CSS)
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)')
     const update = () => setAutoplayEnabled(!query.matches)
@@ -65,71 +67,12 @@ export default function Slideshow({ slides }: SlideshowProps) {
   const paused =
     userPaused || hovered || focused || !inView || !pageVisible || lightboxOpen
 
-  // IntersectionObserver for lazy loading
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Load current image and next few images
-            const imagesToLoad = new Set<number>()
-            for (let i = 0; i < Math.min(3, slideImages.length); i++) {
-              imagesToLoad.add((currentIndex + i) % slideImages.length)
-            }
-            setLoadedImages(prev => new Set([...prev, ...imagesToLoad]))
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
+  const goToSlide = (index: number) => setCurrentIndex(index)
 
-    if (slideshowRef.current) {
-      observer.observe(slideshowRef.current)
-    }
+  const goToPrevious = () =>
+    setCurrentIndex(prev => (prev === 0 ? slideImages.length - 1 : prev - 1))
 
-    return () => observer.disconnect()
-  }, [currentIndex, slideImages.length])
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-    // Load clicked image and surrounding images
-    const imagesToLoad = new Set<number>()
-    for (let i = -1; i <= 1; i++) {
-      const imageIndex = (index + i + slideImages.length) % slideImages.length
-      imagesToLoad.add(imageIndex)
-    }
-    setLoadedImages(prev => new Set([...prev, ...imagesToLoad]))
-  }
-
-  const goToPrevious = () => {
-    setCurrentIndex(prevIndex => {
-      const newIndex = prevIndex === 0 ? slideImages.length - 1 : prevIndex - 1
-      // Preload previous images
-      const imagesToLoad = new Set<number>()
-      for (let i = -1; i <= 1; i++) {
-        const imageIndex =
-          (newIndex + i + slideImages.length) % slideImages.length
-        imagesToLoad.add(imageIndex)
-      }
-      setLoadedImages(prev => new Set([...prev, ...imagesToLoad]))
-      return newIndex
-    })
-  }
-
-  const goToNext = () => {
-    setCurrentIndex(prevIndex => {
-      const newIndex = (prevIndex + 1) % slideImages.length
-      // Preload next images
-      const imagesToLoad = new Set<number>()
-      for (let i = -1; i <= 1; i++) {
-        const imageIndex =
-          (newIndex + i + slideImages.length) % slideImages.length
-        imagesToLoad.add(imageIndex)
-      }
-      setLoadedImages(prev => new Set([...prev, ...imagesToLoad]))
-      return newIndex
-    })
-  }
+  const goToNext = () => setCurrentIndex(prev => (prev + 1) % slideImages.length)
 
   const userPrevious = () => {
     setAnnounce(true)
@@ -186,34 +129,31 @@ export default function Slideshow({ slides }: SlideshowProps) {
               aria-roledescription="slide"
               aria-label={`${index + 1} / ${slideImages.length}`}
             >
-              {loadedImages.has(index) ? (
-                <picture
-                  style={{ width: '100%', height: '100%', display: 'block' }}
-                >
-                  {/* WebP source if available */}
-                  {slide.alternatives.find(alt => alt.format === 'webp') && (
-                    <source
-                      srcSet={
-                        slide.alternatives.find(alt => alt.format === 'webp')!
-                          .path
-                      }
-                      type="image/webp"
-                    />
-                  )}
-                  <source srcSet={slide.path} type="image/png" />
-                  <img alt={slide.alt} style={{
-                      objectFit: 'cover',
-                      objectPosition: slide.position,
-                      width: '100%',
-                      height: '100%',
-                    }} />
-                </picture>
-              ) : (
-                <div className="media-placeholder" />
-              )}
+              <picture
+                style={{ width: '100%', height: '100%', display: 'block' }}
+              >
+                {webpFor(slide) && (
+                  <source srcSet={webpFor(slide)} type="image/webp" />
+                )}
+                {/* Real src from the start; hidden slides are lazy and low
+                    priority so they never compete with the first slide */}
+                <img
+                  src={slide.path}
+                  alt={slide.alt}
+                  loading={index === 0 ? undefined : 'lazy'}
+                  fetchPriority={index === 0 ? undefined : 'low'}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: slide.position,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                />
+              </picture>
             </div>
           ))}
           <button
+            type="button"
             className="slideshow-zoom"
             onClick={() => setLightboxOpen(true)}
             aria-label={`画像 ${currentIndex + 1} を拡大表示`}
@@ -228,6 +168,7 @@ export default function Slideshow({ slides }: SlideshowProps) {
         <MediaCounter current={currentIndex} total={slideImages.length} />
         {autoplayEnabled && (
           <button
+            type="button"
             className="media-toggle"
             onClick={() => setUserPaused(prev => !prev)}
             aria-pressed={userPaused}

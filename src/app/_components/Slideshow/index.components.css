@@ -17,10 +17,15 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transform: scale(1.03);
-  transition:
-    opacity 0.6s ease,
-    transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: opacity 0.6s ease;
+
+  /* The subtle zoom-out is movement, so only without a reduced-motion preference */
+  @media (prefers-reduced-motion: no-preference) {
+    transform: scale(1.03);
+    transition:
+      opacity 0.6s ease,
+      transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
 }
 
 .slideshow-slide.active {
@@ -57,6 +62,15 @@
   color: var(--fg);
   overflow: hidden;
 
+  /* Closed/exit state. display + overlay keep it rendered and in the top layer
+     while it fades out (opacity only, so fine under reduced motion too) */
+  opacity: 0;
+  transition-property: opacity, display, overlay;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  /* Separate declaration so older browsers keep the rest of the transition */
+  transition-behavior: allow-discrete;
+
   /* Page scroll lock without touching <body>: contain scroll chaining on the
      dialog and its backdrop (progressive enhancement; not in Safari yet) */
   &:modal {
@@ -68,15 +82,38 @@
     backdrop-filter: blur(4px);
     overflow: hidden;
     overscroll-behavior: contain;
-  }
-
-  &[open] {
-    animation: lightboxIn 0.2s ease;
+    opacity: 0;
+    transition-property: opacity, display, overlay;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-behavior: allow-discrete;
   }
 
   /* Controls are always visible here, not only on hover */
   .media-nav {
     opacity: 1;
+  }
+}
+
+/* Open state. [data-closing] (set by Lightbox.tsx where overlay/display
+   transitions are unsupported) drops it, so the exit fade runs before close() */
+.lightbox[open]:not([data-closing]),
+.lightbox[open]:not([data-closing])::backdrop {
+  opacity: 1;
+}
+
+/* Entry: kept top-level and after the open state so it wins the cascade */
+@starting-style {
+  .lightbox[open]:not([data-closing]),
+  .lightbox[open]:not([data-closing])::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox::backdrop {
+    transition-duration: 0.1s;
   }
 }
 
@@ -118,14 +155,5 @@
 @media (max-width: 34rem) {
   .lightbox-picture {
     inset: 3rem 0;
-  }
-}
-
-@keyframes lightboxIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

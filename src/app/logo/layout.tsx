@@ -1,26 +1,9 @@
-import { IBM_Plex_Serif } from 'next/font/google'
-
-import '../globals.css'
-
-const ibm = IBM_Plex_Serif({
-  variable: '--font-ibm-plex-serif',
-  subsets: ['latin'],
-  weight: ['500'],
-})
-
-export default function RootLayout({
+// Nested layout: <html>, <body>, fonts, global CSS and the skip link come from
+// the root layout (src/app/layout.tsx)
+export default function LogoLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <html lang="ja">
-      <body className={`${ibm.variable} antialiased bg-black`}>
-        <a href="#main-content" className="skip-link">
-          メインコンテンツにスキップ
-        </a>
-        {children}
-      </body>
-    </html>
-  )
+  return children
 }

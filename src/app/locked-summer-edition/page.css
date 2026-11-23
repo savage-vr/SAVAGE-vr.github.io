@@ -18,7 +18,7 @@
   right: -105px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25em) {
   .maxim {
     right: -125px;
   }
